@@ -1,0 +1,284 @@
+{
+  "chain": "ethereum",
+  "verifiedAt": "2026-10-30T04:44:11.470Z",
+  "stateBlock": 26302683,
+  "poolsChecked": 17935,
+  "verified": 17892,
+  "spoofed": 28,
+  "clampedV3": 694,
+  "balanceUnreadable": 15,
+  "spoofTolerance": 1.005,
+  "method": "balanceOf(pool) for both tokens at the snapshot block; a constant-product pool whose reported reserves exceed its balances by more than the tolerance is marked reservesSpoofed",
+  "afterVerification": {
+    "pricedTokens": 12328,
+    "eligiblePools": 2672,
+    "eligiblePairs": 2228,
+    "eligiblePairsWithTwoOrMorePools": 306,
+    "twoPoolRoutes": 812,
+    "directionalTwoPoolRoutes": 1624
+  },
+  "ineligibilityReasons": {
+    "below-min-depth": 12698,
+    "reserves-dust-or-empty": 1787,
+    "reported-reserves-exceed-token-balances": 27,
+    "token-decimals-unresolved": 24,
+    "no-screening-price-for-either-token": 501,
+    "reserves-not-verified-against-token-balances": 4,
+    "singleton-pool-no-exact-quote-path": 1451,
+    "factory-not-configured": 247,
+    "token-identity-unresolved": 1,
+    "state-unreadable": 1
+  },
+  "spoofExamples": [
+    {
+      "pool": "0xf1f85b2c54a2bd284b1cf4141d64fd171bd85539",
+      "venue": "sushi-v2",
+      "pair": "0x57ab1ec28d129707052df4df418d58a2d46d5f51/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "reserve0": "3478795483052947894272",
+      "balance0": "0",
+      "reserve1": "548309936378869167",
+      "balance1": "548309936378869167",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x3e5e560db64c87e71260878e58d74406e6d693af",
+      "venue": "sushi-v2",
+      "pair": "0x57ab1ec28d129707052df4df418d58a2d46d5f51/0x68a118ef45063051eac49c7e647ce5ace48a68a5",
+      "reserve0": "16978272638608244195",
+      "balance0": "0",
+      "reserve1": "242469542726667863310",
+      "balance1": "242469542726667863310",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x942d30f11f3f232e4dca25e2f0e7501dc91a0277",
+      "venue": "sushi-v2",
+      "pair": "0xb220d53f7d0f52897bcf25e47c4c3dc0bac344f8/0xdf5e0e81dff6faf3a7e52ba697820c5e32d806a8",
+      "reserve0": "2355147923208952120950",
+      "balance0": "162970692530289451",
+      "reserve1": "17376210290112272041",
+      "balance1": "17376210290112272041",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x9cdb6fcb7536baead4e2253c1840d3bd406c7a9d",
+      "venue": "sushi-v2",
+      "pair": "0x47331c546c77997669ea7c9fefb0c649be8644fd/0xb220d53f7d0f52897bcf25e47c4c3dc0bac344f8",
+      "reserve0": "246480434375022682648548",
+      "balance0": "246480434375022682648548",
+      "reserve1": "4569934074201967003333",
+      "balance1": "389622174475206202",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xd9ddff07ebdcf5595998f9f195edd705d1bd1abc",
+      "venue": "sushi-v2",
+      "pair": "0x98ad9b32dd10f8d8486927d846d4df8baf39abe2/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "reserve0": "10165137520946691920297",
+      "balance0": "0",
+      "reserve1": "2332661053549871",
+      "balance1": "2332661053549871",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x7dfd35a3d2ae2035aa0e7b6adbe7014b8e9ff839",
+      "venue": "sushi-v2",
+      "pair": "0xd46ba6d942050d489dbd938a2c909a5d5039a161/0xf4fe56fc650d427bec40225d68b30f4241663039",
+      "reserve0": "10000000000",
+      "balance0": "49285004",
+      "reserve1": "1000000000000000000000",
+      "balance1": "1000000000000000000000",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x711753e72e93ce9ff618b671fca036a33d41007d",
+      "venue": "sushi-v2",
+      "pair": "0x57ab1ec28d129707052df4df418d58a2d46d5f51/0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+      "reserve0": "197666753801722978",
+      "balance0": "0",
+      "reserve1": "734588300104175550",
+      "balance1": "734588300104175550",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xa3ccbd8d6da6fd3e38e3c9b67908ed4400129685",
+      "venue": "sushi-v2",
+      "pair": "0x57ab1ec28d129707052df4df418d58a2d46d5f51/0xe0839f9b9688a77924208ad509e29952dc660261",
+      "reserve0": "504383861422662",
+      "balance0": "0",
+      "reserve1": "7252271618",
+      "balance1": "7252271618",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x55ca1797fdc5f5c2c4e3d69180a72dcd57e98b22",
+      "venue": "sushi-v2",
+      "pair": "0x57ab1ec28d129707052df4df418d58a2d46d5f51/0x71b6296174c5f07d37cafd6e9b72ab5bb3f14fac",
+      "reserve0": "99241924",
+      "balance0": "0",
+      "reserve1": "1",
+      "balance1": "1",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x65d009ed72138085778c0281c72bc4b1fc4c14b3",
+      "venue": "sushi-v2",
+      "pair": "0xc00e94cb662c3520282e6f5717214004a7f26888/0xd46ba6d942050d489dbd938a2c909a5d5039a161",
+      "reserve0": "6800059160515",
+      "balance0": "6800059160515",
+      "reserve1": "10030",
+      "balance1": "48",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xfd2d91db13504a67e33185d3c9b5956496026820",
+      "venue": "sushi-v2",
+      "pair": "0xb3829e5755fafb97396109768895b1026acc003f/0xbd62253c8033f3907c0800780662eab7378a4b96",
+      "reserve0": "199998434856690749975327464",
+      "balance0": "0",
+      "reserve1": "135381062641722183",
+      "balance1": "0",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x28b3c86ec5341fdca5b2d07576212b5a410b88ce",
+      "venue": "sushi-v2",
+      "pair": "0x57ab1ec28d129707052df4df418d58a2d46d5f51/0x8798249c2e607446efb7ad49ec89dd1865ff4272",
+      "reserve0": "108959852574028342",
+      "balance0": "0",
+      "reserve1": "117852069367020313",
+      "balance1": "117852069367020313",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xc0d481d606ee79cdf649446dcf4500a14a443d9a",
+      "venue": "sushi-v2",
+      "pair": "0x15874d65e649880c2614e7a480cb7c9a55787ff6/0xa3e059c0b01f07f211c85bf7b4f1d907afb011df",
+      "reserve0": "5738551595549384767666565",
+      "balance0": "5683125588446209989674331",
+      "reserve1": "1124989185418277589908753182",
+      "balance1": "1136335745090458795336441406",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xfc0bddc5f77205dbc290b4c2cfdc3569ba7db817",
+      "venue": "sushi-v2",
+      "pair": "0x3155ba85d5f96b2d030a4966af206230e46849cb/0x57ab1ec28d129707052df4df418d58a2d46d5f51",
+      "reserve0": "8757501783291449",
+      "balance0": "8757501783291449",
+      "reserve1": "9119379002211410",
+      "balance1": "0",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xc697d4d4d6ec2b5a2efa532549aa83de67733940",
+      "venue": "sushi-v2",
+      "pair": "0x26cf82e4ae43d31ea51e72b663d26e26a75af729/0x68a118ef45063051eac49c7e647ce5ace48a68a5",
+      "reserve0": "266339411502397826135",
+      "balance0": "266339411502397826135",
+      "reserve1": "66465988639864034749",
+      "balance1": "3259465505482911667",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x1a88d1f7899906febac6236c3377f5a0694e23f1",
+      "venue": "sushi-v2",
+      "pair": "0xd46ba6d942050d489dbd938a2c909a5d5039a161/0xedb171c18ce90b633db442f2a6f72874093b49ef",
+      "reserve0": "1",
+      "balance0": "0",
+      "reserve1": "5789940",
+      "balance1": "5789940",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x6d6de58e32beb283996ddebf88819cd1747e47d7",
+      "venue": "sushi-v2",
+      "pair": "0xb22ecdfe16bef29ce48a63cde0add3e8b536d122/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "reserve0": "224155761336486390878448544",
+      "balance0": "8000000000000000000000",
+      "reserve1": "47300335",
+      "balance1": "47300335",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x604ecafded35156260c0ca8eb58b1284da0c6d4d",
+      "venue": "sushi-v2",
+      "pair": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9/0xd46ba6d942050d489dbd938a2c909a5d5039a161",
+      "reserve0": "2603409",
+      "balance0": "2603409",
+      "reserve1": "1",
+      "balance1": "0",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x5326f93507bd2629d3126bec9eef7124d93fcb64",
+      "venue": "sushi-v2",
+      "pair": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/0xd46ba6d942050d489dbd938a2c909a5d5039a161",
+      "reserve0": "239399",
+      "balance0": "239399",
+      "reserve1": "184152878",
+      "balance1": "10939328",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x7953fae367a29f1201d9ab18f0cc831d606b71c9",
+      "venue": "sushi-v2",
+      "pair": "0x84e698ef44711cb1b04f7ebf979e20e37638ad9d/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "reserve0": "7568000000000000000000",
+      "balance0": "0",
+      "reserve1": "21571014",
+      "balance1": "21571014",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x9094040828a20e9e60d1d635ea9ad4aa1b04c28b",
+      "venue": "sushi-v2",
+      "pair": "0x1edf1cf760ebfb6e0b7bd410c2bebb591c7523dd/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "reserve0": "91789",
+      "balance0": "0",
+      "reserve1": "90591",
+      "balance1": "90591",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0x39455b8e57eb3d766779006b29959109c9649021",
+      "venue": "sushi-v2",
+      "pair": "0x71458d000ce5bcac2e145618660c5b8c8c32d12d/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "reserve0": "94745055772265207644",
+      "balance0": "0",
+      "reserve1": "159414238594569",
+      "balance1": "159414238594569",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xfb07a96783ef76bc81edc113d7bf0190d9f30672",
+      "venue": "sushi-v2",
+      "pair": "0x816c812e5ec45c577270ac7fd6326ee76c699abe/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "reserve0": "921",
+      "balance0": "0",
+      "reserve1": "6822689375783",
+      "balance1": "6822689375783",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xd25c2947f1de9a43f2a432779d946fa0d8d685f7",
+      "venue": "unidentified-v2-b-eth",
+      "pair": "0x82af3a5790834cc5569f846ddb1a78443da50dc6/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "reserve0": "100905532600606971893",
+      "balance0": "0",
+      "reserve1": "12548640740878293",
+      "balance1": "12548640740878293",
+      "claimedDepthUsd": null
+    },
+    {
+      "pool": "0xe2b1ea30f5145ce0fdba29cb57a2ceb625295a4c",
+      "venue": "unidentified-v2-b-eth",
+      "pair": "0x168929bb973c6e0803f788d65a809a373b089fde/0x6bba316c48b49bd1eac44573c5c871ff02958469",
+      "reserve0": "10000000000000000000000000",
+      "balance0": "10000000",
+      "reserve1": "1000000000000000000000000",
+      "balance1": "1000000000000000000000000",
+      "claimedDepthUsd": null
+    }
+  ]
+}

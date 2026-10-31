@@ -1,0 +1,15 @@
+# Large measured artefacts live in Git LFS so every figure in the reports stays
+# byte-for-byte reproducible without bloating the git objects.
+#
+# Clone with Git LFS installed, or these paths arrive as pointer files:
+#   brew install git-lfs && git lfs install && git lfs pull
+#
+# The small meta-*.json watermark files are deliberately NOT in LFS: they are
+# the audit trail of what was enumerated and when, so they should stay plainly
+# readable and diffable in the normal git history.
+
+data/market/pools-*.json   filter=lfs diff=lfs merge=lfs -text
+data/market/tokens-*.json  filter=lfs diff=lfs merge=lfs -text
+data/cache/*.json          filter=lfs diff=lfs merge=lfs -text
+data/ledger-*.json         filter=lfs diff=lfs merge=lfs -text
+data/forensics-*.json      filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,5984 @@
+{
+  "version": 2,
+  "updatedAt": "2026-10-29T23:09:32.762Z",
+  "chains": {
+    "base": {
+      "status": "PROMISING",
+      "evidence": [
+        "2,601,792 swaps/day estimated across 6 venue families",
+        "median total transaction fee 0.000001251351278185 ETH (L2 gas + L1 data fee)",
+        "measured block time 2s",
+        "all 10 configured DEX contracts and 3 flash-loan providers verified present on-chain"
+      ],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.071Z",
+          "from": "NOT TESTED",
+          "to": "PROMISING"
+        }
+      ],
+      "rationale": "Dense DEX activity, very low execution cost and live zero-fee flash-loan capacity. Promising as a venue to keep investigating; this is not a statement that we can earn money here.",
+      "dataFiles": [
+        "data/chain-profile-base.json"
+      ]
+    },
+    "ethereum": {
+      "status": "VALIDATION REQUIRED",
+      "evidence": [
+        "median total transaction fee 0.001728409292408668 ETH, about 1381x Base",
+        "base fee p50 0.136836013 gwei vs p95 49.682526144 gwei in the same sample - two orders of magnitude apart",
+        "free endpoints refused unfiltered eth_getLogs, so swap activity by venue was not measured for Ethereum"
+      ],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "VALIDATION REQUIRED"
+        }
+      ],
+      "rationale": "Stage 1 observed one 24-hour window and found the pairs tested too competitive after builder payments. That is a negative result for those pairs in that window, not a finding that Ethereum arbitrage is unprofitable. Re-measuring with the Base toolchain would settle it.",
+      "dataFiles": [
+        "data/chain-profile-ethereum.json"
+      ]
+    }
+  },
+  "dexCombos": {
+    "base:uniswap-v3 + uniswap-v4": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 525,
+      "sharePctOfObservedArb": 31.6,
+      "netUsdPerArb": {
+        "n": 525,
+        "sum": 108.5665,
+        "max": 2.5093,
+        "p90": 0.6744,
+        "median": 0.0272,
+        "min": -0.02488
+      },
+      "distinctOperatorContracts": 39,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + uniswap-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 153,
+      "sharePctOfObservedArb": 9.2,
+      "netUsdPerArb": {
+        "n": 153,
+        "sum": 29.6047,
+        "max": 9.2908,
+        "p90": 0.0988,
+        "median": 0.0166,
+        "min": -0.10349
+      },
+      "distinctOperatorContracts": 33,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 142,
+      "sharePctOfObservedArb": 8.5,
+      "netUsdPerArb": {
+        "n": 142,
+        "sum": 11.9648,
+        "max": 4.4196,
+        "p90": 0.0685,
+        "median": 0.0192,
+        "min": -0.02747
+      },
+      "distinctOperatorContracts": 33,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 88,
+      "sharePctOfObservedArb": 5.3,
+      "netUsdPerArb": {
+        "n": 88,
+        "sum": 53.5512,
+        "max": 12.5285,
+        "p90": 0.597,
+        "median": 0.0189,
+        "min": -0.00379
+      },
+      "distinctOperatorContracts": 36,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + pancake-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 86,
+      "sharePctOfObservedArb": 5.2,
+      "netUsdPerArb": {
+        "n": 86,
+        "sum": 3.1854,
+        "max": 0.5584,
+        "p90": 0.0781,
+        "median": 0.0099,
+        "min": -0.0091
+      },
+      "distinctOperatorContracts": 21,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + pancake-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 51,
+      "sharePctOfObservedArb": 3.1,
+      "netUsdPerArb": {
+        "n": 51,
+        "sum": 0.7908,
+        "max": 0.0571,
+        "p90": 0.038,
+        "median": 0.0099,
+        "min": -0.00305
+      },
+      "distinctOperatorContracts": 11,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-2": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 34,
+      "sharePctOfObservedArb": 2,
+      "netUsdPerArb": {
+        "n": 34,
+        "sum": 12.7411,
+        "max": 11.4671,
+        "p90": 0.0627,
+        "median": 0.0137,
+        "min": -0.00339
+      },
+      "distinctOperatorContracts": 13,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 33,
+      "sharePctOfObservedArb": 2,
+      "netUsdPerArb": {
+        "n": 33,
+        "sum": 7.0133,
+        "max": 5.1444,
+        "p90": 0.1675,
+        "median": 0.012,
+        "min": -0.00503
+      },
+      "distinctOperatorContracts": 19,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + pancake-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 28,
+      "sharePctOfObservedArb": 1.7,
+      "netUsdPerArb": {
+        "n": 28,
+        "sum": 16.0511,
+        "max": 10.5967,
+        "p90": 0.3181,
+        "median": 0.004,
+        "min": -0.00565
+      },
+      "distinctOperatorContracts": 14,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3 + solidly-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 28,
+      "sharePctOfObservedArb": 1.7,
+      "netUsdPerArb": {
+        "n": 28,
+        "sum": 0.4148,
+        "max": 0.082,
+        "p90": 0.0213,
+        "median": 0.0097,
+        "min": -0.00115
+      },
+      "distinctOperatorContracts": 4,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:unknown:uniswap-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 28,
+      "sharePctOfObservedArb": 1.7,
+      "netUsdPerArb": {
+        "n": 28,
+        "sum": 0.4132,
+        "max": 0.0246,
+        "p90": 0.0223,
+        "median": 0.0148,
+        "min": 0.00652
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl + pancake-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 26,
+      "sharePctOfObservedArb": 1.6,
+      "netUsdPerArb": {
+        "n": 26,
+        "sum": 0.7151,
+        "max": 0.1622,
+        "p90": 0.0664,
+        "median": 0.0152,
+        "min": -0.01468
+      },
+      "distinctOperatorContracts": 10,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 25,
+      "sharePctOfObservedArb": 1.5,
+      "netUsdPerArb": {
+        "n": 25,
+        "sum": 0.3226,
+        "max": 0.1383,
+        "p90": 0.0453,
+        "median": 0.0053,
+        "min": -0.05802
+      },
+      "distinctOperatorContracts": 7,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3 + uniswap-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 22,
+      "sharePctOfObservedArb": 1.3,
+      "netUsdPerArb": {
+        "n": 22,
+        "sum": 1.2342,
+        "max": 0.4525,
+        "p90": 0.1249,
+        "median": 0.0092,
+        "min": -0.06014
+      },
+      "distinctOperatorContracts": 15,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + pancake-v3 + uniswap-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 20,
+      "sharePctOfObservedArb": 1.2,
+      "netUsdPerArb": {
+        "n": 20,
+        "sum": 0.5356,
+        "max": 0.1516,
+        "p90": 0.0858,
+        "median": 0.0109,
+        "min": -0.00106
+      },
+      "distinctOperatorContracts": 13,
+      "rationale": "Other operators arbitrage this combination often enough to be worth studying. Not evidence that we could capture it.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-3 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 15,
+      "sharePctOfObservedArb": 0.9,
+      "netUsdPerArb": {
+        "n": 15,
+        "sum": 0.2901,
+        "max": 0.1667,
+        "p90": 0.0202,
+        "median": 0.0096,
+        "min": -0.00493
+      },
+      "distinctOperatorContracts": 8,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-v2 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 15,
+      "sharePctOfObservedArb": 0.9,
+      "netUsdPerArb": {
+        "n": 15,
+        "sum": 0.2275,
+        "max": 0.0956,
+        "p90": 0.0277,
+        "median": 0.0111,
+        "min": -0.00413
+      },
+      "distinctOperatorContracts": 7,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 15,
+      "sharePctOfObservedArb": 0.9,
+      "netUsdPerArb": {
+        "n": 15,
+        "sum": 0.4388,
+        "max": 0.0623,
+        "p90": 0.0493,
+        "median": 0.0358,
+        "min": -0.01204
+      },
+      "distinctOperatorContracts": 7,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 13,
+      "sharePctOfObservedArb": 0.8,
+      "netUsdPerArb": {
+        "n": 13,
+        "sum": 0.3666,
+        "max": 0.1453,
+        "p90": 0.0237,
+        "median": 0.0115,
+        "min": 0.00206
+      },
+      "distinctOperatorContracts": 9,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 13,
+      "sharePctOfObservedArb": 0.8,
+      "netUsdPerArb": {
+        "n": 13,
+        "sum": 0.1913,
+        "max": 0.0368,
+        "p90": 0.0237,
+        "median": 0.0103,
+        "min": 0.00257
+      },
+      "distinctOperatorContracts": 5,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 12,
+      "sharePctOfObservedArb": 0.7,
+      "netUsdPerArb": {
+        "n": 12,
+        "sum": 0.5827,
+        "max": 0.5147,
+        "p90": 0.0218,
+        "median": 0.0046,
+        "min": -0.01057
+      },
+      "distinctOperatorContracts": 8,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 12,
+      "sharePctOfObservedArb": 0.7,
+      "netUsdPerArb": {
+        "n": 12,
+        "sum": 0.104,
+        "max": 0.3472,
+        "p90": 0.0364,
+        "median": 0.0059,
+        "min": -0.59636
+      },
+      "distinctOperatorContracts": 9,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:solidly-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 12,
+      "sharePctOfObservedArb": 0.7,
+      "netUsdPerArb": {
+        "n": 12,
+        "sum": 0.1597,
+        "max": 0.0391,
+        "p90": 0.0222,
+        "median": 0.0069,
+        "min": 0.00118
+      },
+      "distinctOperatorContracts": 5,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 11,
+      "sharePctOfObservedArb": 0.7,
+      "netUsdPerArb": {
+        "n": 11,
+        "sum": 15.6018,
+        "max": 7.819,
+        "p90": 6.0996,
+        "median": 0.0163,
+        "min": 0.00375
+      },
+      "distinctOperatorContracts": 9,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 10,
+      "sharePctOfObservedArb": 0.6,
+      "netUsdPerArb": {
+        "n": 10,
+        "sum": 0.2478,
+        "max": 0.1236,
+        "p90": 0.0859,
+        "median": 0.0036,
+        "min": -0.0016
+      },
+      "distinctOperatorContracts": 5,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-cl-3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 9,
+      "sharePctOfObservedArb": 0.5,
+      "netUsdPerArb": {
+        "n": 9,
+        "sum": 1.6975,
+        "max": 1.5308,
+        "p90": 0.0566,
+        "median": 0.0157,
+        "min": 0.01078
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + sushi-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 9,
+      "sharePctOfObservedArb": 0.5,
+      "netUsdPerArb": {
+        "n": 9,
+        "sum": 0.2038,
+        "max": 0.0807,
+        "p90": 0.0501,
+        "median": 0.0145,
+        "min": 0.00218
+      },
+      "distinctOperatorContracts": 6,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 9,
+      "sharePctOfObservedArb": 0.5,
+      "netUsdPerArb": {
+        "n": 9,
+        "sum": 2.2699,
+        "max": 1.7634,
+        "p90": 0.1801,
+        "median": 0.0551,
+        "min": 0.0069
+      },
+      "distinctOperatorContracts": 8,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 8,
+      "sharePctOfObservedArb": 0.5,
+      "netUsdPerArb": {
+        "n": 8,
+        "sum": 161.9034,
+        "max": 138.0737,
+        "p90": 23.8098,
+        "median": 0.0024,
+        "min": -0.00053
+      },
+      "distinctOperatorContracts": 5,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + sushi-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 8,
+      "sharePctOfObservedArb": 0.5,
+      "netUsdPerArb": {
+        "n": 8,
+        "sum": 0.1898,
+        "max": 0.0484,
+        "p90": 0.0381,
+        "median": 0.0234,
+        "min": 0.00483
+      },
+      "distinctOperatorContracts": 5,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 7,
+      "sharePctOfObservedArb": 0.4,
+      "netUsdPerArb": {
+        "n": 7,
+        "sum": 58.0762,
+        "max": 57.3573,
+        "p90": 1.3716,
+        "median": 0.0169,
+        "min": -0.71247
+      },
+      "distinctOperatorContracts": 6,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-3 + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 7,
+      "sharePctOfObservedArb": 0.4,
+      "netUsdPerArb": {
+        "n": 7,
+        "sum": 0.0499,
+        "max": 0.0256,
+        "p90": 0.008,
+        "median": 0.0064,
+        "min": -0.00474
+      },
+      "distinctOperatorContracts": 4,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 7,
+      "sharePctOfObservedArb": 0.4,
+      "netUsdPerArb": {
+        "n": 7,
+        "sum": 0.0377,
+        "max": 0.0108,
+        "p90": 0.0068,
+        "median": 0.0045,
+        "min": 0.0022
+      },
+      "distinctOperatorContracts": 3,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v2 + uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 7,
+      "sharePctOfObservedArb": 0.4,
+      "netUsdPerArb": {
+        "n": 7,
+        "sum": 56.2708,
+        "max": 41.73,
+        "p90": 14.044,
+        "median": 0.1062,
+        "min": 0.00336
+      },
+      "distinctOperatorContracts": 4,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 6,
+      "sharePctOfObservedArb": 0.4,
+      "netUsdPerArb": {
+        "n": 6,
+        "sum": 0.988,
+        "max": 0.8792,
+        "p90": 0.0653,
+        "median": 0.0056,
+        "min": -0.00004
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-cl-3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 6,
+      "sharePctOfObservedArb": 0.4,
+      "netUsdPerArb": {
+        "n": 6,
+        "sum": 0.0416,
+        "max": 0.0305,
+        "p90": 0.0243,
+        "median": 0.0021,
+        "min": -0.01413
+      },
+      "distinctOperatorContracts": 5,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 6,
+      "sharePctOfObservedArb": 0.4,
+      "netUsdPerArb": {
+        "n": 6,
+        "sum": 0.045,
+        "max": 0.0134,
+        "p90": 0.01,
+        "median": 0.0063,
+        "min": 0.00239
+      },
+      "distinctOperatorContracts": 4,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 6,
+      "sharePctOfObservedArb": 0.4,
+      "netUsdPerArb": {
+        "n": 6,
+        "sum": 0.1131,
+        "max": 0.0657,
+        "p90": 0.0217,
+        "median": 0.0064,
+        "min": 0.00063
+      },
+      "distinctOperatorContracts": 5,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl + aerodrome-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 5,
+      "sharePctOfObservedArb": 0.3,
+      "netUsdPerArb": {
+        "n": 5,
+        "sum": 0.0486,
+        "max": 0.0254,
+        "p90": 0.0134,
+        "median": 0.008,
+        "min": -0.0044
+      },
+      "distinctOperatorContracts": 4,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 5,
+      "sharePctOfObservedArb": 0.3,
+      "netUsdPerArb": {
+        "n": 5,
+        "sum": 0.5943,
+        "max": 0.5141,
+        "p90": 0.061,
+        "median": 0.0078,
+        "min": 0.00439
+      },
+      "distinctOperatorContracts": 4,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v2 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 5,
+      "sharePctOfObservedArb": 0.3,
+      "netUsdPerArb": {
+        "n": 5,
+        "sum": 0.1247,
+        "max": 0.0467,
+        "p90": 0.03,
+        "median": 0.0278,
+        "min": 0.009
+      },
+      "distinctOperatorContracts": 5,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 4,
+        "sum": 0.0521,
+        "max": 0.0263,
+        "p90": 0.0181,
+        "median": 0.0056,
+        "min": 0.00203
+      },
+      "distinctOperatorContracts": 4,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 4,
+        "sum": 0.0185,
+        "max": 0.0177,
+        "p90": 0.0013,
+        "median": 0.0005,
+        "min": -0.00109
+      },
+      "distinctOperatorContracts": 3,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + pancake-v3 + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 4,
+        "sum": 0.07,
+        "max": 0.0324,
+        "p90": 0.0169,
+        "median": 0.0148,
+        "min": 0.0059
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 4,
+        "sum": 5.2573,
+        "max": 3.1999,
+        "p90": 2.0326,
+        "median": 0.0134,
+        "min": 0.01144
+      },
+      "distinctOperatorContracts": 3,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 4,
+        "sum": 0.018,
+        "max": 0.0069,
+        "p90": 0.0052,
+        "median": 0.0039,
+        "min": 0.00188
+      },
+      "distinctOperatorContracts": 3,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:unknown:uniswap-v2 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 4,
+        "sum": 0.0263,
+        "max": 0.0101,
+        "p90": 0.0058,
+        "median": 0.0054,
+        "min": 0.00513
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3 + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 3,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 3,
+        "sum": 0.0948,
+        "max": 0.0565,
+        "p90": 0.0284,
+        "median": 0.0284,
+        "min": 0.00988
+      },
+      "distinctOperatorContracts": 3,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl + aerodrome-cl-3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 3,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 3,
+        "sum": 0.0177,
+        "max": 0.0187,
+        "p90": 0.0014,
+        "median": 0.0014,
+        "min": -0.00244
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + pancake-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 3,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 3,
+        "sum": 0.0133,
+        "max": 0.0078,
+        "p90": 0.0034,
+        "median": 0.0034,
+        "min": 0.00208
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 3,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 3,
+        "sum": 0.0814,
+        "max": 0.0711,
+        "p90": 0.0074,
+        "median": 0.0074,
+        "min": 0.00298
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + sushi-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 3,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 3,
+        "sum": 3.5963,
+        "max": 3.5516,
+        "p90": 0.0377,
+        "median": 0.0377,
+        "min": 0.00707
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 3,
+      "sharePctOfObservedArb": 0.2,
+      "netUsdPerArb": {
+        "n": 3,
+        "sum": 0.1857,
+        "max": 0.1225,
+        "p90": 0.0441,
+        "median": 0.0441,
+        "min": 0.01905
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.1313,
+        "max": 0.0992,
+        "p90": 0.032,
+        "median": 0.032,
+        "min": 0.03204
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + pancake-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0624,
+        "max": 0.061,
+        "p90": 0.0014,
+        "median": 0.0014,
+        "min": 0.00143
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + aerodrome-v2 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0448,
+        "max": 0.0463,
+        "p90": -0.0014,
+        "median": -0.0014,
+        "min": -0.00141
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:baseswap-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0384,
+        "max": 0.0306,
+        "p90": 0.0078,
+        "median": 0.0078,
+        "min": 0.00784
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-cl-3 + pancake-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0288,
+        "max": 0.0146,
+        "p90": 0.0142,
+        "median": 0.0142,
+        "min": 0.01418
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + pancake-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0131,
+        "max": 0.011,
+        "p90": 0.0021,
+        "median": 0.0021,
+        "min": 0.00206
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0087,
+        "max": 0.007,
+        "p90": 0.0018,
+        "median": 0.0018,
+        "min": 0.00175
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.1265,
+        "max": 0.1212,
+        "p90": 0.0053,
+        "median": 0.0053,
+        "min": 0.00526
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0052,
+        "max": 0.0049,
+        "p90": 0.0003,
+        "median": 0.0003,
+        "min": 0.00029
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3 + solidly-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0058,
+        "max": 0.0041,
+        "p90": 0.0017,
+        "median": 0.0017,
+        "min": 0.00175
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + sushi-v2 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 12.2502,
+        "max": 10.7568,
+        "p90": 1.4934,
+        "median": 1.4934,
+        "min": 1.49342
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + uniswap-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.758,
+        "max": 0.7074,
+        "p90": 0.0505,
+        "median": 0.0505,
+        "min": 0.05054
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + uniswap-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.2585,
+        "max": 0.2213,
+        "p90": 0.0372,
+        "median": 0.0372,
+        "min": 0.0372
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0498,
+        "max": 0.0375,
+        "p90": 0.0123,
+        "median": 0.0123,
+        "min": 0.01225
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-3 + uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0377,
+        "max": 0.0246,
+        "p90": 0.0131,
+        "median": 0.0131,
+        "min": 0.01311
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v2 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0441,
+        "max": 0.0223,
+        "p90": 0.0218,
+        "median": 0.0218,
+        "min": 0.02182
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 2,
+        "sum": 0.0254,
+        "max": 0.016,
+        "p90": 0.0094,
+        "median": 0.0094,
+        "min": 0.00936
+      },
+      "distinctOperatorContracts": 2,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl + aerodrome-cl-3 + pancake-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 2.1628,
+        "max": 2.1628,
+        "p90": 2.1628,
+        "median": 2.1628,
+        "min": 2.16284
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.1577,
+        "max": 0.1577,
+        "p90": 0.1577,
+        "median": 0.1577,
+        "min": 0.15771
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3 + uniswap-v2 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0847,
+        "max": 0.0847,
+        "p90": 0.0847,
+        "median": 0.0847,
+        "min": 0.0847
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + aerodrome-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0762,
+        "max": 0.0762,
+        "p90": 0.0762,
+        "median": 0.0762,
+        "min": 0.07625
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + pancake-v3 + sushi-v3 + uniswap-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0204,
+        "max": 0.0204,
+        "p90": 0.0204,
+        "median": 0.0204,
+        "min": 0.02038
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + pancake-v3 + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0173,
+        "max": 0.0173,
+        "p90": 0.0173,
+        "median": 0.0173,
+        "min": 0.01731
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-v2 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0159,
+        "max": 0.0159,
+        "p90": 0.0159,
+        "median": 0.0159,
+        "min": 0.01593
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl + pancake-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0099,
+        "max": 0.0099,
+        "p90": 0.0099,
+        "median": 0.0099,
+        "min": 0.00995
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:balancer-v2 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0097,
+        "max": 0.0097,
+        "p90": 0.0097,
+        "median": 0.0097,
+        "min": 0.00967
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-2 + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0078,
+        "max": 0.0078,
+        "p90": 0.0078,
+        "median": 0.0078,
+        "min": 0.00785
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3 + uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0073,
+        "max": 0.0073,
+        "p90": 0.0073,
+        "median": 0.0073,
+        "min": 0.00732
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + uniswap-v2 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0072,
+        "max": 0.0072,
+        "p90": 0.0072,
+        "median": 0.0072,
+        "min": 0.00724
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-v2 + pancake-v3 + solidly-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0067,
+        "max": 0.0067,
+        "p90": 0.0067,
+        "median": 0.0067,
+        "min": 0.00667
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + uniswap-v2 + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0065,
+        "max": 0.0065,
+        "p90": 0.0065,
+        "median": 0.0065,
+        "min": 0.00647
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-2 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0064,
+        "max": 0.0064,
+        "p90": 0.0064,
+        "median": 0.0064,
+        "min": 0.00641
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + pancake-v3 + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0064,
+        "max": 0.0064,
+        "p90": 0.0064,
+        "median": 0.0064,
+        "min": 0.00641
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + aerodrome-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0063,
+        "max": 0.0063,
+        "p90": 0.0063,
+        "median": 0.0063,
+        "min": 0.00633
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0059,
+        "max": 0.0059,
+        "p90": 0.0059,
+        "median": 0.0059,
+        "min": 0.00588
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-cl-2 + aerodrome-cl-3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0053,
+        "max": 0.0053,
+        "p90": 0.0053,
+        "median": 0.0053,
+        "min": 0.00527
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:unidentified-v3-b + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0049,
+        "max": 0.0049,
+        "p90": 0.0049,
+        "median": 0.0049,
+        "min": 0.0049
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-2 + aerodrome-cl-3 + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0044,
+        "max": 0.0044,
+        "p90": 0.0044,
+        "median": 0.0044,
+        "min": 0.00443
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + balancer-v2 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0043,
+        "max": 0.0043,
+        "p90": 0.0043,
+        "median": 0.0043,
+        "min": 0.00432
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v3 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0039,
+        "max": 0.0039,
+        "p90": 0.0039,
+        "median": 0.0039,
+        "min": 0.00389
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + uniswap-v3 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0037,
+        "max": 0.0037,
+        "p90": 0.0037,
+        "median": 0.0037,
+        "min": 0.00367
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-v2 + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0024,
+        "max": 0.0024,
+        "p90": 0.0024,
+        "median": 0.0024,
+        "min": 0.00242
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:pancake-v3 + uniswap-v3 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": -0.0001,
+        "max": -0.0001,
+        "p90": -0.0001,
+        "median": -0.0001,
+        "min": -0.00007
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + solidly-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": -0.0005,
+        "max": -0.0005,
+        "p90": -0.0005,
+        "median": -0.0005,
+        "min": -0.00055
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-cl-2 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": -0.002,
+        "max": -0.002,
+        "p90": -0.002,
+        "median": -0.002,
+        "min": -0.00197
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + uniswap-v3 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": -0.002,
+        "max": -0.002,
+        "p90": -0.002,
+        "median": -0.002,
+        "min": -0.00202
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + sushi-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": -0.0023,
+        "max": -0.0023,
+        "p90": -0.0023,
+        "median": -0.0023,
+        "min": -0.00232
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v2 + sushi-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 107.2943,
+        "max": 107.2943,
+        "p90": 107.2943,
+        "median": 107.2943,
+        "min": 107.29426
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:baseswap-v2 + sushi-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.2856,
+        "max": 0.2856,
+        "p90": 0.2856,
+        "median": 0.2856,
+        "min": 0.28557
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-v2 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0718,
+        "max": 0.0718,
+        "p90": 0.0718,
+        "median": 0.0718,
+        "min": 0.07184
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + sushi-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0564,
+        "max": 0.0564,
+        "p90": 0.0564,
+        "median": 0.0564,
+        "min": 0.05642
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v2 + uniswap-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0341,
+        "max": 0.0341,
+        "p90": 0.0341,
+        "median": 0.0341,
+        "min": 0.03409
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-v2 + pancake-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0297,
+        "max": 0.0297,
+        "p90": 0.0297,
+        "median": 0.0297,
+        "min": 0.02968
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v2 + uniswap-v2 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0169,
+        "max": 0.0169,
+        "p90": 0.0169,
+        "median": 0.0169,
+        "min": 0.01687
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:baseswap-v2 + uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0159,
+        "max": 0.0159,
+        "p90": 0.0159,
+        "median": 0.0159,
+        "min": 0.0159
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:solidly-v3 + uniswap-v2 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0153,
+        "max": 0.0153,
+        "p90": 0.0153,
+        "median": 0.0153,
+        "min": 0.01535
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v3 + unknown:uniswap-v2 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0106,
+        "max": 0.0106,
+        "p90": 0.0106,
+        "median": 0.0106,
+        "min": 0.01064
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl + pancake-v3 + solidly-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0106,
+        "max": 0.0106,
+        "p90": 0.0106,
+        "median": 0.0106,
+        "min": 0.01056
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + sushi-v2 + uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0104,
+        "max": 0.0104,
+        "p90": 0.0104,
+        "median": 0.0104,
+        "min": 0.01036
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v3 + uniswap-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0098,
+        "max": 0.0098,
+        "p90": 0.0098,
+        "median": 0.0098,
+        "min": 0.00979
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v2 + uniswap-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0096,
+        "max": 0.0096,
+        "p90": 0.0096,
+        "median": 0.0096,
+        "min": 0.00961
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:sushi-v2 + uniswap-v2 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0091,
+        "max": 0.0091,
+        "p90": 0.0091,
+        "median": 0.0091,
+        "min": 0.00909
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:baseswap-v2 + uniswap-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0073,
+        "max": 0.0073,
+        "p90": 0.0073,
+        "median": 0.0073,
+        "min": 0.00731
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + sushi-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0066,
+        "max": 0.0066,
+        "p90": 0.0066,
+        "median": 0.0066,
+        "min": 0.00656
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + uniswap-v2 + uniswap-v3 + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0054,
+        "max": 0.0054,
+        "p90": 0.0054,
+        "median": 0.0054,
+        "min": 0.00537
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + aerodrome-cl-2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0042,
+        "max": 0.0042,
+        "p90": 0.0042,
+        "median": 0.0042,
+        "min": 0.00418
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0039,
+        "max": 0.0039,
+        "p90": 0.0039,
+        "median": 0.0039,
+        "min": 0.0039
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-v2 + uniswap-v3 + unknown:uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0011,
+        "max": 0.0011,
+        "p90": 0.0011,
+        "median": 0.0011,
+        "min": 0.00105
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl + pancake-v3 + uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.1505,
+        "max": 0.1505,
+        "p90": 0.1505,
+        "median": 0.1505,
+        "min": 0.15046
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + unknown:uniswap-v2": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.073,
+        "max": 0.073,
+        "p90": 0.073,
+        "median": 0.073,
+        "min": 0.07297
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + aerodrome-cl-3 + pancake-v3 + uniswap-v3": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0063,
+        "max": 0.0063,
+        "p90": 0.0063,
+        "median": 0.0063,
+        "min": 0.00631
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v2 + uniswap-v3 + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0029,
+        "max": 0.0029,
+        "p90": 0.0029,
+        "median": 0.0029,
+        "min": 0.00294
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + uniswap-v3 + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 250.5701,
+        "max": 250.5701,
+        "p90": 250.5701,
+        "median": 250.5701,
+        "min": 250.5701
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:uniswap-v2 + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0783,
+        "max": 0.0783,
+        "p90": 0.0783,
+        "median": 0.0783,
+        "min": 0.07825
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aero-merged-cl + uniswap-v2 + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.0187,
+        "max": 0.0187,
+        "p90": 0.0187,
+        "median": 0.0187,
+        "min": 0.01875
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:aerodrome-cl-3 + uniswap-v4": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "sharePctOfObservedArb": 0.1,
+      "netUsdPerArb": {
+        "n": 1,
+        "sum": 0.003,
+        "max": 0.003,
+        "p90": 0.003,
+        "median": 0.003,
+        "min": 0.00295
+      },
+      "distinctOperatorContracts": 1,
+      "rationale": "Too few observations in the sampled windows to say anything.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    }
+  },
+  "pairs": {
+    "base:LIc / USDC / WETH / wUSDC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 250.5701,
+        "max": 250.5701,
+        "p90": 250.5701,
+        "median": 250.5701,
+        "min": 250.5701
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3 + uniswap-v4"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:AERO / USDC / USDT": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "netUsd": {
+        "n": 2,
+        "sum": 161.8835,
+        "max": 138.0737,
+        "p90": 23.8098,
+        "median": 23.8098,
+        "min": 23.80984
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "aero-merged-cl + solidly-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:WETH / toby": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 17,
+      "netUsd": {
+        "n": 17,
+        "sum": 116.9766,
+        "max": 107.2943,
+        "p90": 1.7634,
+        "median": 0.0381,
+        "min": 0.00387
+      },
+      "distinctOperators": 10,
+      "venueCombos": [
+        "sushi-v2 + sushi-v3",
+        "sushi-v2 + uniswap-v3",
+        "uniswap-v3 + unknown:uniswap-v2",
+        "aerodrome-v2 + sushi-v2"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:AXIS / USDC": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 654,
+      "netUsd": {
+        "n": 654,
+        "sum": 107.5658,
+        "max": 2.3329,
+        "p90": 0.6361,
+        "median": 0.0247,
+        "min": -0.02747
+      },
+      "distinctOperators": 49,
+      "venueCombos": [
+        "uniswap-v3 + uniswap-v4",
+        "uniswap-v4",
+        "uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:USDC / WETH / cbBTC": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 20,
+      "netUsd": {
+        "n": 20,
+        "sum": 58.8674,
+        "max": 57.3573,
+        "p90": 0.4525,
+        "median": 0.0037,
+        "min": -0.00207
+      },
+      "distinctOperators": 8,
+      "venueCombos": [
+        "aerodrome-cl-3 + uniswap-v3",
+        "pancake-v3 + uniswap-v3",
+        "aero-merged-cl + pancake-v3",
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:PATIENCE / WETH / toby": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "netUsd": {
+        "n": 4,
+        "sum": 55.8289,
+        "max": 41.73,
+        "p90": 14.044,
+        "median": 0.0505,
+        "min": 0.00439
+      },
+      "distinctOperators": 4,
+      "venueCombos": [
+        "sushi-v2 + uniswap-v2",
+        "aerodrome-v2 + uniswap-v2 + uniswap-v3",
+        "uniswap-v2 + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:WETH / cbBTC": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 48,
+      "netUsd": {
+        "n": 48,
+        "sum": 29.1738,
+        "max": 12.5285,
+        "p90": 0.2084,
+        "median": 0.0117,
+        "min": -0.00309
+      },
+      "distinctOperators": 14,
+      "venueCombos": [
+        "aero-merged-cl + pancake-v3",
+        "aero-merged-cl + aerodrome-cl-3",
+        "aero-merged-cl",
+        "aerodrome-cl-3 + unknown:uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:LAPTOP / USDC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 7,
+      "netUsd": {
+        "n": 7,
+        "sum": 19.5756,
+        "max": 7.7649,
+        "p90": 6.5688,
+        "median": 0.5121,
+        "min": 0.01083
+      },
+      "distinctOperators": 6,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3",
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:LMTS / USDC": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 23,
+      "netUsd": {
+        "n": 23,
+        "sum": 12.6535,
+        "max": 11.4671,
+        "p90": 0.0688,
+        "median": 0.0186,
+        "min": 0.00418
+      },
+      "distinctOperators": 9,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-2",
+        "aerodrome-cl + aerodrome-cl-2"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:USDC / WETH / toby": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 6,
+      "netUsd": {
+        "n": 6,
+        "sum": 12.6531,
+        "max": 10.7568,
+        "p90": 1.4934,
+        "median": 0.0246,
+        "min": 0.01201
+      },
+      "distinctOperators": 4,
+      "venueCombos": [
+        "aerodrome-v2 + sushi-v2 + unknown:uniswap-v3",
+        "aerodrome-v2 + uniswap-v3",
+        "aerodrome-v2 + sushi-v2",
+        "sushi-v3 + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:TABOSHI / WETH / toby": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 10,
+      "netUsd": {
+        "n": 10,
+        "sum": 11.7985,
+        "max": 7.819,
+        "p90": 3.5516,
+        "median": 0.0364,
+        "min": 0.00576
+      },
+      "distinctOperators": 8,
+      "venueCombos": [
+        "sushi-v2 + uniswap-v3",
+        "aerodrome-v2 + sushi-v2 + uniswap-v3",
+        "uniswap-v3",
+        "sushi-v3 + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:LIc / USDC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "netUsd": {
+        "n": 4,
+        "sum": 10.8598,
+        "max": 10.3087,
+        "p90": 0.343,
+        "median": 0.2047,
+        "min": 0.00337
+      },
+      "distinctOperators": 4,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3",
+        "aerodrome-cl-3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:Basecat / USDC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 9,
+      "netUsd": {
+        "n": 9,
+        "sum": 9.8279,
+        "max": 9.2908,
+        "p90": 0.1847,
+        "median": 0.0379,
+        "min": 0.00419
+      },
+      "distinctOperators": 8,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:Basecat / USDC / WETH": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 7,
+      "netUsd": {
+        "n": 7,
+        "sum": 5.7636,
+        "max": 2.571,
+        "p90": 2.1407,
+        "median": 0.0858,
+        "min": -0.00379
+      },
+      "distinctOperators": 4,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3",
+        "aero-merged-cl + pancake-v3 + uniswap-v3",
+        "pancake-v3 + uniswap-v3",
+        "aero-merged-cl + aerodrome-cl-3 + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:REPPO / WETH": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "netUsd": {
+        "n": 4,
+        "sum": 5.6632,
+        "max": 3.1999,
+        "p90": 2.0326,
+        "median": 0.5342,
+        "min": -0.10349
+      },
+      "distinctOperators": 3,
+      "venueCombos": [
+        "aerodrome-cl-2 + uniswap-v3",
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:USDC / cbBTC / tBTC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 5.1444,
+        "max": 5.1444,
+        "p90": 5.1444,
+        "median": 5.1444,
+        "min": 5.1444
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:USDC / WETH": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 25,
+      "netUsd": {
+        "n": 25,
+        "sum": 4.7295,
+        "max": 3.7724,
+        "p90": 0.0653,
+        "median": 0.0112,
+        "min": 0.00206
+      },
+      "distinctOperators": 14,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3",
+        "pancake-v3 + uniswap-v3",
+        "aerodrome-v2 + pancake-v3",
+        "pancake-v3 + uniswap-v4"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:SANc / USDC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "netUsd": {
+        "n": 2,
+        "sum": 4.6247,
+        "max": 4.6205,
+        "p90": 0.0042,
+        "median": 0.0042,
+        "min": 0.00425
+      },
+      "distinctOperators": 2,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3",
+        "aerodrome-cl-3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:DRAGONX / ESHARE / WETH / 🌙8": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 4.4196,
+        "max": 4.4196,
+        "p90": 4.4196,
+        "median": 4.4196,
+        "min": 4.41962
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:ETHx / SUP / WETH": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 3.3811,
+        "max": 3.3811,
+        "p90": 3.3811,
+        "median": 3.3811,
+        "min": 3.38105
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:NVOc / USDC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 3,
+      "netUsd": {
+        "n": 3,
+        "sum": 3.1842,
+        "max": 3.1298,
+        "p90": 0.044,
+        "median": 0.044,
+        "min": 0.01047
+      },
+      "distinctOperators": 3,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:ERAGE / ESHARE / LSTEAK / WETH": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 2.5093,
+        "max": 2.5093,
+        "p90": 2.5093,
+        "median": 2.5093,
+        "min": 2.5093
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "uniswap-v3 + uniswap-v4"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:USDC / WRDc": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 2,
+      "netUsd": {
+        "n": 2,
+        "sum": 2.2378,
+        "max": 2.207,
+        "p90": 0.0308,
+        "median": 0.0308,
+        "min": 0.03081
+      },
+      "distinctOperators": 2,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:EURC / USDC / WETH / jEUR": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 25,
+      "netUsd": {
+        "n": 25,
+        "sum": 2.175,
+        "max": 0.878,
+        "p90": 0.1162,
+        "median": 0.0393,
+        "min": 0.01078
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3",
+        "aero-merged-cl + aerodrome-cl + uniswap-v3",
+        "aero-merged-cl + aerodrome-cl-3 + uniswap-v3",
+        "aerodrome-cl + aerodrome-cl-3 + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:LINK / USDC / WETH / cbBTC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 2.1628,
+        "max": 2.1628,
+        "p90": 2.1628,
+        "median": 2.1628,
+        "min": 2.16284
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl + aerodrome-cl-3 + pancake-v3 + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:INFYc / USDC": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 4,
+      "netUsd": {
+        "n": 4,
+        "sum": 2.1524,
+        "max": 1.743,
+        "p90": 0.3164,
+        "median": 0.0597,
+        "min": 0.03331
+      },
+      "distinctOperators": 3,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:USDC / USDT / WETH": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 107,
+      "netUsd": {
+        "n": 107,
+        "sum": 1.9719,
+        "max": 0.1622,
+        "p90": 0.0508,
+        "median": 0.0124,
+        "min": -0.05802
+      },
+      "distinctOperators": 15,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl + pancake-v3",
+        "pancake-v3 + solidly-v3",
+        "aerodrome-cl + pancake-v3",
+        "solidly-v3 + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:USDC / XDP": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 103,
+      "netUsd": {
+        "n": 103,
+        "sum": 1.835,
+        "max": 0.0988,
+        "p90": 0.0349,
+        "median": 0.0119,
+        "min": -0.00278
+      },
+      "distinctOperators": 18,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:ETH / PCAT / USDC / WETH": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "chain": "base",
+      "observedArbTxs": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 1.7175,
+        "max": 1.7175,
+        "p90": 1.7175,
+        "median": 1.7175,
+        "min": 1.71748
+      },
+      "distinctOperators": 1,
+      "venueCombos": [
+        "uniswap-v3 + uniswap-v4"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    },
+    "base:WETH / ZRO": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "observedArbTxs": 30,
+      "netUsd": {
+        "n": 30,
+        "sum": 1.5685,
+        "max": 0.597,
+        "p90": 0.1368,
+        "median": 0.0144,
+        "min": 0.00074
+      },
+      "distinctOperators": 15,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3",
+        "aero-merged-cl + aerodrome-cl",
+        "aero-merged-cl + sushi-v3"
+      ],
+      "rationale": "Frequency of other operators' arbitrage on this cycle. Revalidation against exact historical state is what decides whether it is ours to take.",
+      "dataFiles": [
+        "data/ranking-base.json"
+      ]
+    }
+  },
+  "funding": {
+    "base:balancer-v2": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "feeBps": 0,
+      "feeSource": "ProtocolFeesCollector(0xce88686553686DA562CE7Cea497CE749DA109f9F).getFlashLoanFeePercentage()",
+      "capacityWeth": 22.896094878580413,
+      "capacityUsdc": 74580.823327,
+      "rationale": "Fee and capacity read from chain state. Selecting a provider is gated on an opportunity existing that needs borrowed capital at all.",
+      "dataFiles": [
+        "data/funding-base.json"
+      ]
+    },
+    "base:aave-v3": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "feeBps": 5,
+      "feeSource": "Pool.FLASHLOAN_PREMIUM_TOTAL()",
+      "capacityWeth": 16174.298209289676,
+      "capacityUsdc": 10096446.045202,
+      "rationale": "Fee and capacity read from chain state. Selecting a provider is gated on an opportunity existing that needs borrowed capital at all.",
+      "dataFiles": [
+        "data/funding-base.json"
+      ]
+    },
+    "base:morpho-blue": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "feeBps": 0,
+      "feeSource": "Morpho Blue charges no flash-loan fee (no fee parameter exists on flashLoan); stated, not read from a getter",
+      "capacityWeth": 84241.94667817705,
+      "capacityUsdc": 196066492.713805,
+      "rationale": "Fee and capacity read from chain state. Selecting a provider is gated on an opportunity existing that needs borrowed capital at all.",
+      "dataFiles": [
+        "data/funding-base.json"
+      ]
+    },
+    "base:uniswap-v3-flash": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "chain": "base",
+      "feeBps": "equal to the pool fee tier (e.g. 5 bps on a 0.05% pool)",
+      "feeSource": "per-pool credit, not a single contract: cost is the pool fee tier on the borrowed amount, and capacity is that one pool",
+      "capacityWeth": null,
+      "capacityUsdc": null,
+      "rationale": "Fee and capacity read from chain state. Selecting a provider is gated on an opportunity existing that needs borrowed capital at all.",
+      "dataFiles": [
+        "data/funding-base.json"
+      ]
+    }
+  },
+  "models": {
+    "two-pool-same-pair": {
+      "status": "INVESTIGATING",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "INVESTIGATING"
+        }
+      ],
+      "rationale": "The instructor's model and our current focus. Measured directly in the forensics windows."
+    },
+    "triangular": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "rationale": "Three pools, three tokens. Observed in the data as 3-swap cycles but not separately validated."
+    },
+    "multi-hop-3plus": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "rationale": "Observed: a share of detected arbitrage uses 3 or more swaps."
+    },
+    "cross-quote": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "rationale": "Same asset pair quoted in different quote currencies. Not tested."
+    },
+    "cex-dex": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "rationale": "Needs off-chain venue access and inventory on both sides; outside the on-chain-only toolchain here."
+    },
+    "same-block-backrun": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "rationale": "Directly relevant: the capture test shows much observed Base arbitrage is same-block reaction to a specific trade."
+    },
+    "pool-native-credit": {
+      "status": "NOT TESTED",
+      "evidence": [],
+      "history": [],
+      "rationale": "Borrow inside the swap callback instead of a separate flash loan. Cheapest in gas where it applies."
+    }
+  },
+  "validationCriteria": {
+    "exactQuote": "Both legs priced by an exact on-chain call (quoter or pool math) at a specific historical block.",
+    "netPositive": "Net profit > 0 after swap fees, funding fee, L2 execution gas and L1 data fee, at an executable size.",
+    "sizeRealistic": "The profitable size is reachable with available funding and does not exceed measured pool depth.",
+    "captureShown": "Transaction-aware simulation shows our system could have been the one to take it (ordering + latency + no prior taker in the same block)."
+  },
+  "opportunities": {
+    "0xee4c1632051dcb45a9a23242936742c945190fa9c673d88421d063001c7223e4": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247257,
+      "cycle": "WETH -> toby -> WETH",
+      "venueCombo": "sushi-v2 + sushi-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 107.29425561924596,
+      "revalidatedNetUsdForUs": -3.385388677655454,
+      "optimalSize": 1e-18,
+      "captureVerdict": "same-block backrun: 7 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "constant product on getReserves() @53247256, fee 30 bps",
+        "local V3 tick maths @53247256"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x50ce1dd0fe5864cb2c49a0c2672d74692de4ef5a6ebf711e97c3740fead8f18c": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247158,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 12.528496788166603,
+      "revalidatedNetUsdForUs": -0.00635911876820292,
+      "optimalSize": 0.000291582812910709,
+      "captureVerdict": "same-block backrun: 8 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247157",
+        "local V3 tick maths @53247157"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x84435f6d35e4a4d84e69319eeb84ae84be0f37ebd32cfa219626f0a8eddc3f9c": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.072Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247141,
+      "cycle": "USDC -> LMTS -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-2",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 11.467071191587657,
+      "revalidatedNetUsdForUs": -1.1419378084123442,
+      "optimalSize": 0.121331,
+      "captureVerdict": "same-block backrun: 7 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247140",
+        "local V3 tick maths @53247140"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x12037e4dfa2e9074f4673aa615cef0a546ec6df6fd080105394c2fdcb86637b6": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247158,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aerodrome-cl-3 + pancake-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 10.596671548022949,
+      "revalidatedNetUsdForUs": -0.007982790204202003,
+      "optimalSize": 0.000043854379748546,
+      "captureVerdict": "same-block backrun: 6 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247157",
+        "local V3 tick maths @53247157"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x1a1908b12f6d2d7ea170872015aea871a6f720999648e69589e0e64f93ad383f": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247056,
+      "cycle": "USDC -> LAPTOP -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 7.764888284744609,
+      "revalidatedNetUsdForUs": -9.52625471525539,
+      "optimalSize": 1.821831,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247055",
+        "local V3 tick maths @53247055"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x145ee2857e137529fd90d3faaac9aede5cbfac9528c2851d7e015e7ed8fd5110": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247100,
+      "cycle": "USDC -> LAPTOP -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 6.568764239733003,
+      "revalidatedNetUsdForUs": -1.671038760266997,
+      "optimalSize": 13.675466,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247099",
+        "local V3 tick maths @53247099"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x7fb9eac958c9ddaf40d1f40b2fdd6c9d9172fd7d88dcc4abde29e042d40d9429": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247282,
+      "cycle": "WETH -> toby -> WETH",
+      "venueCombo": "sushi-v2 + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 6.099629486015524,
+      "revalidatedNetUsdForUs": -1.4316115906875537,
+      "optimalSize": 1e-18,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "constant product on getReserves() @53247281, fee 30 bps",
+        "local V3 tick maths @53247281"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0xda3322178fe6600dad2508faa02d1b6369f1a6ad1712accde55627cceaeaa6a8": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247100,
+      "cycle": "USDC -> LAPTOP -> USDC",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 4.556345319822054,
+      "revalidatedNetUsdForUs": -0.9637516801779465,
+      "optimalSize": 0.053113,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247099",
+        "local V3 tick maths @53247099"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0xae09f9839939e4143eaae6a62f5a2de5185f179c4315da03a75b2350f0a4f588": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247158,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aerodrome-cl-3 + pancake-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 3.957604976199343,
+      "revalidatedNetUsdForUs": -0.005001080446073495,
+      "optimalSize": 0.000440691467019961,
+      "captureVerdict": "same-block backrun: 9 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247157",
+        "local V3 tick maths @53247157"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x83634ebacf4ee45553b9ef3636d294277727039316c0d203dfe5fb9ddd4a6ec2": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247230,
+      "cycle": "WETH -> toby -> WETH",
+      "venueCombo": "uniswap-v3 + unknown:uniswap-v2",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 1.7634261497898063,
+      "revalidatedNetUsdForUs": -2.04742970004999,
+      "optimalSize": 1e-18,
+      "captureVerdict": "same-block backrun: 12 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "constant product on getReserves() @53247229, fee 30 bps",
+        "local V3 tick maths @53247229"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x8c9d35d191abd8e26a7dff5602d8acedfae830561162a605dfe6a04558db9ad8": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247277,
+      "cycle": "WETH -> toby -> WETH",
+      "venueCombo": "sushi-v2 + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 1.0940131723071582,
+      "revalidatedNetUsdForUs": -0.3352170118333052,
+      "optimalSize": 1e-18,
+      "captureVerdict": "same-block backrun: 5 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "constant product on getReserves() @53247276, fee 30 bps",
+        "local V3 tick maths @53247276"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x2d78231ea5aa98ea3015029dec0c8343ea8169a272abd504ebfebd9909323bc8": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247144,
+      "cycle": "USDC -> VIRTUAL -> USDC",
+      "venueCombo": "aerodrome-v2 + pancake-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.8792165280075999,
+      "revalidatedNetUsdForUs": -0.4688114719924002,
+      "optimalSize": 0.000001,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "pool.getAmountOut() view @53247143",
+        "local V3 tick maths @53247143"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0xafab968c88f1a3ff049a756c732763af897dbbc1ada645975c6d6497abfcd7d6": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247176,
+      "cycle": "USDC -> LMTS -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-2",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.6331887729975791,
+      "revalidatedNetUsdForUs": -1.177839227002421,
+      "optimalSize": 0.017427,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247175",
+        "local V3 tick maths @53247175"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0x93ad4fe2a295211fbe95c0bf4c7b0c2741c8f9e857afbddb40bd824015d2b973": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247150,
+      "cycle": "BILIc -> USDC -> BILIc",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": false,
+        "netPositive": false,
+        "sizeRealistic": false,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.6024823298633791,
+      "revalidatedNetUsdForUs": null,
+      "optimalSize": null,
+      "captureVerdict": "not profitable at the previous block boundary and no same-block trigger found on these pools - our model does not explain this trade",
+      "quoteBasis": null,
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0xec6e2ecd3c833934f0f95d33edcb37a9f88240cd7316a0a9cff21a26d7bf9c66": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:24.073Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53247158,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aero-merged-cl + pancake-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.5584039061600683,
+      "revalidatedNetUsdForUs": -0.21601686672068535,
+      "optimalSize": 0.00009532425250127,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53247157",
+        "local V3 tick maths @53247157"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53247040-53247289.json",
+        "data/validation-base-1793315022830.json"
+      ]
+    },
+    "0xba0770d23ec4e3a8e54ff8a671bfb7c3e09c02ac00f13c6920f65dca2686567e": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.620Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261658,
+      "cycle": "USDC -> Basecat -> USDC",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 9.290836064907802,
+      "revalidatedNetUsdForUs": -7.791466935092198,
+      "optimalSize": 0.164376,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261657",
+        "local V3 tick maths @53261657"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xfc8ce350de1254b429e3aed9ef6a97601bd5f6980bfcf2575a8a2e0d77344461": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261653,
+      "cycle": "WETH -> USDC -> WETH",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 3.772403361026247,
+      "revalidatedNetUsdForUs": -0.8186349840077579,
+      "optimalSize": 0.000019434204504179,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261652",
+        "local V3 tick maths @53261652"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xa520652bad1b4d965df8971fe38d0b3e5d76acfa49d25e1ca2a72084b9864d90": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261680,
+      "cycle": "USDC -> INFYc -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 1.7429692905725962,
+      "revalidatedNetUsdForUs": -0.1123957094274037,
+      "optimalSize": 0.017725,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261679",
+        "local V3 tick maths @53261679"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0x44c884695f464dc4df508fc0c85873ce510b645309d09d20a92ed2682ce1e06a": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261610,
+      "cycle": "WETH -> DRV -> WETH",
+      "venueCombo": "aerodrome-cl-3 + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 1.3715701341349569,
+      "revalidatedNetUsdForUs": -1.1506179667058052,
+      "optimalSize": 0.000010692748518896,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261609",
+        "local V3 tick maths @53261609"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xde929133a009955d68bc2f01fde7da366ae827365ce471c19002aa22193f0fb0": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261639,
+      "cycle": "WETH -> Basecat -> WETH",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 1.037586458978908,
+      "revalidatedNetUsdForUs": -0.34851636371165584,
+      "optimalSize": 0.000005868623683055,
+      "captureVerdict": "same-block backrun: 5 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261638",
+        "local V3 tick maths @53261638"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xebacf0b616cb974015d4d6ca71ada68a93458a615bb65310822313cd7f960b5c": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261637,
+      "cycle": "WETH -> ZRO -> WETH",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.5970219828825482,
+      "revalidatedNetUsdForUs": -0.5573660329821017,
+      "optimalSize": 0.00203061060349831,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261636",
+        "local V3 tick maths @53261636"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0x265f50b5bd57c969c5bab5ad9e77bb0ba0acb576740a972317efce8074589803": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261729,
+      "cycle": "WETH -> DEGEN -> WETH",
+      "venueCombo": "aero-merged-cl + aerodrome-cl",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.5759082917951074,
+      "revalidatedNetUsdForUs": -0.038044209298676065,
+      "optimalSize": 0.00000259458107018,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261728",
+        "local V3 tick maths @53261728"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0x90a7499779875580800ec9341000dd7de57e8373a16af52fadd81368ccfe357f": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261639,
+      "cycle": "WETH -> USDC -> WETH",
+      "venueCombo": "pancake-v3 + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.4084329688910193,
+      "revalidatedNetUsdForUs": -0.7958148189221336,
+      "optimalSize": 0.000005099335741167,
+      "captureVerdict": "same-block backrun: 5 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261638",
+        "local V3 tick maths @53261638"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0x1053754670663807479deebfc55d9f1cca84036d37a11159003bffd1c2c13c2b": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261594,
+      "cycle": "USDC -> INFYc -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": false,
+        "netPositive": false,
+        "sizeRealistic": false,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.31642753936242957,
+      "revalidatedNetUsdForUs": null,
+      "optimalSize": null,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": null,
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0x28f7df5ce56a2a0b8adc941f190fdff494b5c655a20a9e3b6064558fe2d0a23b": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261729,
+      "cycle": "WETH -> DEGEN -> WETH",
+      "venueCombo": "aerodrome-v2 + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.2735802832930224,
+      "revalidatedNetUsdForUs": -0.0032921793474377467,
+      "optimalSize": 1e-18,
+      "captureVerdict": "same-block backrun: 11 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "pool.getAmountOut() view @53261728",
+        "local V3 tick maths @53261728"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xde617b73a8d5daf10945b7ff2f150f14e5912a5da6cbadc238ee841f46da6977": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261691,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aero-merged-cl + pancake-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.22358358804767048,
+      "revalidatedNetUsdForUs": -0.05642203262971543,
+      "optimalSize": 0.6260230920426215,
+      "captureVerdict": "same-block backrun: 18 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261690",
+        "local V3 tick maths @53261690"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xd3c9394e940201955a1ec09f32ba5cf82bdb79e500f37dbad6d2843d44dd90d5": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261645,
+      "cycle": "WETH -> ZRO -> WETH",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.21784791903103634,
+      "revalidatedNetUsdForUs": -0.060145358394079806,
+      "optimalSize": 0.004615641488152566,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261644",
+        "local V3 tick maths @53261644"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xd474f168d96d89b9618e5f977b8d8250f1b3eaeda135d151e171c65ee269b3b5": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261691,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aero-merged-cl + pancake-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.20841238134586706,
+      "revalidatedNetUsdForUs": -0.08397514909776811,
+      "optimalSize": 0.00656551238071321,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261690",
+        "local V3 tick maths @53261690"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xed8b8b87c4d229ee934a88d78c592e128adb02a489e974a7fb5d517d5fe5031f": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261756,
+      "cycle": "WETH -> VIRTUAL -> WETH",
+      "venueCombo": "aero-merged-cl + aerodrome-cl",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.19737827075452075,
+      "revalidatedNetUsdForUs": -0.033370108809573126,
+      "optimalSize": 9.7511384867e-7,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261755",
+        "local V3 tick maths @53261755"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xb63da96ecd13e6664dd8969c779f114a958a12a084d25e5edb3721bd499f4f0f": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.621Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261690,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aero-merged-cl + pancake-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.1931430046260605,
+      "revalidatedNetUsdForUs": -0.0912473744791813,
+      "optimalSize": 0.001474048958790608,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261689",
+        "local V3 tick maths @53261689"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793314870505.json"
+      ]
+    },
+    "0xc946c15ac0b5c31deb4d7bc01b6d5615f049a426bc5fac72be38f4148686beb8": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.668Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232263,
+      "cycle": "USDC -> SANc -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 4.620457470128348,
+      "revalidatedNetUsdForUs": -0.04191552987165193,
+      "optimalSize": 0.044838,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232262",
+        "local V3 tick maths @53232262"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0xc3f32becea589a831fca9bd862d4450b143f6401157c646af3d81a7c543b0c61": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232232,
+      "cycle": "USDC -> NVOc -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 3.1297890612657664,
+      "revalidatedNetUsdForUs": -2.516235042186767,
+      "optimalSize": 78.881495,
+      "captureVerdict": "not profitable at the previous block boundary and no same-block trigger found on these pools - our model does not explain this trade",
+      "quoteBasis": [
+        "local V3 tick maths @53232231",
+        "local V3 tick maths @53232231"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x2c566a08831ce403229442380e1a5e5ee5c0eabe51f44611fd28082223b54c9f": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232233,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.20753373020610394,
+      "revalidatedNetUsdForUs": -0.16449226979389608,
+      "optimalSize": 0.00358,
+      "captureVerdict": "same-block backrun: 5 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232232",
+        "local V3 tick maths @53232232"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x6c02993ea92cd786b94451a07106e5cc369ee1a09469550a7ffcaecec8294794": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232210,
+      "cycle": "AXIS -> USDC -> AXIS",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.15812180254487512,
+      "revalidatedNetUsdForUs": -0.006522403020414813,
+      "optimalSize": 174.8092528099684,
+      "captureVerdict": "same-block backrun: 4 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232209",
+        "local V3 tick maths @53232209"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0xe08b302824b23ac67e1b382672d003584db0b725c3369665d3be5ce253a38a1e": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232141,
+      "cycle": "USDC -> MUc -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.15113091328338019,
+      "revalidatedNetUsdForUs": -0.0939890867166198,
+      "optimalSize": 3.733348,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232140",
+        "local V3 tick maths @53232140"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x3f21353a1b21dd516a8f506b6130c645851b1285d478909b6f17a7dfa32ad968": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232084,
+      "cycle": "AXIS -> USDC -> AXIS",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.13585905860840972,
+      "revalidatedNetUsdForUs": -0.00792203951747949,
+      "optimalSize": 113.9409922044075,
+      "captureVerdict": "not profitable at the previous block boundary and no same-block trigger found on these pools - our model does not explain this trade",
+      "quoteBasis": [
+        "local V3 tick maths @53232083",
+        "local V3 tick maths @53232083"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x1f0b802808072e9dee5b6c4df42a75b8bfe8c29a8b1b1f8f2e8cb83d3a4083ca": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232109,
+      "cycle": "USDC -> ICNT -> USDC",
+      "venueCombo": "pancake-v3 + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.12491521625458082,
+      "revalidatedNetUsdForUs": -0.028231783745419174,
+      "optimalSize": 0.065591,
+      "captureVerdict": "same-block backrun: 5 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232108",
+        "local V3 tick maths @53232108"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x5990e96702013e4fb39783bf2ad1fb741a4be254a59c685f84645bba7b15e502": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232083,
+      "cycle": "AXIS -> USDC -> AXIS",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.11050046584036255,
+      "revalidatedNetUsdForUs": -0.00841395091094158,
+      "optimalSize": 37.34983132598909,
+      "captureVerdict": "same-block backrun: 16 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232082",
+        "local V3 tick maths @53232082"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0xf59f48b5b16771ec696389f93041b29589baa697d071453c440ed8e88925a1cd": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232182,
+      "cycle": "AXIS -> USDC -> AXIS",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.09489309219996198,
+      "revalidatedNetUsdForUs": -0.007982483732742782,
+      "optimalSize": 102.90965548414765,
+      "captureVerdict": "same-block backrun: 5 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232181",
+        "local V3 tick maths @53232181"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x1a9a04fafd46c577e0c57b4bf8f18c1416168043516a56f0e4880091978cc14f": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232102,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.09445267505733419,
+      "revalidatedNetUsdForUs": -0.027541324942665816,
+      "optimalSize": 0.001174,
+      "captureVerdict": "same-block backrun: 3 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232101",
+        "local V3 tick maths @53232101"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0xd82f81dd2f988880d2ef40873ec2f3b05faf4aaa0462185fb46fbf4098a1cfc4": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232199,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.09281270916227924,
+      "revalidatedNetUsdForUs": -0.9502042908377208,
+      "optimalSize": 0.010037,
+      "captureVerdict": "same-block backrun: 18 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232198",
+        "local V3 tick maths @53232198"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x1c74f74edf801e24ac51bdb69b8a56fc2a4d8e04b31ba1b732ec291af672c630": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232066,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.08167295208228229,
+      "revalidatedNetUsdForUs": -0.02744004791771772,
+      "optimalSize": 0.002099,
+      "captureVerdict": "same-block backrun: 4 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232065",
+        "local V3 tick maths @53232065"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x098f3cc3b530f20e871f239c81b0ffbfe7f280321fedb45eac528edda21b6372": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232073,
+      "cycle": "AXIS -> USDC -> AXIS",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.08129676204646183,
+      "revalidatedNetUsdForUs": -0.009028094344597875,
+      "optimalSize": 14.743260026399795,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232072",
+        "local V3 tick maths @53232072"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0xcc776958857e95e05e6f252a971c80246643886698f569fcc16b3a21e6e41a17": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232133,
+      "cycle": "AXIS -> USDC -> AXIS",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.08084417646642572,
+      "revalidatedNetUsdForUs": -0.01013644079551656,
+      "optimalSize": 14.749995688220224,
+      "captureVerdict": "same-block backrun: 23 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232132",
+        "local V3 tick maths @53232132"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0x71576309627478c06fecf12810bcc022c96990b1c0aebca8094e1e3b26ede8be": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232172,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.08003235888951217,
+      "revalidatedNetUsdForUs": -0.009657641110487834,
+      "optimalSize": 0.001725,
+      "captureVerdict": "same-block backrun: 5 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232171",
+        "local V3 tick maths @53232171"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0xa14029cc0632f3b14bb4e20b1ac571a249572cc6d922c76c2ef205cae04115d9": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232223,
+      "cycle": "USDC -> XDP -> USDC",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.0750057771975893,
+      "revalidatedNetUsdForUs": -0.09715622280241071,
+      "optimalSize": 0.003312,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232222",
+        "local V3 tick maths @53232222"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0xee9f4b556f136687270705c2187f8eafc98783ec6dc726d21a1833a32cfb5f52": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232238,
+      "cycle": "USDC -> XDP -> USDC",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.07370998638518399,
+      "revalidatedNetUsdForUs": -0.11351701361481602,
+      "optimalSize": 0.003602,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232237",
+        "local V3 tick maths @53232237"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x4f77df8fc4c6cafe8b1929627312acb28cc1155889558c815754f8b952e9ef8e": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.669Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232228,
+      "cycle": "WETH -> B3 -> WETH",
+      "venueCombo": "aero-merged-cl + unknown:uniswap-v2",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.07297105568180035,
+      "revalidatedNetUsdForUs": -0.0106391344740299,
+      "optimalSize": 1e-18,
+      "captureVerdict": "same-block backrun: 2 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "constant product on getReserves() @53232227, fee 30 bps",
+        "local V3 tick maths @53232227"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793314980503.json"
+      ]
+    },
+    "0x915b3dbe79a90943258b056004d15c77a3ce6a59943ba0bd75b73965021b047c": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.715Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261565,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.02985115118556733,
+      "revalidatedNetUsdForUs": -0.03413818385683351,
+      "optimalSize": 0.001368371553005665,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261564",
+        "local V3 tick maths @53261564"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0x8e6f3e0903a2c03890352d8aea80b02b602b086325c5e19a14986553d3a48e3f": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261658,
+      "cycle": "USDC -> Basecat -> USDC",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.18093073724645115,
+      "revalidatedNetUsdForUs": -0.004249262753548848,
+      "optimalSize": 0.001782,
+      "captureVerdict": "same-block backrun: 16 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261657",
+        "local V3 tick maths @53261657"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0xa10cdb8ed0a07665c06bdf05d64d3987c73a587326b8f33c0fccf6b3ed850c18": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261567,
+      "cycle": "USDC -> cbBTC -> USDC",
+      "venueCombo": "pancake-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.0036328673552402883,
+      "revalidatedNetUsdForUs": -0.010274132644759713,
+      "optimalSize": 0.444583,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261566",
+        "local V3 tick maths @53261566"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0x90ed1c0325458e75b6284e87941595bd722559a0a4291499ec2ec42691b43eff": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261730,
+      "cycle": "USDC -> XDP -> USDC",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.019875592264900613,
+      "revalidatedNetUsdForUs": -0.03697140773509939,
+      "optimalSize": 3.634605,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261729",
+        "local V3 tick maths @53261729"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0xb93a4e781daa00d0c95f609368365ccf02460ad9f52fef08e9d5059b017b10d7": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261649,
+      "cycle": "WETH -> USDC -> WETH",
+      "venueCombo": "pancake-v3 + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.005798212620832584,
+      "revalidatedNetUsdForUs": -0.03986947396685964,
+      "optimalSize": 0.000003292731093387,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261648",
+        "local V3 tick maths @53261648"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0x76e5f24b1ca12cc2fc4183979b22a65a70023251ac55b157f99e53b55b7965f6": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261691,
+      "cycle": "cbBTC -> WETH -> cbBTC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.013753968956764295,
+      "revalidatedNetUsdForUs": -0.00601092726752115,
+      "optimalSize": 2e-8,
+      "captureVerdict": "same-block backrun: 7 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261690",
+        "local V3 tick maths @53261690"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0x50f8b7a2a198922613601f60d29842ac50b6edf67ceec607931725765413042f": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261691,
+      "cycle": "WETH -> cbBTC -> WETH",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.0548782933411256,
+      "revalidatedNetUsdForUs": -0.017178749758593296,
+      "optimalSize": 0.001025806955321707,
+      "captureVerdict": "same-block backrun: 16 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261690",
+        "local V3 tick maths @53261690"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0x82ee300b415215b61e52b79c5979178ca492d370a1f9a3bc7fed4c6e1f40a63a": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261729,
+      "cycle": "WETH -> DEGEN -> WETH",
+      "venueCombo": "uniswap-v3 + unknown:uniswap-v2",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.059127083326965646,
+      "revalidatedNetUsdForUs": -0.0035247522817372957,
+      "optimalSize": 1e-18,
+      "captureVerdict": "same-block backrun: 7 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "constant product on getReserves() @53261728, fee 30 bps",
+        "local V3 tick maths @53261728"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0xa7e812b0aa12b66e79d2c3878080022abc7d890be62ac2782b5e025480b187e0": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261543,
+      "cycle": "USDC -> XDP -> USDC",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.002435009778339596,
+      "revalidatedNetUsdForUs": -0.017026990221660404,
+      "optimalSize": 0.000374,
+      "captureVerdict": "same-block backrun: 4 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261542",
+        "local V3 tick maths @53261542"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0xcaf94291e42244e4283260b868fb5a652a16d1c67edad87521ad93ff530fad6b": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.716Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53261559,
+      "cycle": "WETH -> ICP -> WETH",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-2",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.008229013427265341,
+      "revalidatedNetUsdForUs": -0.007458464800009593,
+      "optimalSize": 0.00000217910042793,
+      "captureVerdict": "same-block backrun: 4 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53261558",
+        "local V3 tick maths @53261558"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53261540-53261789.json",
+        "data/validation-base-1793315103976.json"
+      ]
+    },
+    "0x6d70e59be685c4d95bffe067a2261d9766ccd20c603a228062573b3dc504c770": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232260,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.007996167167490183,
+      "revalidatedNetUsdForUs": -0.005600832832509816,
+      "optimalSize": 0.000261,
+      "captureVerdict": "same-block backrun: 6 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232259",
+        "local V3 tick maths @53232259"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0x3cd6cb4d53d8d3b373370918ab55054c12a4518e6c04fffd8c3aa3c3bac513cd": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232082,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.023039738734357173,
+      "revalidatedNetUsdForUs": -0.020527261265642825,
+      "optimalSize": 0.000838,
+      "captureVerdict": "same-block backrun: 33 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232081",
+        "local V3 tick maths @53232081"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0x95de0ebef09f89215052f0109141549c5ed239f6889289056b48fb4e315991b4": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232219,
+      "cycle": "USDC -> SAPc -> USDC",
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.008848032849834446,
+      "revalidatedNetUsdForUs": -0.013665967150165555,
+      "optimalSize": 0.006983,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232218",
+        "local V3 tick maths @53232218"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0xed97f474f3312efbe44d17455828b443c4cfe8b76e6d16dea28ae6c8de6a2944": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232218,
+      "cycle": "USDC -> XDP -> USDC",
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.0014753971024186532,
+      "revalidatedNetUsdForUs": -0.03704960289758135,
+      "optimalSize": 0.000741,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232217",
+        "local V3 tick maths @53232217"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0xd8ebede1864ea92f28c27aa9bb8aa0011ed080e01550ad09b27d27821e66b00e": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232120,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.004345632336990729,
+      "revalidatedNetUsdForUs": -0.07005636766300928,
+      "optimalSize": 4.603134,
+      "captureVerdict": "same-block backrun: 9 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232119",
+        "local V3 tick maths @53232119"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0x7773867b2c19c262cdaf23b10e779f0025e89fa6c180df7ae97a2a240d3274a4": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232074,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.04335696460601551,
+      "revalidatedNetUsdForUs": -0.015786035393984488,
+      "optimalSize": 0.001137,
+      "captureVerdict": "same-block backrun: 17 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232073",
+        "local V3 tick maths @53232073"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0xe0e6617af64ab873e41152638181d07d2ce2d4844ad407066a46eb925669b028": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232116,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.033140101589579196,
+      "revalidatedNetUsdForUs": -0.030714898410420795,
+      "optimalSize": 0.001228,
+      "captureVerdict": "same-block backrun: 6 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232115",
+        "local V3 tick maths @53232115"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0xc88c09a3abd235635ad2dab136ead2ea7c251a1cb0bc90e56b46ad9eff3b7f70": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232235,
+      "cycle": "cbETH -> WETH -> cbETH",
+      "venueCombo": "aerodrome-cl + solidly-v3",
+      "criteriaMet": {
+        "exactQuote": false,
+        "netPositive": false,
+        "sizeRealistic": false,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.006302296556908349,
+      "revalidatedNetUsdForUs": null,
+      "optimalSize": null,
+      "captureVerdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": null,
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    },
+    "0x0fa6e139a21c6ae4e5c52f3111550ecb876594dc2158d4f547addc0efcacbbce": {
+      "status": "FAILED",
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-10-29T23:09:32.761Z",
+          "from": "NOT TESTED",
+          "to": "FAILED"
+        }
+      ],
+      "chain": "base",
+      "block": 53232138,
+      "cycle": "USDC -> AXIS -> USDC",
+      "venueCombo": "uniswap-v3",
+      "criteriaMet": {
+        "exactQuote": true,
+        "netPositive": false,
+        "sizeRealistic": true,
+        "captureShown": false
+      },
+      "observedNetUsdForTheOperatorWhoTookIt": 0.002750663525092392,
+      "revalidatedNetUsdForUs": -0.013844336474907609,
+      "optimalSize": 0.000318,
+      "captureVerdict": "same-block backrun: 15 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction",
+      "quoteBasis": [
+        "local V3 tick maths @53232137",
+        "local V3 tick maths @53232137"
+      ],
+      "dataFiles": [
+        "data/forensics-base-53232040-53232289.json",
+        "data/validation-base-1793315146050.json"
+      ]
+    }
+  }
+}

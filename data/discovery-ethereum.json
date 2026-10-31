@@ -1,0 +1,233 @@
+{
+  "chain": "ethereum",
+  "startedAt": "2026-10-30T02:49:06.886Z",
+  "head": 26302683,
+  "snapshotBlock": 26302683,
+  "stages": {
+    "enumeration": {
+      "deferred": [
+        {
+          "key": "uniswap-v2",
+          "count": 526497,
+          "enumerated": 0
+        }
+      ],
+      "reads": 14516
+    },
+    "sweep": {
+      "from": 26301484,
+      "to": 26302683,
+      "pools": 3563,
+      "logs": 90709,
+      "windows": 1200,
+      "windowsFailedFirstPass": 0,
+      "failedWindows": 0,
+      "coverageOfWindow": 100
+    },
+    "identity": {
+      "resolved": 16407,
+      "attempted": 16408,
+      "attributed": 16155,
+      "unknown": 1704
+    },
+    "tokens": {
+      "resolved": 14047,
+      "attempted": 14064,
+      "total": 14064
+    },
+    "state": {
+      "v2": 15377,
+      "v3": 1030,
+      "skipped": 0,
+      "pricedTokens": 12394,
+      "eligibility": {
+        "eligible": 12523,
+        "total": 17859,
+        "reasons": {
+          "below-min-depth": 1749,
+          "reserves-dust-or-empty": 1374,
+          "token-decimals-unresolved": 24,
+          "no-screening-price-for-either-token": 489,
+          "singleton-pool-no-exact-quote-path": 1451,
+          "factory-not-configured": 247,
+          "token-identity-unresolved": 1,
+          "state-unreadable": 1
+        },
+        "minDepthUsd": 500
+      }
+    },
+    "completion": {
+      "eligiblePairs": 12011,
+      "probes": 156143,
+      "hits": 2298,
+      "newPools": 1554,
+      "byVenue": {
+        "uniswap-v2": 2298
+      }
+    },
+    "rescreen": {
+      "eligibility": {
+        "eligible": 13568,
+        "total": 19413,
+        "reasons": {
+          "below-min-depth": 1841,
+          "reserves-dust-or-empty": 1791,
+          "token-decimals-unresolved": 24,
+          "no-screening-price-for-either-token": 489,
+          "singleton-pool-no-exact-quote-path": 1451,
+          "factory-not-configured": 247,
+          "token-identity-unresolved": 1,
+          "state-unreadable": 1
+        },
+        "minDepthUsd": 500
+      },
+      "pricedTokens": 12394
+    }
+  },
+  "finishedAt": "2026-10-30T02:58:09.014Z",
+  "seconds": 542,
+  "reads": 283743,
+  "rpcCalls": 1786,
+  "rpcErrors": 0,
+  "registry": {
+    "pools": 19413,
+    "poolsWithTokens": 17961,
+    "eligiblePools": 13568,
+    "quotablePools": 17962,
+    "tokens": 14064,
+    "pairs": 15478,
+    "pairsWithTwoOrMorePools": 1879,
+    "byVenue": {
+      "sushi-v2": 4812,
+      "aero-merged-cl-eth": 80,
+      "unidentified-v2-a-eth": 468,
+      "unidentified-v2-b-eth": 8094,
+      "unidentified-v2-c-eth": 1062,
+      "uniswap-v3": 801,
+      "unknown": 1457,
+      "uniswap-v2": 2317,
+      "pancake-v3": 47,
+      "unconfigured:0x44b7fbd4d87149efa5347c451e74b9fd18e89c55": 22,
+      "sushi-v3": 28,
+      "unconfigured:0xfb1eb9a45feb7269f3277233af513482bc04ea63": 1,
+      "unconfigured:0x9deb29c9a4c7a88a3c0257393b7f3335338d9a9d": 17,
+      "unconfigured:0x00a38533c68327abe0cc265436e036066e2d6b38": 29,
+      "unconfigured:0x4eef5746ed22a2fd368629c1852365bf5dcb79f1": 1,
+      "unconfigured:0xa70e10beb02ff9a44007d9d3695d4b96003db101": 1,
+      "unconfigured:0xcb44c98572b3f8ebf8e8aba78742adc8e773719f": 1,
+      "unconfigured:0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687": 1,
+      "unconfigured:0xd9ce49caf7299daf18fffcb2b84a44fd33412509": 5,
+      "unconfigured:0x9cf2f35e3656d4c68474525d67d9459da3a000cd": 2,
+      "unconfigured:0x5d8d3bbe66076e844c82b989f8430fa92cf67dba": 9,
+      "unconfigured:0xee3e9e46e34a27dc755a63e2849c9913ee1a06e2": 5,
+      "unconfigured:0xa206f6274b178b5090f64f39ca49878955d93756": 2,
+      "unconfigured:0x81c9cbc47d700da1777abd831d8da3f526dfae24": 2,
+      "unconfigured:0x6511eba915fc1b94b2364289cca2b27ae5898d80": 3,
+      "unconfigured:0x696708db871b77355d6c2be7290b27cf0bb9b24b": 9,
+      "unconfigured:0x88695a239a0a3f70729c4cb30fd32f9b4978513d": 1,
+      "unconfigured:0xf14421f0bcf9401d8930872c2d44d8e67e40529a": 4,
+      "unconfigured:0x75e48c954594d64ef9613aeef97ad85370f13807": 4,
+      "unconfigured:0xca0afa87a7f32ade44e5c007474c61edc4dbb6f0": 1,
+      "unconfigured:0x43ec799eadd63848443e2347c49f5f52e8fe0f6f": 6,
+      "unconfigured:0x1fed2e360a5afb2ac4b047102a7012a57f3c8cab": 1,
+      "unconfigured:0x644b3950b04738a9b3a5fbd11ff9644a79e4a5ed": 4,
+      "unconfigured:0x10d05e057cb1ee7eac0559aa7f09bf06f44fd718": 3,
+      "unconfigured:0xe813574889f310878082195b49021bd0442b28b3": 1,
+      "unconfigured:0x8a93b6865c4492ff17252219b87ea6920848edc0": 2,
+      "unconfigured:0xdd9efcbdf9f422e2fc159efe77add3730d48056d": 5,
+      "unconfigured:0xa7028337d3da1f04d638cc3b4dd09411486b49ea": 5,
+      "unconfigured:0x735bb16affe83a3dc4dc418abccf179617cf9ff2": 1,
+      "unconfigured:0x26aaa70d55fd0988eb9528884c5cd90c95ae0fdf": 1,
+      "unconfigured:0x5e12f3bdeb62c6296fa457b1a69438d7fe8c6e2e": 1,
+      "unconfigured:0x96ff042f8c6757fce515d171f194b5816cafee11": 3,
+      "unconfigured:0x5fa0060fcfea35b31f7a5f6025f0ff399b98edf1": 4,
+      "unconfigured:0x69bd16ae6f507bd3fc9ecc984d50b04f029ef677": 1,
+      "unconfigured:0x8f9f4ca1290076c0f63edbf0390d7e69f07aec93": 1,
+      "unconfigured:0x2f3db9ba0fe94a92d706633abc1c3131fe25d03c": 4,
+      "unconfigured:0xdf62d9e51d7c08360dcd41931a2e6b97ff8c73e8": 1,
+      "unconfigured:0x075c42cd233a1c723c0f18f6dd575c8d679fea85": 2,
+      "unconfigured:0x6dd7f02b6025426e46088f598f45212124478182": 3,
+      "unconfigured:0xcdc7c1d7542128d96fb944af966ea1be5ce31fca": 2,
+      "unconfigured:0x5aef44edfc5a7edd30826c724ea12d7be15bdc30": 5,
+      "unconfigured:0xd36aba9ec96523b0a89886c76065852adfe2eb39": 2,
+      "unconfigured:0x1e2c2102cf8efcaaaf20ffe926469ec7cd0d0f6e": 4,
+      "unconfigured:0x26023843814cff92b8d75311d64d1c032b8b29f2": 1,
+      "unconfigured:0x129538ee65a692fa041e107921d716c31d186803": 2,
+      "unconfigured:0x25393bb68c89a894b5e20fa3fc3b3b34f843c672": 3,
+      "unconfigured:0xa40ec8a93293a3179d4b544239916c1b68cb47b6": 1,
+      "unconfigured:0xd5dd6e883779e63d8bc6a9319b5ea8bf4bcdc0e3": 2,
+      "unconfigured:0x2db54bf6799a14540dc2c495ef5a8dcb9a381869": 1,
+      "unconfigured:0xcc941d37297534696e963fb624b7593c33afdd7f": 2,
+      "unconfigured:0xa3bcedadb23cfaa592ac42f5a18c98f98a37da77": 1,
+      "unconfigured:0x41060a0d3b9a15a4d01343f4e07360505912dbe8": 3,
+      "unconfigured:0xe71ec95e61f76e7dd86bba1c78a85f5e4b062e77": 5,
+      "unconfigured:0x00000021543ed46b665a74484c82b71e4eb61e34": 1,
+      "unconfigured:0x2294577031f113df4782b881cf0b140e94209a6f": 2,
+      "unconfigured:0xcbae5c3f8259181eb7e2309bc4c72fdf02dd56d8": 5,
+      "unconfigured:0xbb50d3e3ca285d5b521eb32ce2a53ad1e6c7d17b": 2,
+      "unconfigured:0x3823ac41b77e51bf0e6536ce465479cbdedcaea9": 2,
+      "unconfigured:0x571c23491e0032d841accded6d8a452e0ef97d81": 1,
+      "unconfigured:0xacf60b3bd6f6728c0deb6b6202ec91fb1bff8f1a": 1,
+      "unconfigured:0x32ce36f6ea8d97f9fc19aab83b9c6d2f52d74470": 1,
+      "unconfigured:0x880ae0a0af8ff8f31f51599891baa8a65db5e152": 3,
+      "unconfigured:0xbdda21dd8da31d5bee0c9bb886c044ebb9b8906a": 1,
+      "unconfigured:0xb9a14ee1cd3417f3acc988f61650895151abde24": 1,
+      "unconfigured:0x53ac1d1fa4f9f6c604b8b198ce29a50d28cba893": 1,
+      "unconfigured:0x0388c1e0f210abae597b7de712b9510c6c36c857": 1,
+      "unconfigured:0x5bddc63f23c0386fb817959773c32b736744c899": 1,
+      "unconfigured:0xb076b06f669e682609fb4a8c6646d2619717be4b": 1,
+      "unconfigured:0x956920f97690bdd76a6a10c7ba931dec14f61169": 1,
+      "unconfigured:0xd1bf4a24dc17da21410a7b047471e191ea538d43": 2,
+      "unconfigured:0x3d5ffe355fed263884bdd8dbfa57a931fd288752": 1,
+      "unconfigured:0x5f1dddbf348ac2fbe22a163e30f99f9ece3dd50a": 1,
+      "unconfigured:0xe5b0ef87db2d09c95fa615e6d90f4605fab4dc33": 2,
+      "unconfigured:0xe71205b53e2d48d8972b2e259028d83e24ae2a6b": 1,
+      "unconfigured:0xfe87e130e2b13d842c4ca99f6e6567712f97c64d": 1,
+      "unconfigured:0x27c0df6b874f0768b687c95367b826d9948fa086": 1,
+      "unconfigured:0xe1046fcb1057ef82b68f3a6b8ebb0e411cf334e0": 1,
+      "unconfigured:0x2a3f3f53c836dc720aa855f9ec2c34bd2d6e8092": 1,
+      "unconfigured:0xd5a77740d286784c5b067ea8f486dc6e97c07744": 1,
+      "unconfigured:0xbec1c22fa669bf17b9d2326beb9adce4fc697614": 1,
+      "unconfigured:0xd34971bab6e5e356fd250715f5de0492bb070452": 1,
+      "unconfigured:0x460b2005b3318982feada99f7ebf13e1d6f6effe": 1,
+      "unconfigured:0x564c4529e12fb5a48ad609820d37d15800c1f539": 2,
+      "unconfigured:0xcc8e4c2998395e56d06d985ba791138edf48a8d4": 1,
+      "unconfigured:0x7a80ab1235ec471bad9d9df610964555d8d27ef6": 1
+    },
+    "bySource": {
+      "factory-array:sushi-v2": 4812,
+      "swap-log-sweep": 3563,
+      "identity-read": 16408,
+      "state-read": 17961,
+      "factory-array:aero-merged-cl-eth": 80,
+      "factory-array:unidentified-v2-a-eth": 468,
+      "factory-array:unidentified-v2-b-eth": 8094,
+      "factory-array:unidentified-v2-c-eth": 1062,
+      "cross-venue:uniswap-v2": 2298
+    }
+  },
+  "eligibleUniverse": {
+    "eligiblePools": 13568,
+    "eligiblePairs": 12012,
+    "eligiblePairsWithTwoOrMorePools": 1298,
+    "twoPoolRoutes": 2108,
+    "directionalTwoPoolRoutes": 4216
+  },
+  "deferredFactories": [
+    {
+      "key": "uniswap-v2",
+      "count": 526497,
+      "enumerated": 0
+    }
+  ],
+  "ineligibilityReasons": {
+    "below-min-depth": 1841,
+    "reserves-dust-or-empty": 1791,
+    "token-decimals-unresolved": 24,
+    "no-screening-price-for-either-token": 489,
+    "singleton-pool-no-exact-quote-path": 1451,
+    "factory-not-configured": 247,
+    "token-identity-unresolved": 1,
+    "state-unreadable": 1
+  }
+}

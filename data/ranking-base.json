@@ -1,0 +1,4111 @@
+{
+  "chain": "base",
+  "measuredAt": "2026-10-30T00:52:10.373Z",
+  "coverage": {
+    "windows": [
+      {
+        "file": "data/forensics-base-53261540-53261789.json",
+        "window": {
+          "fromBlock": 53261540,
+          "toBlock": 53261789,
+          "blocks": 250,
+          "chainMinutes": 8.3
+        },
+        "counts": {
+          "multiSwapTxs": 3191,
+          "selfFundedArb": 624,
+          "rejected": 2567,
+          "rejectedByVerdict": {
+            "not-profitable": 1470,
+            "unverified": 796,
+            "third-party-funded": 157,
+            "liquidity-event": 139,
+            "multi-token-gain": 5
+          }
+        },
+        "blocksWithArbs": 194,
+        "coverageNote": null
+      },
+      {
+        "file": "data/forensics-base-53247040-53247289.json",
+        "window": {
+          "fromBlock": 53247040,
+          "toBlock": 53247289,
+          "blocks": 250,
+          "chainMinutes": 8.3
+        },
+        "counts": {
+          "multiSwapTxs": 2454,
+          "selfFundedArb": 297,
+          "rejected": 2157,
+          "rejectedByVerdict": {
+            "third-party-funded": 110,
+            "unverified": 631,
+            "not-profitable": 1134,
+            "liquidity-event": 250,
+            "multi-token-gain": 32
+          }
+        },
+        "blocksWithArbs": 130,
+        "coverageNote": null
+      },
+      {
+        "file": "data/forensics-base-53232040-53232289.json",
+        "window": {
+          "fromBlock": 53232040,
+          "toBlock": 53232289,
+          "blocks": 250,
+          "chainMinutes": 8.3
+        },
+        "counts": {
+          "multiSwapTxs": 2639,
+          "selfFundedArb": 670,
+          "rejected": 1969,
+          "rejectedByVerdict": {
+            "not-profitable": 1561,
+            "liquidity-event": 151,
+            "unverified": 216,
+            "third-party-funded": 39,
+            "multi-token-gain": 2
+          }
+        },
+        "blocksWithArbs": 220,
+        "coverageNote": null
+      },
+      {
+        "file": "data/forensics-base-53218040-53218289.json",
+        "window": {
+          "fromBlock": 53218040,
+          "toBlock": 53218289,
+          "blocks": 250,
+          "chainMinutes": 8.3
+        },
+        "counts": {
+          "multiSwapTxs": 1000,
+          "selfFundedArb": 71,
+          "rejected": 929,
+          "rejectedByVerdict": {
+            "liquidity-event": 170,
+            "not-profitable": 472,
+            "unverified": 237,
+            "third-party-funded": 50
+          }
+        },
+        "blocksWithArbs": 48,
+        "coverageNote": "low yield (4.0 multi-swap tx/block vs ~10 typical) - likely partial RPC collection, treat counts from this window as a floor"
+      }
+    ],
+    "totalBlocksScanned": 1000,
+    "totalChainMinutes": 33.2,
+    "spreadNote": "four windows spread across roughly 24 hours of Base history, so the result is not a single moment",
+    "totalArbTxDetected": 1662,
+    "arbTxPerBlock": 1.66
+  },
+  "economics": {
+    "netUsdPerArb": {
+      "n": 1662,
+      "sum": 932.7376,
+      "max": 250.5701,
+      "p90": 0.4677,
+      "median": 0.0172,
+      "min": -0.71247
+    },
+    "executionCostUsdPerArb": {
+      "n": 1662,
+      "sum": 333.5202,
+      "max": 18.0051,
+      "p90": 0.4147,
+      "median": 0.0159,
+      "min": 0.00161
+    },
+    "gasUsedPerArb": {
+      "median": 332278,
+      "p90": 659759,
+      "max": 3660731
+    },
+    "l1DataFeeShareOfCost": {
+      "median": 0.0008,
+      "p90": 0.2305
+    },
+    "netAboveUsd": {
+      "0": 1558,
+      "1": 54,
+      "5": 18,
+      "25": 5,
+      "0.10": 272
+    },
+    "totalNetUsdAcrossAllOperators": 932.74,
+    "impliedDailyNetUsdAllOperators": 40456.09,
+    "impliedDailyNote": "extrapolated from the sampled minutes to 24h; an extrapolation, not a measurement, and it is the total across EVERY operator on the chain, not a share we could win"
+  },
+  "step2_dexCombinations": [
+    {
+      "combo": "uniswap-v3 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 525,
+      "sharePct": 31.6,
+      "netUsd": {
+        "n": 525,
+        "sum": 108.5665,
+        "max": 2.5093,
+        "p90": 0.6744,
+        "median": 0.0272,
+        "min": -0.02488
+      },
+      "costUsd": {
+        "n": 525,
+        "sum": 219.2781,
+        "max": 2.602,
+        "p90": 1.5953,
+        "median": 0.022,
+        "min": 0.00227
+      },
+      "distinctCycles": 8,
+      "distinctOperatorContracts": 39
+    },
+    {
+      "combo": "aero-merged-cl + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 153,
+      "sharePct": 9.2,
+      "netUsd": {
+        "n": 153,
+        "sum": 29.6047,
+        "max": 9.2908,
+        "p90": 0.0988,
+        "median": 0.0166,
+        "min": -0.10349
+      },
+      "costUsd": {
+        "n": 153,
+        "sum": 22.4734,
+        "max": 7.7902,
+        "p90": 0.0972,
+        "median": 0.0206,
+        "min": 0.00366
+      },
+      "distinctCycles": 26,
+      "distinctOperatorContracts": 33
+    },
+    {
+      "combo": "uniswap-v3",
+      "sameVenueOnly": true,
+      "arbTxCount": 142,
+      "sharePct": 8.5,
+      "netUsd": {
+        "n": 142,
+        "sum": 11.9648,
+        "max": 4.4196,
+        "p90": 0.0685,
+        "median": 0.0192,
+        "min": -0.02747
+      },
+      "costUsd": {
+        "n": 142,
+        "sum": 23.7384,
+        "max": 18.0051,
+        "p90": 0.0428,
+        "median": 0.0125,
+        "min": 0.00223
+      },
+      "distinctCycles": 12,
+      "distinctOperatorContracts": 33
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-3",
+      "sameVenueOnly": false,
+      "arbTxCount": 88,
+      "sharePct": 5.3,
+      "netUsd": {
+        "n": 88,
+        "sum": 53.5512,
+        "max": 12.5285,
+        "p90": 0.597,
+        "median": 0.0189,
+        "min": -0.00379
+      },
+      "costUsd": {
+        "n": 88,
+        "sum": 14.4218,
+        "max": 9.4945,
+        "p90": 0.0941,
+        "median": 0.0187,
+        "min": 0.00507
+      },
+      "distinctCycles": 27,
+      "distinctOperatorContracts": 36
+    },
+    {
+      "combo": "aero-merged-cl + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 86,
+      "sharePct": 5.2,
+      "netUsd": {
+        "n": 86,
+        "sum": 3.1854,
+        "max": 0.5584,
+        "p90": 0.0781,
+        "median": 0.0099,
+        "min": -0.0091
+      },
+      "costUsd": {
+        "n": 86,
+        "sum": 2.5072,
+        "max": 0.2151,
+        "p90": 0.0564,
+        "median": 0.0202,
+        "min": 0.00444
+      },
+      "distinctCycles": 22,
+      "distinctOperatorContracts": 21
+    },
+    {
+      "combo": "aerodrome-cl + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 51,
+      "sharePct": 3.1,
+      "netUsd": {
+        "n": 51,
+        "sum": 0.7908,
+        "max": 0.0571,
+        "p90": 0.038,
+        "median": 0.0099,
+        "min": -0.00305
+      },
+      "costUsd": {
+        "n": 51,
+        "sum": 0.7795,
+        "max": 0.0541,
+        "p90": 0.042,
+        "median": 0.011,
+        "min": 0.00556
+      },
+      "distinctCycles": 9,
+      "distinctOperatorContracts": 11
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-2",
+      "sameVenueOnly": false,
+      "arbTxCount": 34,
+      "sharePct": 2,
+      "netUsd": {
+        "n": 34,
+        "sum": 12.7411,
+        "max": 11.4671,
+        "p90": 0.0627,
+        "median": 0.0137,
+        "min": -0.00339
+      },
+      "costUsd": {
+        "n": 34,
+        "sum": 3.0066,
+        "max": 1.1778,
+        "p90": 0.0528,
+        "median": 0.0153,
+        "min": 0.00719
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 13
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl",
+      "sameVenueOnly": false,
+      "arbTxCount": 33,
+      "sharePct": 2,
+      "netUsd": {
+        "n": 33,
+        "sum": 7.0133,
+        "max": 5.1444,
+        "p90": 0.1675,
+        "median": 0.012,
+        "min": -0.00503
+      },
+      "costUsd": {
+        "n": 33,
+        "sum": 0.7401,
+        "max": 0.0644,
+        "p90": 0.0357,
+        "median": 0.0183,
+        "min": 0.00663
+      },
+      "distinctCycles": 23,
+      "distinctOperatorContracts": 19
+    },
+    {
+      "combo": "aerodrome-cl-3 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 28,
+      "sharePct": 1.7,
+      "netUsd": {
+        "n": 28,
+        "sum": 16.0511,
+        "max": 10.5967,
+        "p90": 0.3181,
+        "median": 0.004,
+        "min": -0.00565
+      },
+      "costUsd": {
+        "n": 28,
+        "sum": 1.7773,
+        "max": 0.7455,
+        "p90": 0.0896,
+        "median": 0.0124,
+        "min": 0.00374
+      },
+      "distinctCycles": 11,
+      "distinctOperatorContracts": 14
+    },
+    {
+      "combo": "pancake-v3 + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 28,
+      "sharePct": 1.7,
+      "netUsd": {
+        "n": 28,
+        "sum": 0.4148,
+        "max": 0.082,
+        "p90": 0.0213,
+        "median": 0.0097,
+        "min": -0.00115
+      },
+      "costUsd": {
+        "n": 28,
+        "sum": 0.6004,
+        "max": 0.1416,
+        "p90": 0.034,
+        "median": 0.0119,
+        "min": 0.0048
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 4
+    },
+    {
+      "combo": "unknown:uniswap-v3",
+      "sameVenueOnly": true,
+      "arbTxCount": 28,
+      "sharePct": 1.7,
+      "netUsd": {
+        "n": 28,
+        "sum": 0.4132,
+        "max": 0.0246,
+        "p90": 0.0223,
+        "median": 0.0148,
+        "min": 0.00652
+      },
+      "costUsd": {
+        "n": 28,
+        "sum": 0.1433,
+        "max": 0.0069,
+        "p90": 0.006,
+        "median": 0.0052,
+        "min": 0.00365
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 26,
+      "sharePct": 1.6,
+      "netUsd": {
+        "n": 26,
+        "sum": 0.7151,
+        "max": 0.1622,
+        "p90": 0.0664,
+        "median": 0.0152,
+        "min": -0.01468
+      },
+      "costUsd": {
+        "n": 26,
+        "sum": 0.8305,
+        "max": 0.0818,
+        "p90": 0.0523,
+        "median": 0.0233,
+        "min": 0.00891
+      },
+      "distinctCycles": 8,
+      "distinctOperatorContracts": 10
+    },
+    {
+      "combo": "aero-merged-cl",
+      "sameVenueOnly": true,
+      "arbTxCount": 25,
+      "sharePct": 1.5,
+      "netUsd": {
+        "n": 25,
+        "sum": 0.3226,
+        "max": 0.1383,
+        "p90": 0.0453,
+        "median": 0.0053,
+        "min": -0.05802
+      },
+      "costUsd": {
+        "n": 25,
+        "sum": 2.0267,
+        "max": 0.6582,
+        "p90": 0.0348,
+        "median": 0.0144,
+        "min": 0.00969
+      },
+      "distinctCycles": 13,
+      "distinctOperatorContracts": 7
+    },
+    {
+      "combo": "pancake-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 22,
+      "sharePct": 1.3,
+      "netUsd": {
+        "n": 22,
+        "sum": 1.2342,
+        "max": 0.4525,
+        "p90": 0.1249,
+        "median": 0.0092,
+        "min": -0.06014
+      },
+      "costUsd": {
+        "n": 22,
+        "sum": 1.688,
+        "max": 0.7958,
+        "p90": 0.069,
+        "median": 0.0222,
+        "min": 0.00685
+      },
+      "distinctCycles": 9,
+      "distinctOperatorContracts": 15
+    },
+    {
+      "combo": "aero-merged-cl + pancake-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 20,
+      "sharePct": 1.2,
+      "netUsd": {
+        "n": 20,
+        "sum": 0.5356,
+        "max": 0.1516,
+        "p90": 0.0858,
+        "median": 0.0109,
+        "min": -0.00106
+      },
+      "costUsd": {
+        "n": 20,
+        "sum": 0.4223,
+        "max": 0.0501,
+        "p90": 0.0433,
+        "median": 0.0159,
+        "min": 0.00699
+      },
+      "distinctCycles": 11,
+      "distinctOperatorContracts": 13
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-3 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 15,
+      "sharePct": 0.9,
+      "netUsd": {
+        "n": 15,
+        "sum": 0.2901,
+        "max": 0.1667,
+        "p90": 0.0202,
+        "median": 0.0096,
+        "min": -0.00493
+      },
+      "costUsd": {
+        "n": 15,
+        "sum": 0.2573,
+        "max": 0.0371,
+        "p90": 0.0259,
+        "median": 0.015,
+        "min": 0.00757
+      },
+      "distinctCycles": 7,
+      "distinctOperatorContracts": 8
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-v2 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 15,
+      "sharePct": 0.9,
+      "netUsd": {
+        "n": 15,
+        "sum": 0.2275,
+        "max": 0.0956,
+        "p90": 0.0277,
+        "median": 0.0111,
+        "min": -0.00413
+      },
+      "costUsd": {
+        "n": 15,
+        "sum": 0.3782,
+        "max": 0.0742,
+        "p90": 0.0428,
+        "median": 0.0152,
+        "min": 0.00935
+      },
+      "distinctCycles": 6,
+      "distinctOperatorContracts": 7
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 15,
+      "sharePct": 0.9,
+      "netUsd": {
+        "n": 15,
+        "sum": 0.4388,
+        "max": 0.0623,
+        "p90": 0.0493,
+        "median": 0.0358,
+        "min": -0.01204
+      },
+      "costUsd": {
+        "n": 15,
+        "sum": 0.4424,
+        "max": 0.0946,
+        "p90": 0.0448,
+        "median": 0.0151,
+        "min": 0.00606
+      },
+      "distinctCycles": 8,
+      "distinctOperatorContracts": 7
+    },
+    {
+      "combo": "aerodrome-cl + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 13,
+      "sharePct": 0.8,
+      "netUsd": {
+        "n": 13,
+        "sum": 0.3666,
+        "max": 0.1453,
+        "p90": 0.0237,
+        "median": 0.0115,
+        "min": 0.00206
+      },
+      "costUsd": {
+        "n": 13,
+        "sum": 0.6399,
+        "max": 0.2734,
+        "p90": 0.0243,
+        "median": 0.0123,
+        "min": 0.00503
+      },
+      "distinctCycles": 7,
+      "distinctOperatorContracts": 9
+    },
+    {
+      "combo": "uniswap-v4",
+      "sameVenueOnly": true,
+      "arbTxCount": 13,
+      "sharePct": 0.8,
+      "netUsd": {
+        "n": 13,
+        "sum": 0.1913,
+        "max": 0.0368,
+        "p90": 0.0237,
+        "median": 0.0103,
+        "min": 0.00257
+      },
+      "costUsd": {
+        "n": 13,
+        "sum": 0.1203,
+        "max": 0.0335,
+        "p90": 0.0147,
+        "median": 0.0068,
+        "min": 0.00161
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 5
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 12,
+      "sharePct": 0.7,
+      "netUsd": {
+        "n": 12,
+        "sum": 0.5827,
+        "max": 0.5147,
+        "p90": 0.0218,
+        "median": 0.0046,
+        "min": -0.01057
+      },
+      "costUsd": {
+        "n": 12,
+        "sum": 0.6139,
+        "max": 0.4147,
+        "p90": 0.0301,
+        "median": 0.0155,
+        "min": 0.00873
+      },
+      "distinctCycles": 7,
+      "distinctOperatorContracts": 8
+    },
+    {
+      "combo": "aerodrome-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 12,
+      "sharePct": 0.7,
+      "netUsd": {
+        "n": 12,
+        "sum": 0.104,
+        "max": 0.3472,
+        "p90": 0.0364,
+        "median": 0.0059,
+        "min": -0.59636
+      },
+      "costUsd": {
+        "n": 12,
+        "sum": 0.7372,
+        "max": 0.6377,
+        "p90": 0.0141,
+        "median": 0.0083,
+        "min": 0.00329
+      },
+      "distinctCycles": 10,
+      "distinctOperatorContracts": 9
+    },
+    {
+      "combo": "solidly-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 12,
+      "sharePct": 0.7,
+      "netUsd": {
+        "n": 12,
+        "sum": 0.1597,
+        "max": 0.0391,
+        "p90": 0.0222,
+        "median": 0.0069,
+        "min": 0.00118
+      },
+      "costUsd": {
+        "n": 12,
+        "sum": 0.2673,
+        "max": 0.0976,
+        "p90": 0.0198,
+        "median": 0.0124,
+        "min": 0.00659
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 5
+    },
+    {
+      "combo": "sushi-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 11,
+      "sharePct": 0.7,
+      "netUsd": {
+        "n": 11,
+        "sum": 15.6018,
+        "max": 7.819,
+        "p90": 6.0996,
+        "median": 0.0163,
+        "min": 0.00375
+      },
+      "costUsd": {
+        "n": 11,
+        "sum": 1.8368,
+        "max": 1.4316,
+        "p90": 0.3352,
+        "median": 0.0085,
+        "min": 0.00263
+      },
+      "distinctCycles": 4,
+      "distinctOperatorContracts": 9
+    },
+    {
+      "combo": "pancake-v3",
+      "sameVenueOnly": true,
+      "arbTxCount": 10,
+      "sharePct": 0.6,
+      "netUsd": {
+        "n": 10,
+        "sum": 0.2478,
+        "max": 0.1236,
+        "p90": 0.0859,
+        "median": 0.0036,
+        "min": -0.0016
+      },
+      "costUsd": {
+        "n": 10,
+        "sum": 0.1581,
+        "max": 0.0616,
+        "p90": 0.0157,
+        "median": 0.0115,
+        "min": 0.00612
+      },
+      "distinctCycles": 5,
+      "distinctOperatorContracts": 5
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-cl-3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 9,
+      "sharePct": 0.5,
+      "netUsd": {
+        "n": 9,
+        "sum": 1.6975,
+        "max": 1.5308,
+        "p90": 0.0566,
+        "median": 0.0157,
+        "min": 0.01078
+      },
+      "costUsd": {
+        "n": 9,
+        "sum": 0.1264,
+        "max": 0.015,
+        "p90": 0.0143,
+        "median": 0.0142,
+        "min": 0.01353
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aero-merged-cl + sushi-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 9,
+      "sharePct": 0.5,
+      "netUsd": {
+        "n": 9,
+        "sum": 0.2038,
+        "max": 0.0807,
+        "p90": 0.0501,
+        "median": 0.0145,
+        "min": 0.00218
+      },
+      "costUsd": {
+        "n": 9,
+        "sum": 0.1121,
+        "max": 0.0276,
+        "p90": 0.0242,
+        "median": 0.0094,
+        "min": 0.00685
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 6
+    },
+    {
+      "combo": "uniswap-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 9,
+      "sharePct": 0.5,
+      "netUsd": {
+        "n": 9,
+        "sum": 2.2699,
+        "max": 1.7634,
+        "p90": 0.1801,
+        "median": 0.0551,
+        "min": 0.0069
+      },
+      "costUsd": {
+        "n": 9,
+        "sum": 2.3856,
+        "max": 2.0474,
+        "p90": 0.2808,
+        "median": 0.0109,
+        "min": 0.00285
+      },
+      "distinctCycles": 8,
+      "distinctOperatorContracts": 8
+    },
+    {
+      "combo": "aero-merged-cl + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 8,
+      "sharePct": 0.5,
+      "netUsd": {
+        "n": 8,
+        "sum": 161.9034,
+        "max": 138.0737,
+        "p90": 23.8098,
+        "median": 0.0024,
+        "min": -0.00053
+      },
+      "costUsd": {
+        "n": 8,
+        "sum": 0.138,
+        "max": 0.0468,
+        "p90": 0.0171,
+        "median": 0.0147,
+        "min": 0.00542
+      },
+      "distinctCycles": 5,
+      "distinctOperatorContracts": 5
+    },
+    {
+      "combo": "aerodrome-v2 + sushi-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 8,
+      "sharePct": 0.5,
+      "netUsd": {
+        "n": 8,
+        "sum": 0.1898,
+        "max": 0.0484,
+        "p90": 0.0381,
+        "median": 0.0234,
+        "min": 0.00483
+      },
+      "costUsd": {
+        "n": 8,
+        "sum": 0.1181,
+        "max": 0.0379,
+        "p90": 0.0171,
+        "median": 0.0113,
+        "min": 0.00239
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 5
+    },
+    {
+      "combo": "aerodrome-cl-3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 7,
+      "sharePct": 0.4,
+      "netUsd": {
+        "n": 7,
+        "sum": 58.0762,
+        "max": 57.3573,
+        "p90": 1.3716,
+        "median": 0.0169,
+        "min": -0.71247
+      },
+      "costUsd": {
+        "n": 7,
+        "sum": 4.0702,
+        "max": 2.8465,
+        "p90": 1.1504,
+        "median": 0.0153,
+        "min": 0.01175
+      },
+      "distinctCycles": 6,
+      "distinctOperatorContracts": 6
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-3 + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 7,
+      "sharePct": 0.4,
+      "netUsd": {
+        "n": 7,
+        "sum": 0.0499,
+        "max": 0.0256,
+        "p90": 0.008,
+        "median": 0.0064,
+        "min": -0.00474
+      },
+      "costUsd": {
+        "n": 7,
+        "sum": 0.1051,
+        "max": 0.0291,
+        "p90": 0.026,
+        "median": 0.0115,
+        "min": 0.00555
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 4
+    },
+    {
+      "combo": "aerodrome-cl-3",
+      "sameVenueOnly": true,
+      "arbTxCount": 7,
+      "sharePct": 0.4,
+      "netUsd": {
+        "n": 7,
+        "sum": 0.0377,
+        "max": 0.0108,
+        "p90": 0.0068,
+        "median": 0.0045,
+        "min": 0.0022
+      },
+      "costUsd": {
+        "n": 7,
+        "sum": 0.1021,
+        "max": 0.0234,
+        "p90": 0.0213,
+        "median": 0.0153,
+        "min": 0.00524
+      },
+      "distinctCycles": 6,
+      "distinctOperatorContracts": 3
+    },
+    {
+      "combo": "sushi-v2 + uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 7,
+      "sharePct": 0.4,
+      "netUsd": {
+        "n": 7,
+        "sum": 56.2708,
+        "max": 41.73,
+        "p90": 14.044,
+        "median": 0.1062,
+        "min": 0.00336
+      },
+      "costUsd": {
+        "n": 7,
+        "sum": 0.075,
+        "max": 0.0373,
+        "p90": 0.0216,
+        "median": 0.0025,
+        "min": 0.00213
+      },
+      "distinctCycles": 5,
+      "distinctOperatorContracts": 4
+    },
+    {
+      "combo": "aerodrome-v2 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 6,
+      "sharePct": 0.4,
+      "netUsd": {
+        "n": 6,
+        "sum": 0.988,
+        "max": 0.8792,
+        "p90": 0.0653,
+        "median": 0.0056,
+        "min": -0.00004
+      },
+      "costUsd": {
+        "n": 6,
+        "sum": 0.5683,
+        "max": 0.4688,
+        "p90": 0.0434,
+        "median": 0.0177,
+        "min": 0.00847
+      },
+      "distinctCycles": 4,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-cl-3",
+      "sameVenueOnly": false,
+      "arbTxCount": 6,
+      "sharePct": 0.4,
+      "netUsd": {
+        "n": 6,
+        "sum": 0.0416,
+        "max": 0.0305,
+        "p90": 0.0243,
+        "median": 0.0021,
+        "min": -0.01413
+      },
+      "costUsd": {
+        "n": 6,
+        "sum": 0.0816,
+        "max": 0.0252,
+        "p90": 0.0142,
+        "median": 0.0123,
+        "min": 0.00816
+      },
+      "distinctCycles": 5,
+      "distinctOperatorContracts": 5
+    },
+    {
+      "combo": "aerodrome-cl + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 6,
+      "sharePct": 0.4,
+      "netUsd": {
+        "n": 6,
+        "sum": 0.045,
+        "max": 0.0134,
+        "p90": 0.01,
+        "median": 0.0063,
+        "min": 0.00239
+      },
+      "costUsd": {
+        "n": 6,
+        "sum": 0.056,
+        "max": 0.0199,
+        "p90": 0.0121,
+        "median": 0.0058,
+        "min": 0.00473
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 4
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 6,
+      "sharePct": 0.4,
+      "netUsd": {
+        "n": 6,
+        "sum": 0.1131,
+        "max": 0.0657,
+        "p90": 0.0217,
+        "median": 0.0064,
+        "min": 0.00063
+      },
+      "costUsd": {
+        "n": 6,
+        "sum": 0.0964,
+        "max": 0.0379,
+        "p90": 0.0165,
+        "median": 0.0107,
+        "min": 0.00874
+      },
+      "distinctCycles": 6,
+      "distinctOperatorContracts": 5
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl + aerodrome-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 5,
+      "sharePct": 0.3,
+      "netUsd": {
+        "n": 5,
+        "sum": 0.0486,
+        "max": 0.0254,
+        "p90": 0.0134,
+        "median": 0.008,
+        "min": -0.0044
+      },
+      "costUsd": {
+        "n": 5,
+        "sum": 0.0773,
+        "max": 0.0298,
+        "p90": 0.0166,
+        "median": 0.0131,
+        "min": 0.00665
+      },
+      "distinctCycles": 5,
+      "distinctOperatorContracts": 4
+    },
+    {
+      "combo": "uniswap-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 5,
+      "sharePct": 0.3,
+      "netUsd": {
+        "n": 5,
+        "sum": 0.5943,
+        "max": 0.5141,
+        "p90": 0.061,
+        "median": 0.0078,
+        "min": 0.00439
+      },
+      "costUsd": {
+        "n": 5,
+        "sum": 0.0331,
+        "max": 0.0138,
+        "p90": 0.0092,
+        "median": 0.0039,
+        "min": 0.00263
+      },
+      "distinctCycles": 5,
+      "distinctOperatorContracts": 4
+    },
+    {
+      "combo": "sushi-v2 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 5,
+      "sharePct": 0.3,
+      "netUsd": {
+        "n": 5,
+        "sum": 0.1247,
+        "max": 0.0467,
+        "p90": 0.03,
+        "median": 0.0278,
+        "min": 0.009
+      },
+      "costUsd": {
+        "n": 5,
+        "sum": 0.0739,
+        "max": 0.0482,
+        "p90": 0.0176,
+        "median": 0.003,
+        "min": 0.00237
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 5
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 4,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 4,
+        "sum": 0.0521,
+        "max": 0.0263,
+        "p90": 0.0181,
+        "median": 0.0056,
+        "min": 0.00203
+      },
+      "costUsd": {
+        "n": 4,
+        "sum": 0.0771,
+        "max": 0.0403,
+        "p90": 0.0157,
+        "median": 0.0154,
+        "min": 0.00576
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 4
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 4,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 4,
+        "sum": 0.0185,
+        "max": 0.0177,
+        "p90": 0.0013,
+        "median": 0.0005,
+        "min": -0.00109
+      },
+      "costUsd": {
+        "n": 4,
+        "sum": 0.0778,
+        "max": 0.0336,
+        "p90": 0.0175,
+        "median": 0.0153,
+        "min": 0.01142
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 3
+    },
+    {
+      "combo": "aero-merged-cl + pancake-v3 + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 4,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 4,
+        "sum": 0.07,
+        "max": 0.0324,
+        "p90": 0.0169,
+        "median": 0.0148,
+        "min": 0.0059
+      },
+      "costUsd": {
+        "n": 4,
+        "sum": 0.0863,
+        "max": 0.0321,
+        "p90": 0.0229,
+        "median": 0.0181,
+        "min": 0.01314
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-cl-2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 4,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 4,
+        "sum": 5.2573,
+        "max": 3.1999,
+        "p90": 2.0326,
+        "median": 0.0134,
+        "min": 0.01144
+      },
+      "costUsd": {
+        "n": 4,
+        "sum": 6.3665,
+        "max": 3.6793,
+        "p90": 2.6754,
+        "median": 0.0071,
+        "min": 0.00469
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 3
+    },
+    {
+      "combo": "pancake-v3 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 4,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 4,
+        "sum": 0.018,
+        "max": 0.0069,
+        "p90": 0.0052,
+        "median": 0.0039,
+        "min": 0.00188
+      },
+      "costUsd": {
+        "n": 4,
+        "sum": 0.039,
+        "max": 0.0146,
+        "p90": 0.0082,
+        "median": 0.0082,
+        "min": 0.008
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 3
+    },
+    {
+      "combo": "unknown:uniswap-v2 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 4,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 4,
+        "sum": 0.0263,
+        "max": 0.0101,
+        "p90": 0.0058,
+        "median": 0.0054,
+        "min": 0.00513
+      },
+      "costUsd": {
+        "n": 4,
+        "sum": 0.0234,
+        "max": 0.0077,
+        "p90": 0.0065,
+        "median": 0.0051,
+        "min": 0.00412
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "pancake-v3 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 3,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 3,
+        "sum": 0.0948,
+        "max": 0.0565,
+        "p90": 0.0284,
+        "median": 0.0284,
+        "min": 0.00988
+      },
+      "costUsd": {
+        "n": 3,
+        "sum": 0.0471,
+        "max": 0.0392,
+        "p90": 0.0041,
+        "median": 0.0041,
+        "min": 0.00374
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 3
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl + aerodrome-cl-3",
+      "sameVenueOnly": false,
+      "arbTxCount": 3,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 3,
+        "sum": 0.0177,
+        "max": 0.0187,
+        "p90": 0.0014,
+        "median": 0.0014,
+        "min": -0.00244
+      },
+      "costUsd": {
+        "n": 3,
+        "sum": 0.0661,
+        "max": 0.0371,
+        "p90": 0.0172,
+        "median": 0.0172,
+        "min": 0.01177
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-cl + pancake-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 3,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 3,
+        "sum": 0.0133,
+        "max": 0.0078,
+        "p90": 0.0034,
+        "median": 0.0034,
+        "min": 0.00208
+      },
+      "costUsd": {
+        "n": 3,
+        "sum": 0.0318,
+        "max": 0.0143,
+        "p90": 0.0098,
+        "median": 0.0098,
+        "min": 0.00768
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-v2",
+      "sameVenueOnly": true,
+      "arbTxCount": 3,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 3,
+        "sum": 0.0814,
+        "max": 0.0711,
+        "p90": 0.0074,
+        "median": 0.0074,
+        "min": 0.00298
+      },
+      "costUsd": {
+        "n": 3,
+        "sum": 0.0546,
+        "max": 0.0231,
+        "p90": 0.0192,
+        "median": 0.0192,
+        "min": 0.01236
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-v2 + sushi-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 3,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 3,
+        "sum": 3.5963,
+        "max": 3.5516,
+        "p90": 0.0377,
+        "median": 0.0377,
+        "min": 0.00707
+      },
+      "costUsd": {
+        "n": 3,
+        "sum": 0.0652,
+        "max": 0.0566,
+        "p90": 0.0048,
+        "median": 0.0048,
+        "min": 0.00383
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "sushi-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 3,
+      "sharePct": 0.2,
+      "netUsd": {
+        "n": 3,
+        "sum": 0.1857,
+        "max": 0.1225,
+        "p90": 0.0441,
+        "median": 0.0441,
+        "min": 0.01905
+      },
+      "costUsd": {
+        "n": 3,
+        "sum": 0.0832,
+        "max": 0.0337,
+        "p90": 0.0318,
+        "median": 0.0318,
+        "min": 0.01766
+      },
+      "distinctCycles": 3,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.1313,
+        "max": 0.0992,
+        "p90": 0.032,
+        "median": 0.032,
+        "min": 0.03204
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0932,
+        "max": 0.0525,
+        "p90": 0.0406,
+        "median": 0.0406,
+        "min": 0.04064
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-v2 + pancake-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0624,
+        "max": 0.061,
+        "p90": 0.0014,
+        "median": 0.0014,
+        "min": 0.00143
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0364,
+        "max": 0.0262,
+        "p90": 0.0102,
+        "median": 0.0102,
+        "min": 0.01016
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-cl-3 + aerodrome-v2 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0448,
+        "max": 0.0463,
+        "p90": -0.0014,
+        "median": -0.0014,
+        "min": -0.00141
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0762,
+        "max": 0.0628,
+        "p90": 0.0134,
+        "median": 0.0134,
+        "min": 0.01343
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "baseswap-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0384,
+        "max": 0.0306,
+        "p90": 0.0078,
+        "median": 0.0078,
+        "min": 0.00784
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0058,
+        "max": 0.0035,
+        "p90": 0.0023,
+        "median": 0.0023,
+        "min": 0.00231
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-cl-3 + pancake-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0288,
+        "max": 0.0146,
+        "p90": 0.0142,
+        "median": 0.0142,
+        "min": 0.01418
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0294,
+        "max": 0.0158,
+        "p90": 0.0136,
+        "median": 0.0136,
+        "min": 0.01356
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-3 + pancake-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0131,
+        "max": 0.011,
+        "p90": 0.0021,
+        "median": 0.0021,
+        "min": 0.00206
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.017,
+        "max": 0.0113,
+        "p90": 0.0057,
+        "median": 0.0057,
+        "min": 0.00568
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-cl",
+      "sameVenueOnly": true,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0087,
+        "max": 0.007,
+        "p90": 0.0018,
+        "median": 0.0018,
+        "min": 0.00175
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0175,
+        "max": 0.0105,
+        "p90": 0.0071,
+        "median": 0.0071,
+        "min": 0.00706
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-cl-3 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.1265,
+        "max": 0.1212,
+        "p90": 0.0053,
+        "median": 0.0053,
+        "min": 0.00526
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0161,
+        "max": 0.0081,
+        "p90": 0.0081,
+        "median": 0.0081,
+        "min": 0.00806
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aero-merged-cl + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0052,
+        "max": 0.0049,
+        "p90": 0.0003,
+        "median": 0.0003,
+        "min": 0.00029
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0215,
+        "max": 0.0111,
+        "p90": 0.0104,
+        "median": 0.0104,
+        "min": 0.01038
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "pancake-v3 + solidly-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0058,
+        "max": 0.0041,
+        "p90": 0.0017,
+        "median": 0.0017,
+        "min": 0.00175
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0222,
+        "max": 0.0121,
+        "p90": 0.0101,
+        "median": 0.0101,
+        "min": 0.01006
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-v2 + sushi-v2 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 12.2502,
+        "max": 10.7568,
+        "p90": 1.4934,
+        "median": 1.4934,
+        "min": 1.49342
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0618,
+        "max": 0.0581,
+        "p90": 0.0036,
+        "median": 0.0036,
+        "min": 0.00364
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-v2 + uniswap-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.758,
+        "max": 0.7074,
+        "p90": 0.0505,
+        "median": 0.0505,
+        "min": 0.05054
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.4653,
+        "max": 0.4165,
+        "p90": 0.0489,
+        "median": 0.0489,
+        "min": 0.04887
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aero-merged-cl + uniswap-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.2585,
+        "max": 0.2213,
+        "p90": 0.0372,
+        "median": 0.0372,
+        "min": 0.0372
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0441,
+        "max": 0.0382,
+        "p90": 0.0059,
+        "median": 0.0059,
+        "min": 0.00589
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "sushi-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0498,
+        "max": 0.0375,
+        "p90": 0.0123,
+        "median": 0.0123,
+        "min": 0.01225
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0623,
+        "max": 0.0595,
+        "p90": 0.0028,
+        "median": 0.0028,
+        "min": 0.00282
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-3 + uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0377,
+        "max": 0.0246,
+        "p90": 0.0131,
+        "median": 0.0131,
+        "min": 0.01311
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0157,
+        "max": 0.0079,
+        "p90": 0.0078,
+        "median": 0.0078,
+        "min": 0.00777
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "uniswap-v2 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0441,
+        "max": 0.0223,
+        "p90": 0.0218,
+        "median": 0.0218,
+        "min": 0.02182
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0096,
+        "max": 0.0072,
+        "p90": 0.0025,
+        "median": 0.0025,
+        "min": 0.00247
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aerodrome-cl + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 2,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 2,
+        "sum": 0.0254,
+        "max": 0.016,
+        "p90": 0.0094,
+        "median": 0.0094,
+        "min": 0.00936
+      },
+      "costUsd": {
+        "n": 2,
+        "sum": 0.0169,
+        "max": 0.0113,
+        "p90": 0.0055,
+        "median": 0.0055,
+        "min": 0.00554
+      },
+      "distinctCycles": 2,
+      "distinctOperatorContracts": 2
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl + aerodrome-cl-3 + pancake-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 2.1628,
+        "max": 2.1628,
+        "p90": 2.1628,
+        "median": 2.1628,
+        "min": 2.16284
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0824,
+        "max": 0.0824,
+        "p90": 0.0824,
+        "median": 0.0824,
+        "min": 0.0824
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.1577,
+        "max": 0.1577,
+        "p90": 0.1577,
+        "median": 0.1577,
+        "min": 0.15771
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.049,
+        "max": 0.049,
+        "p90": 0.049,
+        "median": 0.049,
+        "min": 0.049
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "pancake-v3 + uniswap-v2 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0847,
+        "max": 0.0847,
+        "p90": 0.0847,
+        "median": 0.0847,
+        "min": 0.0847
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0496,
+        "max": 0.0496,
+        "p90": 0.0496,
+        "median": 0.0496,
+        "min": 0.04963
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-3 + aerodrome-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0762,
+        "max": 0.0762,
+        "p90": 0.0762,
+        "median": 0.0762,
+        "min": 0.07625
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0288,
+        "max": 0.0288,
+        "p90": 0.0288,
+        "median": 0.0288,
+        "min": 0.02884
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-v2 + pancake-v3 + sushi-v3 + uniswap-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0204,
+        "max": 0.0204,
+        "p90": 0.0204,
+        "median": 0.0204,
+        "min": 0.02038
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0224,
+        "max": 0.0224,
+        "p90": 0.0224,
+        "median": 0.0224,
+        "min": 0.02243
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-3 + pancake-v3 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0173,
+        "max": 0.0173,
+        "p90": 0.0173,
+        "median": 0.0173,
+        "min": 0.01731
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0069,
+        "max": 0.0069,
+        "p90": 0.0069,
+        "median": 0.0069,
+        "min": 0.00688
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-v2 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0159,
+        "max": 0.0159,
+        "p90": 0.0159,
+        "median": 0.0159,
+        "min": 0.01593
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0153,
+        "max": 0.0153,
+        "p90": 0.0153,
+        "median": 0.0153,
+        "min": 0.01529
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl + pancake-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0099,
+        "max": 0.0099,
+        "p90": 0.0099,
+        "median": 0.0099,
+        "min": 0.00995
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0141,
+        "max": 0.0141,
+        "p90": 0.0141,
+        "median": 0.0141,
+        "min": 0.01406
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "balancer-v2 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0097,
+        "max": 0.0097,
+        "p90": 0.0097,
+        "median": 0.0097,
+        "min": 0.00967
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0042,
+        "max": 0.0042,
+        "p90": 0.0042,
+        "median": 0.0042,
+        "min": 0.00424
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-2 + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0078,
+        "max": 0.0078,
+        "p90": 0.0078,
+        "median": 0.0078,
+        "min": 0.00785
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0061,
+        "max": 0.0061,
+        "p90": 0.0061,
+        "median": 0.0061,
+        "min": 0.00606
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "pancake-v3 + uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0073,
+        "max": 0.0073,
+        "p90": 0.0073,
+        "median": 0.0073,
+        "min": 0.00732
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0036,
+        "max": 0.0036,
+        "p90": 0.0036,
+        "median": 0.0036,
+        "min": 0.00358
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + uniswap-v2 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0072,
+        "max": 0.0072,
+        "p90": 0.0072,
+        "median": 0.0072,
+        "min": 0.00724
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0054,
+        "max": 0.0054,
+        "p90": 0.0054,
+        "median": 0.0054,
+        "min": 0.00542
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-v2 + pancake-v3 + solidly-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0067,
+        "max": 0.0067,
+        "p90": 0.0067,
+        "median": 0.0067,
+        "min": 0.00667
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0146,
+        "max": 0.0146,
+        "p90": 0.0146,
+        "median": 0.0146,
+        "min": 0.01457
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + uniswap-v2 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0065,
+        "max": 0.0065,
+        "p90": 0.0065,
+        "median": 0.0065,
+        "min": 0.00647
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0055,
+        "max": 0.0055,
+        "p90": 0.0055,
+        "median": 0.0055,
+        "min": 0.00549
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-2 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0064,
+        "max": 0.0064,
+        "p90": 0.0064,
+        "median": 0.0064,
+        "min": 0.00641
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0054,
+        "max": 0.0054,
+        "p90": 0.0054,
+        "median": 0.0054,
+        "min": 0.00535
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-3 + pancake-v3 + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0064,
+        "max": 0.0064,
+        "p90": 0.0064,
+        "median": 0.0064,
+        "min": 0.00641
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0144,
+        "max": 0.0144,
+        "p90": 0.0144,
+        "median": 0.0144,
+        "min": 0.01435
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-3 + aerodrome-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0063,
+        "max": 0.0063,
+        "p90": 0.0063,
+        "median": 0.0063,
+        "min": 0.00633
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0186,
+        "max": 0.0186,
+        "p90": 0.0186,
+        "median": 0.0186,
+        "min": 0.01855
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-v2 + uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0059,
+        "max": 0.0059,
+        "p90": 0.0059,
+        "median": 0.0059,
+        "min": 0.00588
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0156,
+        "max": 0.0156,
+        "p90": 0.0156,
+        "median": 0.0156,
+        "min": 0.01564
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-cl-2 + aerodrome-cl-3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0053,
+        "max": 0.0053,
+        "p90": 0.0053,
+        "median": 0.0053,
+        "min": 0.00527
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0082,
+        "max": 0.0082,
+        "p90": 0.0082,
+        "median": 0.0082,
+        "min": 0.00817
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "unidentified-v3-b + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0049,
+        "max": 0.0049,
+        "p90": 0.0049,
+        "median": 0.0049,
+        "min": 0.0049
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0051,
+        "max": 0.0051,
+        "p90": 0.0051,
+        "median": 0.0051,
+        "min": 0.00511
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-2 + aerodrome-cl-3 + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0044,
+        "max": 0.0044,
+        "p90": 0.0044,
+        "median": 0.0044,
+        "min": 0.00443
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0074,
+        "max": 0.0074,
+        "p90": 0.0074,
+        "median": 0.0074,
+        "min": 0.00736
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + balancer-v2 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0043,
+        "max": 0.0043,
+        "p90": 0.0043,
+        "median": 0.0043,
+        "min": 0.00432
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0062,
+        "max": 0.0062,
+        "p90": 0.0062,
+        "median": 0.0062,
+        "min": 0.00619
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "uniswap-v3 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0039,
+        "max": 0.0039,
+        "p90": 0.0039,
+        "median": 0.0039,
+        "min": 0.00389
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.007,
+        "max": 0.007,
+        "p90": 0.007,
+        "median": 0.007,
+        "min": 0.007
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-3 + uniswap-v3 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0037,
+        "max": 0.0037,
+        "p90": 0.0037,
+        "median": 0.0037,
+        "min": 0.00367
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0076,
+        "max": 0.0076,
+        "p90": 0.0076,
+        "median": 0.0076,
+        "min": 0.00764
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-v2 + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0024,
+        "max": 0.0024,
+        "p90": 0.0024,
+        "median": 0.0024,
+        "min": 0.00242
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0162,
+        "max": 0.0162,
+        "p90": 0.0162,
+        "median": 0.0162,
+        "min": 0.01619
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "pancake-v3 + uniswap-v3 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": -0.0001,
+        "max": -0.0001,
+        "p90": -0.0001,
+        "median": -0.0001,
+        "min": -0.00007
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0109,
+        "max": 0.0109,
+        "p90": 0.0109,
+        "median": 0.0109,
+        "min": 0.01093
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + solidly-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": -0.0005,
+        "max": -0.0005,
+        "p90": -0.0005,
+        "median": -0.0005,
+        "min": -0.00055
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0115,
+        "max": 0.0115,
+        "p90": 0.0115,
+        "median": 0.0115,
+        "min": 0.01155
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-cl-2 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": -0.002,
+        "max": -0.002,
+        "p90": -0.002,
+        "median": -0.002,
+        "min": -0.00197
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0125,
+        "max": 0.0125,
+        "p90": 0.0125,
+        "median": 0.0125,
+        "min": 0.01254
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + uniswap-v3 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": -0.002,
+        "max": -0.002,
+        "p90": -0.002,
+        "median": -0.002,
+        "min": -0.00202
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0126,
+        "max": 0.0126,
+        "p90": 0.0126,
+        "median": 0.0126,
+        "min": 0.01257
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-3 + sushi-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": -0.0023,
+        "max": -0.0023,
+        "p90": -0.0023,
+        "median": -0.0023,
+        "min": -0.00232
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0133,
+        "max": 0.0133,
+        "p90": 0.0133,
+        "median": 0.0133,
+        "min": 0.01325
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "sushi-v2 + sushi-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 107.2943,
+        "max": 107.2943,
+        "p90": 107.2943,
+        "median": 107.2943,
+        "min": 107.29426
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 3.3854,
+        "max": 3.3854,
+        "p90": 3.3854,
+        "median": 3.3854,
+        "min": 3.38539
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "baseswap-v2 + sushi-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.2856,
+        "max": 0.2856,
+        "p90": 0.2856,
+        "median": 0.2856,
+        "min": 0.28557
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0025,
+        "max": 0.0025,
+        "p90": 0.0025,
+        "median": 0.0025,
+        "min": 0.0025
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-v2 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0718,
+        "max": 0.0718,
+        "p90": 0.0718,
+        "median": 0.0718,
+        "min": 0.07184
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0053,
+        "max": 0.0053,
+        "p90": 0.0053,
+        "median": 0.0053,
+        "min": 0.00526
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + sushi-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0564,
+        "max": 0.0564,
+        "p90": 0.0564,
+        "median": 0.0564,
+        "min": 0.05642
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0067,
+        "max": 0.0067,
+        "p90": 0.0067,
+        "median": 0.0067,
+        "min": 0.00671
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "sushi-v2 + uniswap-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0341,
+        "max": 0.0341,
+        "p90": 0.0341,
+        "median": 0.0341,
+        "min": 0.03409
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0046,
+        "max": 0.0046,
+        "p90": 0.0046,
+        "median": 0.0046,
+        "min": 0.00456
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-v2 + pancake-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0297,
+        "max": 0.0297,
+        "p90": 0.0297,
+        "median": 0.0297,
+        "min": 0.02968
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0151,
+        "max": 0.0151,
+        "p90": 0.0151,
+        "median": 0.0151,
+        "min": 0.01506
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "sushi-v2 + uniswap-v2 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0169,
+        "max": 0.0169,
+        "p90": 0.0169,
+        "median": 0.0169,
+        "min": 0.01687
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0061,
+        "max": 0.0061,
+        "p90": 0.0061,
+        "median": 0.0061,
+        "min": 0.00614
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "baseswap-v2 + uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0159,
+        "max": 0.0159,
+        "p90": 0.0159,
+        "median": 0.0159,
+        "min": 0.0159
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0785,
+        "max": 0.0785,
+        "p90": 0.0785,
+        "median": 0.0785,
+        "min": 0.07851
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "solidly-v3 + uniswap-v2 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0153,
+        "max": 0.0153,
+        "p90": 0.0153,
+        "median": 0.0153,
+        "min": 0.01535
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0053,
+        "max": 0.0053,
+        "p90": 0.0053,
+        "median": 0.0053,
+        "min": 0.00529
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "uniswap-v3 + unknown:uniswap-v2 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0106,
+        "max": 0.0106,
+        "p90": 0.0106,
+        "median": 0.0106,
+        "min": 0.01064
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.004,
+        "max": 0.004,
+        "p90": 0.004,
+        "median": 0.004,
+        "min": 0.004
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl + pancake-v3 + solidly-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0106,
+        "max": 0.0106,
+        "p90": 0.0106,
+        "median": 0.0106,
+        "min": 0.01056
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0096,
+        "max": 0.0096,
+        "p90": 0.0096,
+        "median": 0.0096,
+        "min": 0.00958
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-v2 + sushi-v2 + uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0104,
+        "max": 0.0104,
+        "p90": 0.0104,
+        "median": 0.0104,
+        "min": 0.01036
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0076,
+        "max": 0.0076,
+        "p90": 0.0076,
+        "median": 0.0076,
+        "min": 0.00756
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "sushi-v3 + uniswap-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0098,
+        "max": 0.0098,
+        "p90": 0.0098,
+        "median": 0.0098,
+        "min": 0.00979
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0029,
+        "max": 0.0029,
+        "p90": 0.0029,
+        "median": 0.0029,
+        "min": 0.00288
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "uniswap-v2 + uniswap-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0096,
+        "max": 0.0096,
+        "p90": 0.0096,
+        "median": 0.0096,
+        "min": 0.00961
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0037,
+        "max": 0.0037,
+        "p90": 0.0037,
+        "median": 0.0037,
+        "min": 0.00366
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "sushi-v2 + uniswap-v2 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0091,
+        "max": 0.0091,
+        "p90": 0.0091,
+        "median": 0.0091,
+        "min": 0.00909
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0033,
+        "max": 0.0033,
+        "p90": 0.0033,
+        "median": 0.0033,
+        "min": 0.00327
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "baseswap-v2 + uniswap-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0073,
+        "max": 0.0073,
+        "p90": 0.0073,
+        "median": 0.0073,
+        "min": 0.00731
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0032,
+        "max": 0.0032,
+        "p90": 0.0032,
+        "median": 0.0032,
+        "min": 0.00321
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-v2 + sushi-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0066,
+        "max": 0.0066,
+        "p90": 0.0066,
+        "median": 0.0066,
+        "min": 0.00656
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0057,
+        "max": 0.0057,
+        "p90": 0.0057,
+        "median": 0.0057,
+        "min": 0.00569
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + uniswap-v2 + uniswap-v3 + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0054,
+        "max": 0.0054,
+        "p90": 0.0054,
+        "median": 0.0054,
+        "min": 0.00537
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0073,
+        "max": 0.0073,
+        "p90": 0.0073,
+        "median": 0.0073,
+        "min": 0.00732
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + aerodrome-cl-2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0042,
+        "max": 0.0042,
+        "p90": 0.0042,
+        "median": 0.0042,
+        "min": 0.00418
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0067,
+        "max": 0.0067,
+        "p90": 0.0067,
+        "median": 0.0067,
+        "min": 0.00669
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0039,
+        "max": 0.0039,
+        "p90": 0.0039,
+        "median": 0.0039,
+        "min": 0.0039
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0079,
+        "max": 0.0079,
+        "p90": 0.0079,
+        "median": 0.0079,
+        "min": 0.00787
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-v2 + uniswap-v3 + unknown:uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0011,
+        "max": 0.0011,
+        "p90": 0.0011,
+        "median": 0.0011,
+        "min": 0.00105
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.01,
+        "max": 0.01,
+        "p90": 0.01,
+        "median": 0.01,
+        "min": 0.01002
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl + pancake-v3 + uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.1505,
+        "max": 0.1505,
+        "p90": 0.1505,
+        "median": 0.1505,
+        "min": 0.15046
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0373,
+        "max": 0.0373,
+        "p90": 0.0373,
+        "median": 0.0373,
+        "min": 0.03732
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + unknown:uniswap-v2",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.073,
+        "max": 0.073,
+        "p90": 0.073,
+        "median": 0.073,
+        "min": 0.07297
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0106,
+        "max": 0.0106,
+        "p90": 0.0106,
+        "median": 0.0106,
+        "min": 0.01064
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + aerodrome-cl-3 + pancake-v3 + uniswap-v3",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0063,
+        "max": 0.0063,
+        "p90": 0.0063,
+        "median": 0.0063,
+        "min": 0.00631
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0097,
+        "max": 0.0097,
+        "p90": 0.0097,
+        "median": 0.0097,
+        "min": 0.00967
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "uniswap-v2 + uniswap-v3 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0029,
+        "max": 0.0029,
+        "p90": 0.0029,
+        "median": 0.0029,
+        "min": 0.00294
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0075,
+        "max": 0.0075,
+        "p90": 0.0075,
+        "median": 0.0075,
+        "min": 0.00748
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + uniswap-v3 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 250.5701,
+        "max": 250.5701,
+        "p90": 250.5701,
+        "median": 250.5701,
+        "min": 250.5701
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 13.197,
+        "max": 13.197,
+        "p90": 13.197,
+        "median": 13.197,
+        "min": 13.19703
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "uniswap-v2 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0783,
+        "max": 0.0783,
+        "p90": 0.0783,
+        "median": 0.0783,
+        "min": 0.07825
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0357,
+        "max": 0.0357,
+        "p90": 0.0357,
+        "median": 0.0357,
+        "min": 0.0357
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aero-merged-cl + uniswap-v2 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.0187,
+        "max": 0.0187,
+        "p90": 0.0187,
+        "median": 0.0187,
+        "min": 0.01875
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.0168,
+        "max": 0.0168,
+        "p90": 0.0168,
+        "median": 0.0168,
+        "min": 0.01675
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    },
+    {
+      "combo": "aerodrome-cl-3 + uniswap-v4",
+      "sameVenueOnly": false,
+      "arbTxCount": 1,
+      "sharePct": 0.1,
+      "netUsd": {
+        "n": 1,
+        "sum": 0.003,
+        "max": 0.003,
+        "p90": 0.003,
+        "median": 0.003,
+        "min": 0.00295
+      },
+      "costUsd": {
+        "n": 1,
+        "sum": 0.011,
+        "max": 0.011,
+        "p90": 0.011,
+        "median": 0.011,
+        "min": 0.01103
+      },
+      "distinctCycles": 1,
+      "distinctOperatorContracts": 1
+    }
+  ],
+  "step3_tokenCycles": [
+    {
+      "cycle": "LIc / USDC / WETH / wUSDC",
+      "arbTxCount": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 250.5701,
+        "max": 250.5701,
+        "p90": 250.5701,
+        "median": 250.5701,
+        "min": 250.5701
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3 + uniswap-v4"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 1,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "AERO / USDC / USDT",
+      "arbTxCount": 2,
+      "netUsd": {
+        "n": 2,
+        "sum": 161.8835,
+        "max": 138.0737,
+        "p90": 23.8098,
+        "median": 23.8098,
+        "min": 23.80984
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + solidly-v3"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 2,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "WETH / toby",
+      "arbTxCount": 17,
+      "netUsd": {
+        "n": 17,
+        "sum": 116.9766,
+        "max": 107.2943,
+        "p90": 1.7634,
+        "median": 0.0381,
+        "min": 0.00387
+      },
+      "distinctVenueCombos": 6,
+      "venueCombos": [
+        "sushi-v2 + sushi-v3",
+        "sushi-v2 + uniswap-v3",
+        "uniswap-v3 + unknown:uniswap-v2",
+        "aerodrome-v2 + sushi-v2"
+      ],
+      "distinctOperators": 10,
+      "distinctBlocks": 12,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "AXIS / USDC",
+      "arbTxCount": 654,
+      "netUsd": {
+        "n": 654,
+        "sum": 107.5658,
+        "max": 2.3329,
+        "p90": 0.6361,
+        "median": 0.0247,
+        "min": -0.02747
+      },
+      "distinctVenueCombos": 3,
+      "venueCombos": [
+        "uniswap-v3 + uniswap-v4",
+        "uniswap-v4",
+        "uniswap-v3"
+      ],
+      "distinctOperators": 49,
+      "distinctBlocks": 274,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "USDC / WETH / cbBTC",
+      "arbTxCount": 20,
+      "netUsd": {
+        "n": 20,
+        "sum": 58.8674,
+        "max": 57.3573,
+        "p90": 0.4525,
+        "median": 0.0037,
+        "min": -0.00207
+      },
+      "distinctVenueCombos": 11,
+      "venueCombos": [
+        "aerodrome-cl-3 + uniswap-v3",
+        "pancake-v3 + uniswap-v3",
+        "aero-merged-cl + pancake-v3",
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "distinctOperators": 8,
+      "distinctBlocks": 17,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "PATIENCE / WETH / toby",
+      "arbTxCount": 4,
+      "netUsd": {
+        "n": 4,
+        "sum": 55.8289,
+        "max": 41.73,
+        "p90": 14.044,
+        "median": 0.0505,
+        "min": 0.00439
+      },
+      "distinctVenueCombos": 3,
+      "venueCombos": [
+        "sushi-v2 + uniswap-v2",
+        "aerodrome-v2 + uniswap-v2 + uniswap-v3",
+        "uniswap-v2 + uniswap-v3"
+      ],
+      "distinctOperators": 4,
+      "distinctBlocks": 3,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "WETH / cbBTC",
+      "arbTxCount": 48,
+      "netUsd": {
+        "n": 48,
+        "sum": 29.1738,
+        "max": 12.5285,
+        "p90": 0.2084,
+        "median": 0.0117,
+        "min": -0.00309
+      },
+      "distinctVenueCombos": 11,
+      "venueCombos": [
+        "aero-merged-cl + pancake-v3",
+        "aero-merged-cl + aerodrome-cl-3",
+        "aero-merged-cl",
+        "aerodrome-cl-3 + unknown:uniswap-v3"
+      ],
+      "distinctOperators": 14,
+      "distinctBlocks": 29,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "LAPTOP / USDC",
+      "arbTxCount": 7,
+      "netUsd": {
+        "n": 7,
+        "sum": 19.5756,
+        "max": 7.7649,
+        "p90": 6.5688,
+        "median": 0.5121,
+        "min": 0.01083
+      },
+      "distinctVenueCombos": 2,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3",
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "distinctOperators": 6,
+      "distinctBlocks": 3,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "LMTS / USDC",
+      "arbTxCount": 23,
+      "netUsd": {
+        "n": 23,
+        "sum": 12.6535,
+        "max": 11.4671,
+        "p90": 0.0688,
+        "median": 0.0186,
+        "min": 0.00418
+      },
+      "distinctVenueCombos": 2,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-2",
+        "aerodrome-cl + aerodrome-cl-2"
+      ],
+      "distinctOperators": 9,
+      "distinctBlocks": 19,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "USDC / WETH / toby",
+      "arbTxCount": 6,
+      "netUsd": {
+        "n": 6,
+        "sum": 12.6531,
+        "max": 10.7568,
+        "p90": 1.4934,
+        "median": 0.0246,
+        "min": 0.01201
+      },
+      "distinctVenueCombos": 5,
+      "venueCombos": [
+        "aerodrome-v2 + sushi-v2 + unknown:uniswap-v3",
+        "aerodrome-v2 + uniswap-v3",
+        "aerodrome-v2 + sushi-v2",
+        "sushi-v3 + uniswap-v3"
+      ],
+      "distinctOperators": 4,
+      "distinctBlocks": 2,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "TABOSHI / WETH / toby",
+      "arbTxCount": 10,
+      "netUsd": {
+        "n": 10,
+        "sum": 11.7985,
+        "max": 7.819,
+        "p90": 3.5516,
+        "median": 0.0364,
+        "min": 0.00576
+      },
+      "distinctVenueCombos": 5,
+      "venueCombos": [
+        "sushi-v2 + uniswap-v3",
+        "aerodrome-v2 + sushi-v2 + uniswap-v3",
+        "uniswap-v3",
+        "sushi-v3 + uniswap-v3"
+      ],
+      "distinctOperators": 8,
+      "distinctBlocks": 6,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "LIc / USDC",
+      "arbTxCount": 4,
+      "netUsd": {
+        "n": 4,
+        "sum": 10.8598,
+        "max": 10.3087,
+        "p90": 0.343,
+        "median": 0.2047,
+        "min": 0.00337
+      },
+      "distinctVenueCombos": 2,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3",
+        "aerodrome-cl-3"
+      ],
+      "distinctOperators": 4,
+      "distinctBlocks": 4,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "Basecat / USDC",
+      "arbTxCount": 9,
+      "netUsd": {
+        "n": 9,
+        "sum": 9.8279,
+        "max": 9.2908,
+        "p90": 0.1847,
+        "median": 0.0379,
+        "min": 0.00419
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "distinctOperators": 8,
+      "distinctBlocks": 4,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "Basecat / USDC / WETH",
+      "arbTxCount": 7,
+      "netUsd": {
+        "n": 7,
+        "sum": 5.7636,
+        "max": 2.571,
+        "p90": 2.1407,
+        "median": 0.0858,
+        "min": -0.00379
+      },
+      "distinctVenueCombos": 5,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3",
+        "aero-merged-cl + pancake-v3 + uniswap-v3",
+        "pancake-v3 + uniswap-v3",
+        "aero-merged-cl + aerodrome-cl-3 + uniswap-v3"
+      ],
+      "distinctOperators": 4,
+      "distinctBlocks": 4,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "REPPO / WETH",
+      "arbTxCount": 4,
+      "netUsd": {
+        "n": 4,
+        "sum": 5.6632,
+        "max": 3.1999,
+        "p90": 2.0326,
+        "median": 0.5342,
+        "min": -0.10349
+      },
+      "distinctVenueCombos": 2,
+      "venueCombos": [
+        "aerodrome-cl-2 + uniswap-v3",
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "distinctOperators": 3,
+      "distinctBlocks": 2,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "USDC / cbBTC / tBTC",
+      "arbTxCount": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 5.1444,
+        "max": 5.1444,
+        "p90": 5.1444,
+        "median": 5.1444,
+        "min": 5.1444
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 1,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "USDC / WETH",
+      "arbTxCount": 25,
+      "netUsd": {
+        "n": 25,
+        "sum": 4.7295,
+        "max": 3.7724,
+        "p90": 0.0653,
+        "median": 0.0112,
+        "min": 0.00206
+      },
+      "distinctVenueCombos": 13,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3",
+        "pancake-v3 + uniswap-v3",
+        "aerodrome-v2 + pancake-v3",
+        "pancake-v3 + uniswap-v4"
+      ],
+      "distinctOperators": 14,
+      "distinctBlocks": 21,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "SANc / USDC",
+      "arbTxCount": 2,
+      "netUsd": {
+        "n": 2,
+        "sum": 4.6247,
+        "max": 4.6205,
+        "p90": 0.0042,
+        "median": 0.0042,
+        "min": 0.00425
+      },
+      "distinctVenueCombos": 2,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3",
+        "aerodrome-cl-3"
+      ],
+      "distinctOperators": 2,
+      "distinctBlocks": 1,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "DRAGONX / ESHARE / WETH / 🌙8",
+      "arbTxCount": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 4.4196,
+        "max": 4.4196,
+        "p90": 4.4196,
+        "median": 4.4196,
+        "min": 4.41962
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "uniswap-v3"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 1,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "ETHx / SUP / WETH",
+      "arbTxCount": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 3.3811,
+        "max": 3.3811,
+        "p90": 3.3811,
+        "median": 3.3811,
+        "min": 3.38105
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "uniswap-v3"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 1,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "NVOc / USDC",
+      "arbTxCount": 3,
+      "netUsd": {
+        "n": 3,
+        "sum": 3.1842,
+        "max": 3.1298,
+        "p90": 0.044,
+        "median": 0.044,
+        "min": 0.01047
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3"
+      ],
+      "distinctOperators": 3,
+      "distinctBlocks": 2,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "ERAGE / ESHARE / LSTEAK / WETH",
+      "arbTxCount": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 2.5093,
+        "max": 2.5093,
+        "p90": 2.5093,
+        "median": 2.5093,
+        "min": 2.5093
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "uniswap-v3 + uniswap-v4"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 1,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "USDC / WRDc",
+      "arbTxCount": 2,
+      "netUsd": {
+        "n": 2,
+        "sum": 2.2378,
+        "max": 2.207,
+        "p90": 0.0308,
+        "median": 0.0308,
+        "min": 0.03081
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3"
+      ],
+      "distinctOperators": 2,
+      "distinctBlocks": 2,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "EURC / USDC / WETH / jEUR",
+      "arbTxCount": 25,
+      "netUsd": {
+        "n": 25,
+        "sum": 2.175,
+        "max": 0.878,
+        "p90": 0.1162,
+        "median": 0.0393,
+        "min": 0.01078
+      },
+      "distinctVenueCombos": 5,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3",
+        "aero-merged-cl + aerodrome-cl + uniswap-v3",
+        "aero-merged-cl + aerodrome-cl-3 + uniswap-v3",
+        "aerodrome-cl + aerodrome-cl-3 + uniswap-v3"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 20,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "LINK / USDC / WETH / cbBTC",
+      "arbTxCount": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 2.1628,
+        "max": 2.1628,
+        "p90": 2.1628,
+        "median": 2.1628,
+        "min": 2.16284
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl + aerodrome-cl-3 + pancake-v3 + uniswap-v3"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 1,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "INFYc / USDC",
+      "arbTxCount": 4,
+      "netUsd": {
+        "n": 4,
+        "sum": 2.1524,
+        "max": 1.743,
+        "p90": 0.3164,
+        "median": 0.0597,
+        "min": 0.03331
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3"
+      ],
+      "distinctOperators": 3,
+      "distinctBlocks": 4,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "USDC / USDT / WETH",
+      "arbTxCount": 107,
+      "netUsd": {
+        "n": 107,
+        "sum": 1.9719,
+        "max": 0.1622,
+        "p90": 0.0508,
+        "median": 0.0124,
+        "min": -0.05802
+      },
+      "distinctVenueCombos": 14,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl + pancake-v3",
+        "pancake-v3 + solidly-v3",
+        "aerodrome-cl + pancake-v3",
+        "solidly-v3 + uniswap-v3"
+      ],
+      "distinctOperators": 15,
+      "distinctBlocks": 79,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "USDC / XDP",
+      "arbTxCount": 103,
+      "netUsd": {
+        "n": 103,
+        "sum": 1.835,
+        "max": 0.0988,
+        "p90": 0.0349,
+        "median": 0.0119,
+        "min": -0.00278
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "aero-merged-cl + uniswap-v3"
+      ],
+      "distinctOperators": 18,
+      "distinctBlocks": 93,
+      "repeats": "multiple arbs on this cycle within one block"
+    },
+    {
+      "cycle": "ETH / PCAT / USDC / WETH",
+      "arbTxCount": 1,
+      "netUsd": {
+        "n": 1,
+        "sum": 1.7175,
+        "max": 1.7175,
+        "p90": 1.7175,
+        "median": 1.7175,
+        "min": 1.71748
+      },
+      "distinctVenueCombos": 1,
+      "venueCombos": [
+        "uniswap-v3 + uniswap-v4"
+      ],
+      "distinctOperators": 1,
+      "distinctBlocks": 1,
+      "repeats": "at most one per block"
+    },
+    {
+      "cycle": "WETH / ZRO",
+      "arbTxCount": 30,
+      "netUsd": {
+        "n": 30,
+        "sum": 1.5685,
+        "max": 0.597,
+        "p90": 0.1368,
+        "median": 0.0144,
+        "min": 0.00074
+      },
+      "distinctVenueCombos": 3,
+      "venueCombos": [
+        "aero-merged-cl + aerodrome-cl-3",
+        "aero-merged-cl + aerodrome-cl",
+        "aero-merged-cl + sushi-v3"
+      ],
+      "distinctOperators": 15,
+      "distinctBlocks": 11,
+      "repeats": "multiple arbs on this cycle within one block"
+    }
+  ],
+  "step4_fundingObserved": [
+    {
+      "fundingObserved": "none-observed",
+      "arbTxCount": 1590,
+      "sharePct": 95.7,
+      "netUsd": {
+        "n": 1590,
+        "sum": 929.4444,
+        "max": 250.5701,
+        "p90": 0.493,
+        "median": 0.0169,
+        "min": -0.71247
+      }
+    },
+    {
+      "fundingObserved": "morpho-blue",
+      "arbTxCount": 72,
+      "sharePct": 4.3,
+      "netUsd": {
+        "n": 72,
+        "sum": 3.2931,
+        "max": 0.878,
+        "p90": 0.0799,
+        "median": 0.0213,
+        "min": -0.01057
+      }
+    }
+  ],
+  "competition": {
+    "distinctOperatorContracts": 131,
+    "top15": [
+      {
+        "contract": "0x62b073265203e0aec00977cada22d8bae5ccc8b7",
+        "distinctEoas": 29,
+        "arbTxCount": 174,
+        "netUsd": {
+          "n": 174,
+          "sum": 1.0991,
+          "max": 0.0956,
+          "p90": 0.0165,
+          "median": 0.0034,
+          "min": -0.00503
+        },
+        "distinctVenueCombos": 50,
+        "distinctCycles": 63
+      },
+      {
+        "contract": "0x7f0d70ac761b496ebf9cf32f399f704fb8c449da",
+        "distinctEoas": 40,
+        "arbTxCount": 164,
+        "netUsd": {
+          "n": 164,
+          "sum": 67.6792,
+          "max": 1.3655,
+          "p90": 0.8613,
+          "median": 0.4901,
+          "min": 0.00395
+        },
+        "distinctVenueCombos": 1,
+        "distinctCycles": 1
+      },
+      {
+        "contract": "0x49174e18377c3ef17a051c9ed54e9c41e51a54f9",
+        "distinctEoas": 60,
+        "arbTxCount": 72,
+        "netUsd": {
+          "n": 72,
+          "sum": 6.3248,
+          "max": 4.6205,
+          "p90": 0.0403,
+          "median": 0.0203,
+          "min": -0.00184
+        },
+        "distinctVenueCombos": 9,
+        "distinctCycles": 11
+      },
+      {
+        "contract": "0x341c9f8231aebf9208c173b1a9c694f88450b7f7",
+        "distinctEoas": 65,
+        "arbTxCount": 68,
+        "netUsd": {
+          "n": 68,
+          "sum": 42.2358,
+          "max": 11.4671,
+          "p90": 1.0188,
+          "median": 0.0401,
+          "min": 0.00576
+        },
+        "distinctVenueCombos": 11,
+        "distinctCycles": 15
+      },
+      {
+        "contract": "0xf0ee620042263c9fd1f497792b128e7be23d1ca1",
+        "distinctEoas": 26,
+        "arbTxCount": 55,
+        "netUsd": {
+          "n": 55,
+          "sum": 0.0826,
+          "max": 0.0191,
+          "p90": 0.0097,
+          "median": 0.0001,
+          "min": -0.00787
+        },
+        "distinctVenueCombos": 16,
+        "distinctCycles": 16
+      },
+      {
+        "contract": "0x544c5ed0cde3f38f9b532271acb8693a26b9fc57",
+        "distinctEoas": 29,
+        "arbTxCount": 49,
+        "netUsd": {
+          "n": 49,
+          "sum": 7.3661,
+          "max": 0.7972,
+          "p90": 0.5075,
+          "median": 0.0327,
+          "min": 0.00312
+        },
+        "distinctVenueCombos": 8,
+        "distinctCycles": 10
+      },
+      {
+        "contract": "0x72d76b97d90f6107dcd71e752b5d1c5cc7dbf032",
+        "distinctEoas": 37,
+        "arbTxCount": 43,
+        "netUsd": {
+          "n": 43,
+          "sum": 0.4964,
+          "max": 0.0694,
+          "p90": 0.0281,
+          "median": 0.0075,
+          "min": -0.0091
+        },
+        "distinctVenueCombos": 13,
+        "distinctCycles": 20
+      },
+      {
+        "contract": "0x50f7b42c2ad00ab86ed83f830d6f10bc87e5302c",
+        "distinctEoas": 15,
+        "arbTxCount": 34,
+        "netUsd": {
+          "n": 34,
+          "sum": 0.9785,
+          "max": 0.1102,
+          "p90": 0.0549,
+          "median": 0.0239,
+          "min": 0.00318
+        },
+        "distinctVenueCombos": 18,
+        "distinctCycles": 18
+      },
+      {
+        "contract": "0xee4c6b4d6a39ac5f80a9f978df22c83646c2cc89",
+        "distinctEoas": 13,
+        "arbTxCount": 34,
+        "netUsd": {
+          "n": 34,
+          "sum": 1.01,
+          "max": 0.0584,
+          "p90": 0.0471,
+          "median": 0.0247,
+          "min": 0.01169
+        },
+        "distinctVenueCombos": 1,
+        "distinctCycles": 1
+      },
+      {
+        "contract": "0xb44446b0c8e56988c34f7ff73ae904982b5fdda5",
+        "distinctEoas": 2,
+        "arbTxCount": 31,
+        "netUsd": {
+          "n": 31,
+          "sum": 1.4227,
+          "max": 0.1581,
+          "p90": 0.0949,
+          "median": 0.0325,
+          "min": 0.00068
+        },
+        "distinctVenueCombos": 2,
+        "distinctCycles": 1
+      },
+      {
+        "contract": "0x16e41af5e034113802d06064fbeb020cc3d47b19",
+        "distinctEoas": 1,
+        "arbTxCount": 31,
+        "netUsd": {
+          "n": 31,
+          "sum": 0.4338,
+          "max": 0.0246,
+          "p90": 0.0223,
+          "median": 0.013,
+          "min": 0.00513
+        },
+        "distinctVenueCombos": 2,
+        "distinctCycles": 1
+      },
+      {
+        "contract": "0x5ba9832f1750691ca1879315942d56e6639088d0",
+        "distinctEoas": 30,
+        "arbTxCount": 30,
+        "netUsd": {
+          "n": 30,
+          "sum": 0.7398,
+          "max": 0.1436,
+          "p90": 0.0514,
+          "median": 0.0195,
+          "min": 0.00127
+        },
+        "distinctVenueCombos": 4,
+        "distinctCycles": 2
+      },
+      {
+        "contract": "0x3159a44fdf1cec22e423689146fe25531442b716",
+        "distinctEoas": 6,
+        "arbTxCount": 30,
+        "netUsd": {
+          "n": 30,
+          "sum": 11.8909,
+          "max": 10.5967,
+          "p90": 0.1801,
+          "median": 0.0071,
+          "min": 0
+        },
+        "distinctVenueCombos": 19,
+        "distinctCycles": 22
+      },
+      {
+        "contract": "0xe0e75c2c687e1df5400aaf8e34ea029da6fca96f",
+        "distinctEoas": 23,
+        "arbTxCount": 30,
+        "netUsd": {
+          "n": 30,
+          "sum": 0.5684,
+          "max": 0.0417,
+          "p90": 0.0331,
+          "median": 0.0177,
+          "min": 0.00398
+        },
+        "distinctVenueCombos": 3,
+        "distinctCycles": 3
+      },
+      {
+        "contract": "0x563203867b12cf2405f415042db11f6fa9fb937b",
+        "distinctEoas": 16,
+        "arbTxCount": 30,
+        "netUsd": {
+          "n": 30,
+          "sum": 0.9148,
+          "max": 0.3551,
+          "p90": 0.0218,
+          "median": 0.0107,
+          "min": 0.00537
+        },
+        "distinctVenueCombos": 21,
+        "distinctCycles": 21
+      }
+    ],
+    "concentration": {
+      "top1SharePct": 10.5,
+      "top5SharePct": 32.1
+    }
+  }
+}

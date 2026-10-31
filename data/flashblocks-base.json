@@ -1,0 +1,468 @@
+{
+  "measuredAt": "2026-10-30T00:52:35.697Z",
+  "endpoint": "wss://mainnet.flashblocks.base.org/ws",
+  "endpointCaveat": "documented by Base as a node-infrastructure endpoint, not an application API; reachable and brotli-parseable at time of measurement",
+  "observationSeconds": 25,
+  "feedContents": {
+    "carriesRawTransactions": true,
+    "carriesReceiptsOrLogs": false,
+    "consequence": "a reaction cannot read Swap events from this feed. It must decode raw calldata and simulate the trade itself to know how a pool moved, which is strictly more work than the course's contract.on(\"Swap\") design."
+  },
+  "volume": {
+    "messages": 134,
+    "decodeFailures": 0,
+    "rawTxParseFailures": 13,
+    "blocksTouched": 13,
+    "completeBlocks": 12
+  },
+  "arrivalIntervalMs": {
+    "p10": 97,
+    "p50": 169,
+    "p90": 352,
+    "max": 693
+  },
+  "flashblocksPerBlock": {
+    "min": 9,
+    "p50": 11,
+    "max": 11
+  },
+  "txPerFlashblock": {
+    "p50": 21,
+    "p90": 44,
+    "max": 107
+  },
+  "txCountByFlashblockIndex": {
+    "0": {
+      "medianTxs": 1,
+      "blocks": 12
+    },
+    "1": {
+      "medianTxs": 45,
+      "blocks": 12
+    },
+    "2": {
+      "medianTxs": 15,
+      "blocks": 12
+    },
+    "3": {
+      "medianTxs": 14,
+      "blocks": 12
+    },
+    "4": {
+      "medianTxs": 20,
+      "blocks": 12
+    },
+    "5": {
+      "medianTxs": 19,
+      "blocks": 12
+    },
+    "6": {
+      "medianTxs": 25,
+      "blocks": 12
+    },
+    "7": {
+      "medianTxs": 17,
+      "blocks": 12
+    },
+    "8": {
+      "medianTxs": 17,
+      "blocks": 12
+    },
+    "9": {
+      "medianTxs": 22,
+      "blocks": 11
+    },
+    "10": {
+      "medianTxs": 25,
+      "blocks": 11
+    }
+  },
+  "dexTouchingReactionRoom": {
+    "observations": 5,
+    "remainingFlashblocksAfterADexTx": {
+      "p10": 0,
+      "p50": 3,
+      "p90": 4
+    },
+    "remainingMsAfterADexTx": {
+      "p10": 0,
+      "p50": 600,
+      "p90": 800
+    },
+    "note": "counts only transactions sent directly to a configured factory/router/singleton, so it is a floor on real DEX activity"
+  },
+  "sampleBlocks": [
+    {
+      "block": 53266093,
+      "flashblocks": [
+        {
+          "index": 0,
+          "atMs": 393,
+          "txCount": 1,
+          "dexTouching": 0,
+          "gasUsed": 46242,
+          "distinctTo": 0
+        },
+        {
+          "index": 1,
+          "atMs": 618,
+          "txCount": 55,
+          "dexTouching": 0,
+          "gasUsed": 10589018,
+          "distinctTo": 34
+        },
+        {
+          "index": 2,
+          "atMs": 682,
+          "txCount": 7,
+          "dexTouching": 0,
+          "gasUsed": 13039498,
+          "distinctTo": 7
+        },
+        {
+          "index": 3,
+          "atMs": 835,
+          "txCount": 8,
+          "dexTouching": 0,
+          "gasUsed": 13550364,
+          "distinctTo": 7
+        },
+        {
+          "index": 4,
+          "atMs": 1004,
+          "txCount": 14,
+          "dexTouching": 0,
+          "gasUsed": 15613726,
+          "distinctTo": 10
+        },
+        {
+          "index": 5,
+          "atMs": 1178,
+          "txCount": 28,
+          "dexTouching": 0,
+          "gasUsed": 19396856,
+          "distinctTo": 22
+        },
+        {
+          "index": 6,
+          "atMs": 1343,
+          "txCount": 16,
+          "dexTouching": 0,
+          "gasUsed": 22393324,
+          "distinctTo": 13
+        },
+        {
+          "index": 7,
+          "atMs": 1531,
+          "txCount": 19,
+          "dexTouching": 0,
+          "gasUsed": 24319983,
+          "distinctTo": 13
+        },
+        {
+          "index": 8,
+          "atMs": 1695,
+          "txCount": 12,
+          "dexTouching": 0,
+          "gasUsed": 26319152,
+          "distinctTo": 10
+        },
+        {
+          "index": 9,
+          "atMs": 1873,
+          "txCount": 24,
+          "dexTouching": 0,
+          "gasUsed": 30855865,
+          "distinctTo": 20
+        },
+        {
+          "index": 10,
+          "atMs": 2052,
+          "txCount": 28,
+          "dexTouching": 0,
+          "gasUsed": 35332291,
+          "distinctTo": 24
+        }
+      ]
+    },
+    {
+      "block": 53266094,
+      "flashblocks": [
+        {
+          "index": 0,
+          "atMs": 2388,
+          "txCount": 1,
+          "dexTouching": 0,
+          "gasUsed": 46242,
+          "distinctTo": 0
+        },
+        {
+          "index": 1,
+          "atMs": 2577,
+          "txCount": 51,
+          "dexTouching": 1,
+          "gasUsed": 6445928,
+          "distinctTo": 40
+        },
+        {
+          "index": 2,
+          "atMs": 2696,
+          "txCount": 20,
+          "dexTouching": 0,
+          "gasUsed": 9646983,
+          "distinctTo": 14
+        },
+        {
+          "index": 3,
+          "atMs": 2862,
+          "txCount": 25,
+          "dexTouching": 0,
+          "gasUsed": 13946125,
+          "distinctTo": 22
+        },
+        {
+          "index": 4,
+          "atMs": 3012,
+          "txCount": 8,
+          "dexTouching": 0,
+          "gasUsed": 14741015,
+          "distinctTo": 7
+        },
+        {
+          "index": 5,
+          "atMs": 3194,
+          "txCount": 27,
+          "dexTouching": 0,
+          "gasUsed": 18592878,
+          "distinctTo": 21
+        },
+        {
+          "index": 6,
+          "atMs": 3354,
+          "txCount": 34,
+          "dexTouching": 0,
+          "gasUsed": 21592568,
+          "distinctTo": 12
+        },
+        {
+          "index": 7,
+          "atMs": 3531,
+          "txCount": 24,
+          "dexTouching": 0,
+          "gasUsed": 24972442,
+          "distinctTo": 16
+        },
+        {
+          "index": 8,
+          "atMs": 3700,
+          "txCount": 25,
+          "dexTouching": 0,
+          "gasUsed": 27682232,
+          "distinctTo": 19
+        },
+        {
+          "index": 9,
+          "atMs": 4052,
+          "txCount": 20,
+          "dexTouching": 0,
+          "gasUsed": 31843404,
+          "distinctTo": 15
+        },
+        {
+          "index": 10,
+          "atMs": 4054,
+          "txCount": 43,
+          "dexTouching": 0,
+          "gasUsed": 38122311,
+          "distinctTo": 27
+        }
+      ]
+    },
+    {
+      "block": 53266095,
+      "flashblocks": [
+        {
+          "index": 0,
+          "atMs": 4393,
+          "txCount": 1,
+          "dexTouching": 0,
+          "gasUsed": 46242,
+          "distinctTo": 0
+        },
+        {
+          "index": 1,
+          "atMs": 4575,
+          "txCount": 44,
+          "dexTouching": 0,
+          "gasUsed": 6304919,
+          "distinctTo": 19
+        },
+        {
+          "index": 2,
+          "atMs": 4951,
+          "txCount": 15,
+          "dexTouching": 0,
+          "gasUsed": 9693646,
+          "distinctTo": 12
+        },
+        {
+          "index": 3,
+          "atMs": 4952,
+          "txCount": 14,
+          "dexTouching": 0,
+          "gasUsed": 12462613,
+          "distinctTo": 11
+        },
+        {
+          "index": 4,
+          "atMs": 5129,
+          "txCount": 107,
+          "dexTouching": 0,
+          "gasUsed": 40276853,
+          "distinctTo": 58
+        },
+        {
+          "index": 5,
+          "atMs": 5200,
+          "txCount": 17,
+          "dexTouching": 0,
+          "gasUsed": 42623896,
+          "distinctTo": 13
+        },
+        {
+          "index": 6,
+          "atMs": 5373,
+          "txCount": 36,
+          "dexTouching": 1,
+          "gasUsed": 52133325,
+          "distinctTo": 12
+        },
+        {
+          "index": 7,
+          "atMs": 5526,
+          "txCount": 15,
+          "dexTouching": 0,
+          "gasUsed": 54692983,
+          "distinctTo": 12
+        },
+        {
+          "index": 8,
+          "atMs": 5705,
+          "txCount": 14,
+          "dexTouching": 0,
+          "gasUsed": 57510842,
+          "distinctTo": 9
+        },
+        {
+          "index": 9,
+          "atMs": 5896,
+          "txCount": 31,
+          "dexTouching": 0,
+          "gasUsed": 62301793,
+          "distinctTo": 22
+        },
+        {
+          "index": 10,
+          "atMs": 6048,
+          "txCount": 23,
+          "dexTouching": 0,
+          "gasUsed": 65846615,
+          "distinctTo": 20
+        }
+      ]
+    },
+    {
+      "block": 53266096,
+      "flashblocks": [
+        {
+          "index": 0,
+          "atMs": 6386,
+          "txCount": 1,
+          "dexTouching": 0,
+          "gasUsed": 46242,
+          "distinctTo": 0
+        },
+        {
+          "index": 1,
+          "atMs": 6585,
+          "txCount": 40,
+          "dexTouching": 0,
+          "gasUsed": 6257684,
+          "distinctTo": 31
+        },
+        {
+          "index": 2,
+          "atMs": 6682,
+          "txCount": 8,
+          "dexTouching": 0,
+          "gasUsed": 9880771,
+          "distinctTo": 7
+        },
+        {
+          "index": 3,
+          "atMs": 6843,
+          "txCount": 13,
+          "dexTouching": 0,
+          "gasUsed": 11940743,
+          "distinctTo": 10
+        },
+        {
+          "index": 4,
+          "atMs": 7023,
+          "txCount": 20,
+          "dexTouching": 0,
+          "gasUsed": 14584478,
+          "distinctTo": 14
+        },
+        {
+          "index": 5,
+          "atMs": 7179,
+          "txCount": 15,
+          "dexTouching": 0,
+          "gasUsed": 17629226,
+          "distinctTo": 14
+        },
+        {
+          "index": 6,
+          "atMs": 7342,
+          "txCount": 25,
+          "dexTouching": 0,
+          "gasUsed": 19649617,
+          "distinctTo": 20
+        },
+        {
+          "index": 7,
+          "atMs": 7529,
+          "txCount": 27,
+          "dexTouching": 0,
+          "gasUsed": 24498947,
+          "distinctTo": 19
+        },
+        {
+          "index": 8,
+          "atMs": 7699,
+          "txCount": 34,
+          "dexTouching": 0,
+          "gasUsed": 31704795,
+          "distinctTo": 18
+        },
+        {
+          "index": 9,
+          "atMs": 7865,
+          "txCount": 27,
+          "dexTouching": 0,
+          "gasUsed": 36744163,
+          "distinctTo": 22
+        },
+        {
+          "index": 10,
+          "atMs": 8037,
+          "txCount": 28,
+          "dexTouching": 0,
+          "gasUsed": 41328831,
+          "distinctTo": 24
+        }
+      ]
+    }
+  ]
+}

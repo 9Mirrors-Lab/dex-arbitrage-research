@@ -1,0 +1,120 @@
+{
+  "chain": "ethereum",
+  "chainId": 1,
+  "name": "Ethereum mainnet",
+  "kind": "l1",
+  "measuredAt": "2026-10-29T22:14:52.108Z",
+  "headBlock": 26301320,
+  "method": "3 windows of 25 blocks, spread over the last ~24h of chain history",
+  "cadence": {
+    "blocksSampled": 75,
+    "configuredBlockTimeSec": 12,
+    "measuredMeanBlockTimeSec": 12
+  },
+  "throughput": {
+    "meanTxPerBlock": 228.4,
+    "medianTxPerBlock": 232,
+    "meanGasUsedPerBlock": 31151181,
+    "meanGasLimit": 59992181,
+    "estTxPerDay": 1644768
+  },
+  "fees": {
+    "baseFeeWei": {
+      "p50": "136836013",
+      "p95": "49682526144"
+    },
+    "baseFeeGwei": {
+      "p50": 0.136836013,
+      "p95": 49.682526144
+    }
+  },
+  "txCost": {
+    "probeBlock": 26301294,
+    "receiptsSampled": 314,
+    "hasL1FeeField": false,
+    "medianL2FeeWei": "1728409292408668",
+    "medianL1FeeWei": "0",
+    "medianTotalFeeEth": 0.001728409292408668,
+    "medianGasUsed": 46109
+  },
+  "dexActivity": {
+    "unfilteredLogsSupported": false,
+    "windowBlocksPerSample": 25,
+    "byFamily": {},
+    "totalSwapsPerBlock": 0,
+    "totalEstSwapsPerDay": 0
+  },
+  "contractChecks": {
+    "dexes": {
+      "uniswap-v3": {
+        "label": "Uniswap V3",
+        "family": "uniswap-v3",
+        "address": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+        "exists": true,
+        "bytes": 24535,
+        "quoter": {
+          "address": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
+          "exists": true,
+          "bytes": 8273
+        }
+      },
+      "uniswap-v2": {
+        "label": "Uniswap V2",
+        "family": "uniswap-v2",
+        "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+        "exists": true,
+        "bytes": 13859
+      },
+      "sushi-v2": {
+        "label": "SushiSwap V2",
+        "family": "uniswap-v2",
+        "address": "0xC0AEe478e3658e2610c5F7A4A2E1777cE9e4f2Ac",
+        "exists": true,
+        "bytes": 11264
+      },
+      "balancer-v2": {
+        "label": "Balancer V2",
+        "family": "balancer-v2",
+        "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "exists": true,
+        "bytes": 24512
+      }
+    },
+    "flashLoanProviders": {
+      "balancer-v2": {
+        "label": "Balancer V2 Vault",
+        "kind": "flash-loan",
+        "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "exists": true,
+        "bytes": 24512
+      },
+      "aave-v3": {
+        "label": "Aave V3 Pool",
+        "kind": "flash-loan",
+        "address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
+        "exists": true,
+        "bytes": 2400
+      }
+    }
+  },
+  "fundingFees": {
+    "aave-v3": {
+      "premiumBps": 5,
+      "source": "Pool.FLASHLOAN_PREMIUM_TOTAL()"
+    },
+    "balancer-v2": {
+      "collector": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
+      "feePercentageWei": "0",
+      "feeBps": 0,
+      "source": "ProtocolFeesCollector.getFlashLoanFeePercentage()"
+    }
+  },
+  "rpcStats": {
+    "calls": 105,
+    "errors": 0,
+    "retries": 0,
+    "byUrl": {
+      "https://ethereum-rpc.publicnode.com": 30
+    }
+  }
+}

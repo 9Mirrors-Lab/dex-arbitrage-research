@@ -1,0 +1,142 @@
+{
+  "measuredAt": "2026-10-30T00:47:24.694Z",
+  "atBlock": 53265944,
+  "method": "real two-pool V3 cycles taken from the forensics data, priced with the same code the Stage 2 gate used",
+  "regimes": {
+    "cold": {
+      "description": "no cached pool state; every tick bitmap and tick read is a network round trip. This is what the Stage 2 validator did per candidate.",
+      "msP50": 881.3,
+      "msMax": 945.3,
+      "rpcReadsP50": 16,
+      "verdict": "within a block, but with no margin"
+    },
+    "warm": {
+      "description": "tick maps already in memory; a single cycle re-quote at a new size",
+      "msP50": 0.08,
+      "msP90": 0.1,
+      "verdict": "this is the operation a bot repeats; it is pure arithmetic once state is held"
+    },
+    "localOptimalSearch": {
+      "description": "full optimal-size search (20 ternary iterations, both legs each probe) with state in memory",
+      "msP50": 55,
+      "msMax": 1694.2,
+      "newRpcReadsP50": 1
+    }
+  },
+  "perCycle": [
+    {
+      "cycle": "USDC/LIc",
+      "pools": [
+        "0x606586b722ab48e2e1f81363de4a46d4113e7b5b",
+        "0xd71b2d9cb3532477df77ae26e780963cce784a0c"
+      ],
+      "coldMs": 881.3,
+      "coldRpcReads": 16,
+      "warmMsP50": 0.21,
+      "warmMsP90": 0.29,
+      "rpcReadsDuringWarm": 0,
+      "optimalSearchMs": 7.1,
+      "optimalSearchProbes": 42,
+      "rpcReadsDuringSearch": 0
+    },
+    {
+      "cycle": "WETH/REPPO",
+      "pools": [
+        "0x71fe33676773df7cf9ce14f640cae06823f083cc",
+        "0x2ef682177554f616fae331796ebbfbf835e9ed3b"
+      ],
+      "coldMs": 945.3,
+      "coldRpcReads": 18,
+      "warmMsP50": 0.08,
+      "warmMsP90": 0.15,
+      "rpcReadsDuringWarm": 1,
+      "optimalSearchMs": 1435.3,
+      "optimalSearchProbes": 42,
+      "rpcReadsDuringSearch": 26
+    },
+    {
+      "cycle": "USDC/WRDc",
+      "pools": [
+        "0xd26b3ddd97b3a2726f895ed11a0450f865bc9aa6",
+        "0xbc440aff9a79cced69d5b21c7b71e60bd0278efb"
+      ],
+      "coldMs": 860.2,
+      "coldRpcReads": 16,
+      "warmMsP50": 0.1,
+      "warmMsP90": 0.13,
+      "rpcReadsDuringWarm": 0,
+      "optimalSearchMs": 4.9,
+      "optimalSearchProbes": 42,
+      "rpcReadsDuringSearch": 0
+    },
+    {
+      "cycle": "WETH/REPPO",
+      "pools": [
+        "0x2ef682177554f616fae331796ebbfbf835e9ed3b",
+        "0x71fe33676773df7cf9ce14f640cae06823f083cc"
+      ],
+      "coldMs": 939.3,
+      "coldRpcReads": 17,
+      "warmMsP50": 0.1,
+      "warmMsP90": 0.12,
+      "rpcReadsDuringWarm": 0,
+      "optimalSearchMs": 1694.2,
+      "optimalSearchProbes": 42,
+      "rpcReadsDuringSearch": 30
+    },
+    {
+      "cycle": "WETH/REPPO",
+      "pools": [
+        "0x138bc2a962845d99a8c2bbcb7ab7f423cabe478d",
+        "0x2ef682177554f616fae331796ebbfbf835e9ed3b"
+      ],
+      "coldMs": 890.1,
+      "coldRpcReads": 17,
+      "warmMsP50": 0.07,
+      "warmMsP90": 0.07,
+      "rpcReadsDuringWarm": 0,
+      "optimalSearchMs": 874.3,
+      "optimalSearchProbes": 42,
+      "rpcReadsDuringSearch": 15
+    },
+    {
+      "cycle": "USDC/LIc",
+      "pools": [
+        "0x606586b722ab48e2e1f81363de4a46d4113e7b5b",
+        "0xe769c06de929ee2ce8988c7bbf768eefd6c6e7c5"
+      ],
+      "coldMs": 717,
+      "coldRpcReads": 14,
+      "warmMsP50": 0.04,
+      "warmMsP90": 0.05,
+      "rpcReadsDuringWarm": 0,
+      "optimalSearchMs": 55,
+      "optimalSearchProbes": 42,
+      "rpcReadsDuringSearch": 1
+    }
+  ],
+  "endToEndBudget": {
+    "steps": [
+      {
+        "step": "trigger appears in a Flashblock and reaches us",
+        "ms": 169,
+        "source": "measured feed arrival interval p50"
+      },
+      {
+        "step": "decide: optimal-size search with state in memory",
+        "ms": 55,
+        "source": "measured here"
+      },
+      {
+        "step": "sign and submit (one network leg)",
+        "ms": 22,
+        "source": "half of measured p50 RTT"
+      }
+    ],
+    "totalMs": 246,
+    "measuredReactionRoomMsP50": 800,
+    "fitsMedianReactionRoom": true,
+    "excludes": "local pool-state bookkeeping, mempool competition, the sequencer actually placing our transaction in a later Flashblock of the same block, and any retry",
+    "status": "arithmetic from measured components, NOT an end-to-end demonstration: no transaction was built, signed or sent at any point"
+  }
+}

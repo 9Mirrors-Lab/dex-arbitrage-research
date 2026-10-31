@@ -1,0 +1,121 @@
+{
+  "id": "ethereum",
+  "chainId": 1,
+  "name": "Ethereum mainnet",
+  "kind": "l1",
+  "nativeSymbol": "ETH",
+  "blockTimeSec": 12,
+  "notes": "Proof-of-stake L1 with a competitive block-builder market (MEV-Boost). Arbitrage txs normally reach a builder as a private bundle and pay the builder directly, so realised profit = gross spread - swap fees - gas - builder payment. There is no l1Fee component.",
+  "rpc": [
+    "https://ethereum-rpc.publicnode.com",
+    "https://eth.drpc.org"
+  ],
+  "rpcCapabilities": {
+    "archiveStateCalls": null,
+    "getBlockReceipts": null,
+    "unfilteredGetLogsMaxRange": 1,
+    "addressFilteredGetLogsMaxRange": 1000,
+    "addressFilteredGetLogs": true,
+    "traceApi": false,
+    "multicall3ReadsPerSecond": 1440,
+    "measuredBy": "scripts/20-enumeration-probe.mjs, 2026-10-29. An unfiltered eth_getLogs is served for exactly one block and refused beyond it ('Please specify an address in your request'), against 100 blocks on Base. A 12-second block time partly compensates: one block here is six blocks of Base chain time."
+  },
+  "explorer": "https://etherscan.io",
+  "multicall3": "0xcA11bde05977b3631167028862bE2a173976CA11",
+  "opStack": null,
+  "tokens": {
+    "WETH": { "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", "decimals": 18, "core": true },
+    "USDC": { "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", "decimals": 6, "core": true },
+    "USDT": { "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7", "decimals": 6, "core": true },
+    "DAI": { "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F", "decimals": 18, "core": true },
+    "WBTC": { "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599", "decimals": 8, "core": true },
+    "LINK": { "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA", "decimals": 18, "core": false }
+  },
+  "usdQuote": { "token": "USDC", "refPool": null },
+  "dexes": {
+    "uniswap-v3": {
+      "label": "Uniswap V3",
+      "family": "uniswap-v3",
+      "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+      "quoter": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
+      "quoterKind": "quoterV2",
+      "feeTiers": [100, 500, 3000, 10000]
+    },
+    "uniswap-v2": {
+      "label": "Uniswap V2",
+      "family": "uniswap-v2",
+      "factory": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+      "feeBps": 30
+    },
+    "sushi-v2": {
+      "label": "SushiSwap V2",
+      "family": "uniswap-v2",
+      "factory": "0xC0AEe478e3658e2610c5F7A4A2E1777cE9e4f2Ac",
+      "feeBps": 30
+    },
+    "pancake-v3": {
+      "label": "PancakeSwap V3",
+      "family": "pancake-v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": null,
+      "feeTiers": [100, 500, 2500, 10000],
+      "evidence": "Found by scripts/23-identify-factories.mjs: 2,188 swaps in the sweep window, feeAmountTickSpacing() present. The address is byte-identical to the factory already identified as PancakeSwap V3 on Base, which is how the brand is attributed; the family is established from the fingerprint alone."
+    },
+    "sushi-v3": {
+      "label": "SushiSwap V3",
+      "family": "uniswap-v3",
+      "factory": "0xbACEB8eC6b9355Dfc0269C18bac9d6E2Bdc29C4F",
+      "quoter": null,
+      "feeTiers": [100, 500, 3000, 10000],
+      "evidence": "Found by scripts/23-identify-factories.mjs: feeAmountTickSpacing(3000)=60, the Uniswap V3 value, so it is a straight V3 fork. 553 swaps in the sweep window. Brand attribution from the documented SushiV3Factory address; the family is from chain state."
+    },
+    "aero-merged-cl-eth": {
+      "label": "Aero/Velodrome Slipstream CL (Ethereum deployment)",
+      "family": "uniswap-v3",
+      "factory": "0xf4fd2e6c5b60c5b365cd1b96dd6245e6d60414c2",
+      "quoter": null,
+      "tickSpacingBased": true,
+      "evidence": "Slipstream fingerprint (poolImplementation/voter/factoryRegistry) with voter()=0x382409fad8503FbCdbB27A4211551fa03e884078 — the SAME voter as the Base factory configured here as aero-merged-cl, so it is the same protocol deployed on Ethereum. 1,294 swaps in the sweep window."
+    },
+    "unidentified-v2-a-eth": {
+      "label": "Unidentified Uniswap V2 fork A",
+      "family": "uniswap-v2",
+      "factory": "0xeb2a625b704d73e82946d8d026e1f588eed06416",
+      "feeBps": 30,
+      "evidence": "V2-style factory, allPairsLength()=468, 1,611 swaps in the sweep window. Brand not identified. feeBps assumed to be the V2 default of 30 and NOT verified on-chain, so quotes from this venue carry that assumption."
+    },
+    "unidentified-v2-b-eth": {
+      "label": "Unidentified Uniswap V2 fork B",
+      "family": "uniswap-v2",
+      "factory": "0x1097053fd2ea711dad45caccc45eff7548fcb362",
+      "feeBps": 30,
+      "evidence": "V2-style factory, allPairsLength()=8094. Brand not identified. feeBps assumed to be the V2 default of 30 and NOT verified on-chain."
+    },
+    "unidentified-v2-c-eth": {
+      "label": "Unidentified Uniswap V2 fork C",
+      "family": "uniswap-v2",
+      "factory": "0x115934131916c8b277dd010ee02de363c09d037c",
+      "feeBps": 30,
+      "evidence": "V2-style factory, allPairsLength()=1062, 450 swaps in the sweep window. Brand not identified. feeBps assumed to be the V2 default of 30 and NOT verified on-chain."
+    },
+    "balancer-v2": {
+      "label": "Balancer V2",
+      "family": "balancer-v2",
+      "vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+    }
+  },
+  "flashLoanProviders": {
+    "balancer-v2": {
+      "label": "Balancer V2 Vault",
+      "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+      "feeModel": "protocolFlashLoanFeePercentage (read on-chain)",
+      "kind": "flash-loan"
+    },
+    "aave-v3": {
+      "label": "Aave V3 Pool",
+      "address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
+      "feeModel": "FLASHLOAN_PREMIUM_TOTAL (read on-chain, bps)",
+      "kind": "flash-loan"
+    }
+  }
+}

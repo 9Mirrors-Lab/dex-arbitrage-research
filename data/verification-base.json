@@ -1,0 +1,283 @@
+{
+  "chain": "base",
+  "verifiedAt": "2026-10-30T04:46:20.494Z",
+  "stateBlock": 53266711,
+  "poolsChecked": 62496,
+  "verified": 61932,
+  "spoofed": 533,
+  "clampedV3": 7659,
+  "balanceUnreadable": 31,
+  "spoofTolerance": 1.005,
+  "method": "balanceOf(pool) for both tokens at the snapshot block; a constant-product pool whose reported reserves exceed its balances by more than the tolerance is marked reservesSpoofed",
+  "afterVerification": {
+    "pricedTokens": 34336,
+    "eligiblePools": 2428,
+    "eligiblePairs": 2042,
+    "eligiblePairsWithTwoOrMorePools": 199,
+    "twoPoolRoutes": 1091,
+    "directionalTwoPoolRoutes": 2182
+  },
+  "ineligibilityReasons": {
+    "below-min-depth": 39286,
+    "reserves-dust-or-empty": 18864,
+    "no-screening-price-for-either-token": 632,
+    "token-decimals-unresolved": 34,
+    "reported-reserves-exceed-token-balances": 533,
+    "singleton-pool-no-exact-quote-path": 5066,
+    "factory-not-configured": 749,
+    "state-unreadable": 5,
+    "token-identity-unresolved": 2
+  },
+  "spoofExamples": [
+    {
+      "pool": "0x094e0a67d632883b74bbc8b18fc77b2e9a5cebe3",
+      "venue": "aerodrome-v2",
+      "pair": "0x4200000000000000000000000000000000000006/0x8cacad072091cbbc568e4568dc3a1df19ab030e0",
+      "reserve0": "1000000000000000",
+      "balance0": "1000000000000000",
+      "reserve1": "866374365820025",
+      "balance1": "751279375980822",
+      "claimedDepthUsd": 24701391899042190000
+    },
+    {
+      "pool": "0x62a86ba34133bea8d871473f6af178f032a5cafc",
+      "venue": "aerodrome-v2",
+      "pair": "0x6784454c434dd02fb509c8e7e059093bb21416ff/0xc5fa50acde11cda1bfea8c39cff0273da2a2a08f",
+      "reserve0": "7166",
+      "balance0": "7166",
+      "reserve1": "13344934905608220732111",
+      "balance1": "0",
+      "claimedDepthUsd": 1680648494.436295
+    },
+    {
+      "pool": "0xba71693423f6eafda72d8ad0f1331b08d38ba57c",
+      "venue": "aerodrome-v2",
+      "pair": "0x80a228c443f62a000438b71573aedab2286c5b46/0xfaca98c72501312575c7f61efd19b1056351042f",
+      "reserve0": "1398367477141469245972",
+      "balance0": "0",
+      "reserve1": "2667335785503534",
+      "balance1": "2667335785503534",
+      "claimedDepthUsd": 11135.62799989033
+    },
+    {
+      "pool": "0x050125ffe1f3c72ae332fd06c5494dc6ad9258ee",
+      "venue": "aerodrome-v2",
+      "pair": "0x6784454c434dd02fb509c8e7e059093bb21416ff/0x80a228c443f62a000438b71573aedab2286c5b46",
+      "reserve0": "25180566",
+      "balance0": "25180566",
+      "reserve1": "2339497090476163117926",
+      "balance1": "0",
+      "claimedDepthUsd": 18630.131015077044
+    },
+    {
+      "pool": "0xa0fd896f02d999de5a83b340b27841241b6d67b5",
+      "venue": "aerodrome-v2",
+      "pair": "0x80a228c443f62a000438b71573aedab2286c5b46/0xb355f4f4cc84a9429a59d5c2b98d77016f7ec482",
+      "reserve0": "3937969495365788389982",
+      "balance0": "0",
+      "reserve1": "1948216233049411",
+      "balance1": "1948216233049411",
+      "claimedDepthUsd": 8149.173651726275
+    },
+    {
+      "pool": "0x2b1ced170a3cb7cfb1e21657b4bcc3dd0594639a",
+      "venue": "aerodrome-v2",
+      "pair": "0x5ab3d4c385b400f3abb49e80de2faf6a88a7b691/0xd02f50e1017f493ffffa70c8fcf09e349e11d6c9",
+      "reserve0": "16670468474126096502",
+      "balance0": "16670468474126096502",
+      "reserve1": "17933250047493057522268",
+      "balance1": "0",
+      "claimedDepthUsd": 0.5958781083853804
+    },
+    {
+      "pool": "0xfb841148e463e077a1b08a232ec87ac625b94e92",
+      "venue": "sushi-v2",
+      "pair": "0xba5edf631828ebbe81b850f476fa5936e3c15783/0xf33bacc59dbb603432ada3756109e88a6feac61f",
+      "reserve0": "702424",
+      "balance0": "5154",
+      "reserve1": "110463694877",
+      "balance1": "110463694877",
+      "claimedDepthUsd": 2153089488065416.5
+    },
+    {
+      "pool": "0x84a3c50b4560ab89df55dc418ea648d8b8f0b88a",
+      "venue": "sushi-v2",
+      "pair": "0x6784454c434dd02fb509c8e7e059093bb21416ff/0xc5fa50acde11cda1bfea8c39cff0273da2a2a08f",
+      "reserve0": "3226",
+      "balance0": "3226",
+      "reserve1": "3624676265012202062900",
+      "balance1": "0",
+      "claimedDepthUsd": 456488304.416655
+    },
+    {
+      "pool": "0x805dea21e1b1754b902d2c74472a25e53fb3e34e",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0xcdcfe77aa7e84c1fd86de707fd6ddcb7d02e7777",
+      "reserve0": "1918979849660871923",
+      "balance0": "0",
+      "reserve1": "1107036665662415171057990416",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147331283826e+22
+    },
+    {
+      "pool": "0x4b1da9b2b8affe32adcb8c29aa7fb1a6ccf964a1",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0xc7497178ac5794348dedc14dddd7f74a92117777",
+      "reserve0": "1918979842840847771",
+      "balance0": "0",
+      "reserve1": "1107036669596806053345849665",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147314437417e+22
+    },
+    {
+      "pool": "0x8b4f0e3e352c4b781520cc99af3d1c1d417aef55",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0x6068c8aa6f36e9f52c6d68bb7d3c8c6d1d9b7777",
+      "reserve0": "1918979849216024276",
+      "balance0": "0",
+      "reserve1": "1107036665919042491070673547",
+      "balance1": "0",
+      "claimedDepthUsd": 4.74014733018499e+22
+    },
+    {
+      "pool": "0x7165eaabd264876f12a9c90f3c56af1ebd1ec348",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0xd0068f3c8c6a256f6a58fc0a81d98a86d9a27777",
+      "reserve0": "1918979842700400045",
+      "balance0": "0",
+      "reserve1": "1107036669677828677650590276",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147314090491e+22
+    },
+    {
+      "pool": "0xb3341c8bc847a2e12c35e0b6114386ab515b7046",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0xa9238f1b1a2c63faad5b86f34cddc066cff87777",
+      "reserve0": "1918979849564986003",
+      "balance0": "0",
+      "reserve1": "1107036665717730618578106941",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147331046974e+22
+    },
+    {
+      "pool": "0xa1466d87777fcdb593efad47c97dd567ef075850",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0xbcd09fd0ec8e42f791ab2b408266ec7a23a37777",
+      "reserve0": "1918979849851208196",
+      "balance0": "0",
+      "reserve1": "1107036665552612437572868659",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147331753983e+22
+    },
+    {
+      "pool": "0x3075abd84f4ca0fed48af192369cf352c661bc3f",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0xb035f7d56c9dada9f479d3476d78bbaf91d57777",
+      "reserve0": "1918979848450499139",
+      "balance0": "0",
+      "reserve1": "1107036666360664843710797647",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147328294037e+22
+    },
+    {
+      "pool": "0xc6044e63d2457d127acc7bb21aa414205909a716",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0x7cbc411320bb44c0e84341a4ee338d04eb347777",
+      "reserve0": "1918979854198535527",
+      "balance0": "0",
+      "reserve1": "1107036663044690980218128362",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147342492487e+22
+    },
+    {
+      "pool": "0x0437c2c5015997eaee1f3fb15f69bee313142add",
+      "venue": "unknown",
+      "pair": "0x201e13e7cb28f9545ac75aefeff465d634677777/0x4200000000000000000000000000000000000006",
+      "reserve0": "1107036672941032494554806051",
+      "balance0": "0",
+      "reserve1": "1918979837043837349",
+      "balance1": "0",
+      "claimedDepthUsd": 4.7401473001179945e+22
+    },
+    {
+      "pool": "0x4fbdbc001f22d97b399336d16dc637bfecc7e6a4",
+      "venue": "unknown",
+      "pair": "0x1b484b19f82036e9ba7d2e4f0aa585e141d57777/0x4200000000000000000000000000000000000006",
+      "reserve0": "1107036653110536526937979424",
+      "balance0": "0",
+      "reserve1": "1918979871418780413",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147385028888e+22
+    },
+    {
+      "pool": "0xdddf58e2189c0c7b4e4b435259172405faf1eedb",
+      "venue": "unknown",
+      "pair": "0x3738d5719f69b21ed06d2b0b718c568853637777/0x4200000000000000000000000000000000000006",
+      "reserve0": "1107036645837689094514645468",
+      "balance0": "0",
+      "reserve1": "1918979884025813688",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147416170015e+22
+    },
+    {
+      "pool": "0x558c0a841a338696c56d3425cbc591aad3bb7222",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0x863fe3e9622eaee88624a510869797e6e3dc7777",
+      "reserve0": "1918979921893312223",
+      "balance0": "0",
+      "reserve1": "1107036623992380508330994378",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147509708008e+22
+    },
+    {
+      "pool": "0x34129f18897bf4e6101a1e52c86119220a45df62",
+      "venue": "unknown",
+      "pair": "0x37ca4e79e7d8d2f04bf8ee13b1e94a5341c27777/0x4200000000000000000000000000000000000006",
+      "reserve0": "1107036648693156063422686706",
+      "balance0": "0",
+      "reserve1": "1918979879076037473",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147403943379e+22
+    },
+    {
+      "pool": "0xfe07f81adfcfa6786ed4c0d180ad2e69d27aa72f",
+      "venue": "unknown",
+      "pair": "0x2421084948ecec3a74c0096552f6b4a281657777/0x4200000000000000000000000000000000000006",
+      "reserve0": "1107036653141097939021677725",
+      "balance0": "0",
+      "reserve1": "1918979871365804087",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147384898029e+22
+    },
+    {
+      "pool": "0xe1c727ca1d19845e1913288e5bbed54c7011037e",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0xaf10a2e303d9990101b60c3be28e363ee2a77777",
+      "reserve0": "1918979916624775993",
+      "balance0": "0",
+      "reserve1": "1107036627031736215450248810",
+      "balance1": "0",
+      "claimedDepthUsd": 4.7401474966939895e+22
+    },
+    {
+      "pool": "0x1d458bf875cf333a5dbb2124159814966b86e17b",
+      "venue": "unknown",
+      "pair": "0x169ab35a9b5d4cf8309bccc28f9d50108d297777/0x4200000000000000000000000000000000000006",
+      "reserve0": "1107036628910709220050802847",
+      "balance0": "0",
+      "reserve1": "1918979913367691841",
+      "balance1": "0",
+      "claimedDepthUsd": 4.740147488648538e+22
+    },
+    {
+      "pool": "0xe13e6597f768a3b2eb578c88b75c5beb4241e9e1",
+      "venue": "unknown",
+      "pair": "0x4200000000000000000000000000000000000006/0x6722bed053746c302faef700e73a4c0feb777777",
+      "reserve0": "1918979913512945020",
+      "balance0": "0",
+      "reserve1": "1107036628826914393181376579",
+      "balance1": "0",
+      "claimedDepthUsd": 4.7401474890073335e+22
+    }
+  ]
+}

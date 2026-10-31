@@ -1,0 +1,1530 @@
+{
+  "chain": "ethereum",
+  "chainName": "Ethereum mainnet",
+  "block": 26302653,
+  "scannedAt": "2026-10-30T05:34:24.311Z",
+  "seconds": 1325,
+  "method": {
+    "candidateSource": "pool registry (data/market/pools-base.json) — generated mechanically, not derived from any observed arbitrage transaction",
+    "legOneQuote": "exact, pool-native arithmetic at the stated block",
+    "legTwoQuote": "exact, on the actual output amount of leg one",
+    "sizing": "geometric ladder of 8 sizes bounded by the shallower pool's input-token reserve, then ternary refinement when a spread appears",
+    "costs": "gasUsed borrowed from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; gas price must be read from ethereum itself; gas price = baseFeePerGas at block 26302653 (1.9805 gwei), contested = +2 gwei priority",
+    "costGasUsedBorrowed": true,
+    "builderPaymentUnmodelled": true,
+    "netProfitIsUpperBound": true,
+    "spotPricesUsedForProfit": false
+  },
+  "routeUniverse": {
+    "generated": 1562,
+    "pairs": 275,
+    "excludedAtGeneration": 1754,
+    "queued": 1562
+  },
+  "coverage": {
+    "total": 1562,
+    "evaluated": 1494,
+    "notTested": 0,
+    "unsupported": 68,
+    "pctEvaluated": 95.6466,
+    "byClass": {
+      "NO SPREAD": 1316,
+      "NEGATIVE NET": 173,
+      "PROFITABLE / TIMING UNKNOWN": 5,
+      "UNSUPPORTED": 68
+    },
+    "byType": {
+      "two-pool": {
+        "NO SPREAD": 1316,
+        "NEGATIVE NET": 173,
+        "PROFITABLE / TIMING UNKNOWN": 5,
+        "UNSUPPORTED": 68
+      }
+    }
+  },
+  "rpc": {
+    "calls": 39724,
+    "errors": 19741,
+    "quoteCalls": 20336
+  },
+  "evaluationErrors": 0,
+  "leadingCandidates": [
+    {
+      "key": "0x1a98aae831759efa5a36f78336defa156957bc07|0x6a604ae0f7949f1d58c46cb5dd6259509180af47|d1",
+      "type": "two-pool",
+      "pair": "0x28be7e8cd8125cb7a74d2002a5862e1bfd774cd9/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "token0": "0x28be7e8cd8125cb7a74d2002a5862e1bfd774cd9",
+      "token1": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "poolA": "0x1a98aae831759efa5a36f78336defa156957bc07",
+      "poolB": "0x6a604ae0f7949f1d58c46cb5dd6259509180af47",
+      "venueA": "unidentified-v2-c-eth",
+      "venueB": "uniswap-v2",
+      "familyA": "uniswap-v2",
+      "familyB": "uniswap-v2",
+      "feeA": null,
+      "feeB": null,
+      "tokenIn": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "tokenMid": "0x28be7e8cd8125cb7a74d2002a5862e1bfd774cd9",
+      "dir": 1,
+      "sameVenue": false,
+      "crossBrand": true,
+      "depthUsdA": 513.3838740033287,
+      "depthUsdB": 1203.7137626549393,
+      "minDepthUsd": 513.3838740033287,
+      "activity": 0,
+      "classification": "PROFITABLE / TIMING UNKNOWN",
+      "evaluatedAt": "2026-10-30T05:34:24.308Z",
+      "evidence": {
+        "block": 26302653,
+        "bestSizeToken": 0.01294333503478672,
+        "bestSizeRaw": "12943335034786720",
+        "midAmountRaw": "137550743540353323934028729619036",
+        "returnedRaw": "14022470065491081",
+        "grossToken": 0.001079135030704361,
+        "grossUsd": 2.3837045421893004,
+        "notionalUsd": 28.590570814257536,
+        "grossBasisToken": "WETH",
+        "priceBasis": "spot ratio of a $56,625,682 pool against a $1 anchor (1 hop) — uniswap-v3 0x88e6a0c2 vs USDC",
+        "quoteBasis": [
+          "constant product on getReserves() @26302653, fee 30 bps",
+          "constant product on getReserves() @26302653, fee 30 bps"
+        ],
+        "ticksCrossed": [
+          null,
+          null
+        ],
+        "costMedianUsd": 1.1642662192949784,
+        "costContestedUsd": 4.5553193992980745,
+        "netUsdMedian": 1.219438322894322,
+        "netUsdContested": -2.171614857108774,
+        "costModel": "calibrated p50 from gasUsed borrowed from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; gas price must be read from ethereum itself; gas price = baseFeePerGas at block 26302653 (1.9805 gwei), contested = +2 gwei priority; no L1 data fee (L1 chain). EXCLUDES the block-builder payment, which is unmeasured here, so net profit on this chain is an UPPER BOUND",
+        "netIsUpperBound": true,
+        "ladder": [
+          {
+            "size": "4648315366525",
+            "out": "5455699408075",
+            "profit": "807384041550"
+          },
+          {
+            "size": "46483153665250",
+            "out": "54542291709804",
+            "profit": "8059138044554"
+          },
+          {
+            "size": "232415768326253",
+            "out": "272385217985013",
+            "profit": "39969449658760"
+          },
+          {
+            "size": "929663073305013",
+            "out": "1084674946500933",
+            "profit": "155011873195920"
+          },
+          {
+            "size": "2788989219915039",
+            "out": "3215727387543452",
+            "profit": "426738167628413"
+          },
+          {
+            "size": "6972473049787597",
+            "out": "7831922683812462",
+            "profit": "859449634024865"
+          },
+          {
+            "size": "11620788416312664",
+            "out": "12689472277048300",
+            "profit": "1068683860735636"
+          },
+          {
+            "size": "18593261466100260",
+            "out": "19488571648585611",
+            "profit": "895310182485351"
+          }
+        ],
+        "ceilingRaw": "232415768326253241"
+      }
+    },
+    {
+      "key": "0x56534741cd8b152df6d48adf7ac51f75169a83b2|0x941ddc62f8699f448e86c798e62520550616503d|d1",
+      "type": "two-pool",
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "token0": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "token1": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "poolA": "0x56534741cd8b152df6d48adf7ac51f75169a83b2",
+      "poolB": "0x941ddc62f8699f448e86c798e62520550616503d",
+      "venueA": "uniswap-v3",
+      "venueB": "aero-merged-cl-eth",
+      "familyA": "uniswap-v3",
+      "familyB": "uniswap-v3",
+      "feeA": 500,
+      "feeB": 744,
+      "tokenIn": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tokenMid": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "dir": 1,
+      "sameVenue": false,
+      "crossBrand": true,
+      "depthUsdA": 8022607.199145,
+      "depthUsdB": 62810.731696,
+      "minDepthUsd": 62810.731696,
+      "activity": 2099,
+      "classification": "PROFITABLE / TIMING UNKNOWN",
+      "evaluatedAt": "2026-10-30T05:19:46.567Z",
+      "evidence": {
+        "block": 26302653,
+        "bestSizeToken": 2392.631221,
+        "bestSizeRaw": "2392631221",
+        "midAmountRaw": "3089982",
+        "returnedRaw": "2394145011",
+        "grossToken": 1.51379,
+        "grossUsd": 1.51379,
+        "notionalUsd": 2392.631221,
+        "grossBasisToken": "USDT",
+        "priceBasis": "configured stablecoin address, assumed $1.00",
+        "quoteBasis": [
+          "local V3 tick maths @26302653",
+          "local V3 tick maths @26302653"
+        ],
+        "ticksCrossed": [
+          0,
+          1
+        ],
+        "costMedianUsd": 1.1642662192949784,
+        "costContestedUsd": 4.5553193992980745,
+        "netUsdMedian": 0.34952378070502155,
+        "netUsdContested": -3.0415293992980743,
+        "costModel": "calibrated p50 from gasUsed borrowed from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; gas price must be read from ethereum itself; gas price = baseFeePerGas at block 26302653 (1.9805 gwei), contested = +2 gwei priority; no L1 data fee (L1 chain). EXCLUDES the block-builder payment, which is unmeasured here, so net profit on this chain is an UPPER BOUND",
+        "netIsUpperBound": true,
+        "ladder": [
+          {
+            "size": "48911023",
+            "out": "48964013",
+            "profit": "52990"
+          },
+          {
+            "size": "489110237",
+            "out": "489604244",
+            "profit": "494007"
+          },
+          {
+            "size": "2445551186",
+            "out": "2447064323",
+            "profit": "1513137"
+          },
+          {
+            "size": "9782204744",
+            "out": "9761332488",
+            "profit": "-20872256"
+          },
+          {
+            "size": "29346614234",
+            "out": "29019817130",
+            "profit": "-326797104"
+          },
+          {
+            "size": "73366535585",
+            "out": "68935184527",
+            "profit": "-4431351058"
+          },
+          {
+            "size": "122277559308",
+            "out": "68935713568",
+            "profit": "-53341845740"
+          },
+          {
+            "size": "195644094894",
+            "out": "68935715946",
+            "profit": "-126708378948"
+          }
+        ],
+        "ceilingRaw": "2445551186178"
+      }
+    },
+    {
+      "key": "0x11b815efb8f581194ae79006d24e0d814b7697f6|0xc7bbec68d12a0d1830360f8ec58fa599ba1b0e9b|d1",
+      "type": "two-pool",
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "token0": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "token1": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "poolA": "0x11b815efb8f581194ae79006d24e0d814b7697f6",
+      "poolB": "0xc7bbec68d12a0d1830360f8ec58fa599ba1b0e9b",
+      "venueA": "uniswap-v3",
+      "venueB": "uniswap-v3",
+      "familyA": "uniswap-v3",
+      "familyB": "uniswap-v3",
+      "feeA": 500,
+      "feeB": 100,
+      "tokenIn": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tokenMid": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "dir": 1,
+      "sameVenue": true,
+      "crossBrand": false,
+      "depthUsdA": 3015597.798699,
+      "depthUsdB": 579175.465204,
+      "minDepthUsd": 579175.465204,
+      "activity": 6466,
+      "classification": "PROFITABLE / TIMING UNKNOWN",
+      "evaluatedAt": "2026-10-30T05:18:04.326Z",
+      "evidence": {
+        "block": 26302653,
+        "bestSizeToken": 1871.530954,
+        "bestSizeRaw": "1871530954",
+        "midAmountRaw": "843533262857362835",
+        "returnedRaw": "1872840817",
+        "grossToken": 1.309863,
+        "grossUsd": 1.309863,
+        "notionalUsd": 1871.530954,
+        "grossBasisToken": "USDT",
+        "priceBasis": "configured stablecoin address, assumed $1.00",
+        "quoteBasis": [
+          "local V3 tick maths @26302653",
+          "local V3 tick maths @26302653"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "costMedianUsd": 1.1642662192949784,
+        "costContestedUsd": 4.5553193992980745,
+        "netUsdMedian": 0.14559678070502158,
+        "netUsdContested": -3.2454563992980745,
+        "costModel": "calibrated p50 from gasUsed borrowed from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; gas price must be read from ethereum itself; gas price = baseFeePerGas at block 26302653 (1.9805 gwei), contested = +2 gwei priority; no L1 data fee (L1 chain). EXCLUDES the block-builder payment, which is unmeasured here, so net profit on this chain is an UPPER BOUND",
+        "netIsUpperBound": true,
+        "ladder": [
+          {
+            "size": "59322613",
+            "out": "59404371",
+            "profit": "81758"
+          },
+          {
+            "size": "593226138",
+            "out": "593925122",
+            "profit": "698984"
+          },
+          {
+            "size": "2966130691",
+            "out": "2966992684",
+            "profit": "861993"
+          },
+          {
+            "size": "11864522767",
+            "out": "11828641560",
+            "profit": "-35881207"
+          },
+          {
+            "size": "35593568302",
+            "out": "35166870044",
+            "profit": "-426698258"
+          },
+          {
+            "size": "88983920756",
+            "out": "86120076622",
+            "profit": "-2863844134"
+          },
+          {
+            "size": "148306534594",
+            "out": "140653978647",
+            "profit": "-7652555947"
+          },
+          {
+            "size": "237290455351",
+            "out": "220202097044",
+            "profit": "-17088358307"
+          }
+        ],
+        "ceilingRaw": "2966130691894"
+      }
+    },
+    {
+      "key": "0x941ddc62f8699f448e86c798e62520550616503d|0x9db9e0e53058c89e5b94e29621a205198648425b|d0",
+      "type": "two-pool",
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "token0": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "token1": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "poolA": "0x941ddc62f8699f448e86c798e62520550616503d",
+      "poolB": "0x9db9e0e53058c89e5b94e29621a205198648425b",
+      "venueA": "aero-merged-cl-eth",
+      "venueB": "uniswap-v3",
+      "familyA": "uniswap-v3",
+      "familyB": "uniswap-v3",
+      "feeA": 744,
+      "feeB": 3000,
+      "tokenIn": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "tokenMid": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "dir": 0,
+      "sameVenue": false,
+      "crossBrand": true,
+      "depthUsdA": 62810.731696,
+      "depthUsdB": 11878815.648102,
+      "minDepthUsd": 62810.731696,
+      "activity": 176,
+      "classification": "PROFITABLE / TIMING UNKNOWN",
+      "evaluatedAt": "2026-10-30T05:20:13.568Z",
+      "evidence": {
+        "block": 26302653,
+        "bestSizeToken": 0.02873897,
+        "bestSizeRaw": "2873897",
+        "midAmountRaw": "2226811444",
+        "returnedRaw": "2875486",
+        "grossToken": 0.00001589,
+        "grossUsd": 1.227205512317184,
+        "notionalUsd": 2219.548294670748,
+        "grossBasisToken": "WBTC",
+        "priceBasis": "spot ratio of a $11,878,816 pool against a $1 anchor (1 hop) — uniswap-v3 0x9db9e0e5 vs USDT",
+        "quoteBasis": [
+          "local V3 tick maths @26302653",
+          "local V3 tick maths @26302653"
+        ],
+        "ticksCrossed": [
+          1,
+          0
+        ],
+        "costMedianUsd": 1.1642662192949784,
+        "costContestedUsd": 4.5553193992980745,
+        "netUsdMedian": 0.06293929302220569,
+        "netUsdContested": -3.3281138869808906,
+        "costModel": "calibrated p50 from gasUsed borrowed from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; gas price must be read from ethereum itself; gas price = baseFeePerGas at block 26302653 (1.9805 gwei), contested = +2 gwei priority; no L1 data fee (L1 chain). EXCLUDES the block-builder payment, which is unmeasured here, so net profit on this chain is an UPPER BOUND",
+        "netIsUpperBound": true,
+        "ladder": [
+          {
+            "size": "63237",
+            "out": "63298",
+            "profit": "61"
+          },
+          {
+            "size": "632378",
+            "out": "632950",
+            "profit": "572"
+          },
+          {
+            "size": "3161894",
+            "out": "3163455",
+            "profit": "1561"
+          },
+          {
+            "size": "12647579",
+            "out": "12618045",
+            "profit": "-29534"
+          },
+          {
+            "size": "37942737",
+            "out": "37504810",
+            "profit": "-437927"
+          },
+          {
+            "size": "94856843",
+            "out": "88913981",
+            "profit": "-5942862"
+          },
+          {
+            "size": "158094739",
+            "out": "88914493",
+            "profit": "-69180246"
+          },
+          {
+            "size": "252951583",
+            "out": "88914496",
+            "profit": "-164037087"
+          }
+        ],
+        "ceilingRaw": "3161894789"
+      }
+    },
+    {
+      "key": "0x11b1f53204d03e5529f09eb3091939e4fd8c9cf3|0x8661ae7918c0115af9e3691662f605e9c550ddc9|d1",
+      "type": "two-pool",
+      "pair": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "token0": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+      "token1": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "poolA": "0x11b1f53204d03e5529f09eb3091939e4fd8c9cf3",
+      "poolB": "0x8661ae7918c0115af9e3691662f605e9c550ddc9",
+      "venueA": "uniswap-v2",
+      "venueB": "uniswap-v3",
+      "familyA": "uniswap-v2",
+      "familyB": "uniswap-v3",
+      "feeA": null,
+      "feeB": 3000,
+      "tokenIn": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "tokenMid": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+      "dir": 1,
+      "sameVenue": false,
+      "crossBrand": true,
+      "depthUsdA": 35454.742138829075,
+      "depthUsdB": 20513.396148120846,
+      "minDepthUsd": 20513.396148120846,
+      "activity": 419,
+      "classification": "PROFITABLE / TIMING UNKNOWN",
+      "evaluatedAt": "2026-10-30T05:23:13.295Z",
+      "evidence": {
+        "block": 26302653,
+        "bestSizeToken": 0.09095030269333966,
+        "bestSizeRaw": "90950302693339662",
+        "midAmountRaw": "2944432769304654294937",
+        "returnedRaw": "91503085672883614",
+        "grossToken": 0.000552782979543952,
+        "grossUsd": 1.2210439488038838,
+        "notionalUsd": 200.90039103086025,
+        "grossBasisToken": "WETH",
+        "priceBasis": "spot ratio of a $56,625,682 pool against a $1 anchor (1 hop) — uniswap-v3 0x88e6a0c2 vs USDC",
+        "quoteBasis": [
+          "constant product on getReserves() @26302653, fee 30 bps",
+          "local V3 tick maths @26302653"
+        ],
+        "ticksCrossed": [
+          null,
+          0
+        ],
+        "costMedianUsd": 1.1642662192949784,
+        "costContestedUsd": 4.5553193992980745,
+        "netUsdMedian": 0.05677772950890536,
+        "netUsdContested": -3.3342754504941907,
+        "costModel": "calibrated p50 from gasUsed borrowed from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; gas price must be read from ethereum itself; gas price = baseFeePerGas at block 26302653 (1.9805 gwei), contested = +2 gwei priority; no L1 data fee (L1 chain). EXCLUDES the block-builder payment, which is unmeasured here, so net profit on this chain is an UPPER BOUND",
+        "netIsUpperBound": true,
+        "ladder": [
+          {
+            "size": "321016749932107",
+            "out": "324923419618090",
+            "profit": "3906669685983"
+          },
+          {
+            "size": "3210167499321070",
+            "out": "3248607128859841",
+            "profit": "38439629538771"
+          },
+          {
+            "size": "16050837496605350",
+            "out": "16229115443989039",
+            "profit": "178277947383689"
+          },
+          {
+            "size": "64203349986421400",
+            "out": "64708506028318093",
+            "profit": "505156041896693"
+          },
+          {
+            "size": "192610049959264192",
+            "out": "192481247662367949",
+            "profit": "-128802296896243"
+          },
+          {
+            "size": "481525124898160448",
+            "out": "472203943179819156",
+            "profit": "-9321181718341292"
+          },
+          {
+            "size": "802541874830267520",
+            "out": "770985990028273214",
+            "profit": "-31555884801994306"
+          },
+          {
+            "size": "1284066999728428032",
+            "out": "1197026933602816156",
+            "profit": "-87040066125611876"
+          }
+        ],
+        "ceilingRaw": "16050837496605350228"
+      }
+    }
+  ],
+  "excludedSample": [
+    {
+      "pair": "0x84ca8bc7997272c7cfb4d0cd3d55cd942b3c9419/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0xc965bc2cf23d54ccf41a7d3af10572580e9b8078",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xce9afaf5b0da6ce0366ab40435a48ccff65d2ed7",
+      "pool": "0xdfb87fd2f9f5eec75930a2d8cfe67f791801fe30",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x44f3ef76b4f277e6c78c9d363ffd18a34a761940/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x168d3fcbb4213fc91d5c40acc302bfccd89112aa",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1efb2286bf89f01488c6b2a22b2556c0f45e972b/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xe1996640c0e7ae4ddca6310a25879b8255c7e92f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x8798249c2e607446efb7ad49ec89dd1865ff4272/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x36e2fcccc59e5747ff63a03ea2e5c0c2c14911e7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0dbb4b96a23ea7943bb72a8f16cc2c248f372935/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x00c70e8b3c9d0e0adb85993382abaae2a11c5d96",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0x8daebade922df735c38c80c7ebd708af50815faa",
+      "pool": "0x2dbc7dd86c6cd87b525bd54ea73ebeebbc307f68",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0aacfbec6a24756c20d41914f2caba817c0d8521/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x0f82e57804d0b1f6fab2370a43dcfad3c7cb239c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xcaaa93712bdac37f736c323c93d4d5fdefcc31cc",
+      "pool": "0xd3f85d18206829f917929bbbf738c1e0ce9af7fc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3c9d6c1c73b31c837832c72e04d3152f051fc1a9/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x44d34985826578e5ba24ec78c93be968549bb918",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x87edffde3e14c7a66c9b9724747a1c5696b742e6/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xadeaa96a81ebba4e3a5525a008ee107385d588c3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xdac17f958d2ee523a2206206994597c13d831ec7/0xf8c3527cc04340b208c854e985240c02f7b7793f",
+      "pool": "0x98c2f9d752e044dc2e1f1743bf0b76a7096eceb2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5d8d9f5b96f4438195be9b99eee6118ed4304286/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xe7689b2c21242e07870aaa0ffee1ec11833d5e24",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x50d1c9771902476076ecfc8b2a83ad6b9355a4c9/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x7825de5586e4d2fd04459091bbe783fa243e1bf3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0xc88f47067db2e25851317a2fdae73a22c0777c37",
+      "pool": "0xd227083b6feb1a40a975d74575311fb907fb960f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa67e83917b438e11a58f119a2bd9cc5daab86041/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x4b3d33521a977ca690d845c0327c41c05401f7bd",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x26cf82e4ae43d31ea51e72b663d26e26a75af729/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xe5f06db4f3473e7e35490f1f98017728496fe81e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9d4aa5600e0c8c2085bb82d946ca6642742a8250/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x060c603d9243e5152c406ee4eb603e4e9e47a11f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xe4ae84448db5cfe1daf1e6fb172b469c161cb85f",
+      "pool": "0x8c2e6a4af15c94cf4a86cd3c067159f08571d780",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa47c8bf37f92abed4a126bda807a7b7498661acd/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x8b00ee8606cc70c2dce68dea0cefe632cca0fb7b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1f3f9d3068568f8040775be2e8c03c103c61f3af/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x4441eb3076f828d5176f4fe74d7c775542dae106",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa1faa113cbe53436df28ff0aee54275c13b40975/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xf55c33d94150d93c2cfb833bcca30be388b14964",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5bc25f649fc4e26069ddf4cf4010f9f706c23831/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb1d38026062ac10feda072ca0e9b7e35f1f5795a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x368b3a58b5f49392e5c9e4c998cb0bb966752e51/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0xc9cb53b48a2f3a9e75982685644c1870f1405ccb",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4b4d2e899658fb59b1d518b68fe836b100ee8958/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0x066f3a3b7c8fa077c71b9184d862ed0a4d5cf3e0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x71b6296174c5f07d37cafd6e9b72ab5bb3f14fac/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0x78df2025a0fa9dba6ec7499df83f3230e04baf57",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b175474e89094c44da98b954eedeac495271d0f/0x71b6296174c5f07d37cafd6e9b72ab5bb3f14fac",
+      "pool": "0xe320546f9f9bf4b750fb706ee26317bcced4cac4",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1ceb5cb57c4d4e2b2433641b95dd330a33185a44/0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+      "pool": "0x79e0d4858af8071349469b6589a3c23c1fe1586e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b175474e89094c44da98b954eedeac495271d0f/0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2",
+      "pool": "0x1f44e67eb4b8438efe62847affb5b8e528e3f465",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0xaa3d98e1ba725fdc1bd94c818d5bc3968ad73b63",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9/0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2",
+      "pool": "0x6c2134dc2ed7e086be2ab6c12916f66c3704b137",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x514910771af9ca656af840dff83e8264ecf986ca/0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2",
+      "pool": "0x153b4c29e692faf10255fe435e290e9cfb2351b5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e/0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2",
+      "pool": "0x41ca2d9cf874af557b0d75fa9c78f0131c7f345c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2",
+      "pool": "0x2a11ccfb96223bd35ec24b2aac046fcc85035f3d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2/0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2",
+      "pool": "0xf15e21e1c90f851b735778c001aa22a635bf9dbc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2/0xeb4c2781e4eba804ce9a9803c67d0893436bb27d",
+      "pool": "0x7088418510ef80da1a3e52bced2a9be1a79e7484",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x010ebea9af6ce644d56c6808ae324ae9476bb11d/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xe683fbdf4c031023d68b43fcbcf3df0780757774",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x010ebea9af6ce644d56c6808ae324ae9476bb11d/0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e",
+      "pool": "0x17708db79926d44cb7adadd7b5b70c6250e86749",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0000000000095413afc295d19edeb1ad7b71c952/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0x55d31f68975e446a40a2d02ffa4b0e1bfb233c2f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x79256db1bdb6259315a1a3d7dd237f69cadfd8fc/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0xd1482dc5d5f6c140a69157d945267831d1cf2d6e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xd291e7a03283640fdc51b121ac401383a46cc623",
+      "pool": "0x18a797c7c70c1bf22fdee1c09062aba709cacf04",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x92b767185fb3b04f881e3ac8e5b0662a027a1d9f/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0x0838b3353b16e50a749ec2424f3476b4ab067943",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9ca85572e6a3ebf24dedd195623f188735a5179f/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0xa3f6ebdd220918eb5d45523a7d92f11e55046a20",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x888888888889c00c67689029d7856aac1065ec11/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xd84d55532b231dbb305908bc5a10b8c55ba21e5e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3832d2f059e55934220881f831be501d180671a7/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb46736888247c68c995b156ca86426ff32e27cc9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xc5bddf9843308380375a611c18b50fb9341f502a",
+      "pool": "0x10b47177e92ef9d5c6059055d92ddf6290848991",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0fe629d1e84e171f8ff0c1ded2cc2221caa48a3f/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xfd38565ef22299d491055f0c508f62dd9a669f0f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x26607ac599266b21d13c7acf7942c7701a8b699c/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x04e02423299c2c56c451ceb125779cfa0f7ac6bc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa487bf43cf3b10dffc97a9a744cbb7036965d3b9/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0xa3dfbf2933ff3d96177bde4928d0f5840ee55600",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6399c842dd2be3de30bf99bc7d1bbf6fa3650e70/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x93e2f3a8277e0360081547d711446e4a1f83546d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x27ffed7e5926fb2795fc85aaab558243f280a8a2/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xca2ae9c5c491f497dc5625feaef4572076c946c5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xf18ade29a225faa555e475ee01f9eb66eb4a3a74",
+      "pool": "0x0e7e8dde18e4016ccc15f12301a47ef7b87bdafa",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xabe580e7ee158da464b51ee1a83ac0289622e6be/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xf39ff863730268c9bb867b3a69d031d1c1614b31",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x24a6a37576377f63f194caa5f518a60f45b42921/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x938625591adb4e865b882377e2c965f9f9b85e34",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xdbdb4d16eda451d0503b854cf79d55697f90c8df",
+      "pool": "0xc3f279090a47e80990fe3a9c30d24cb117ef91a8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x297d33e17e61c2ddd812389c2105193f8348188a/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x05cc2e064e0b48e46015ead9961f1391d74e5f83",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b175474e89094c44da98b954eedeac495271d0f/0x89472e02e3550fd52971ed89a2682613b2c97199",
+      "pool": "0x87619715b9e5beee8f2cb1d33387ea6fc6b2ce34",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9ba60ba98413a60db4c651d4afe5c937bbd8044b/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x87b6f3a2dc6e541a9ce40e58f517953782ae614e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x91af0fbb28aba7e31403cb457106ce79397fd4e6/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x9e48fadf799e0513d2ef4631478ea186741fa617",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0x6fc2f1044a3b9bb3e43a43ec8f840843ed753061",
+      "pool": "0x69d4f0e72a9de650dd3fe1f185ed3bf1e9e7e3ed",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec",
+      "pool": "0x7835cb043e8d53a5b361d489956d6c30808349da",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4691937a7508860f876c9c0a2a617e7d9e945d4b/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0xf5ca27927ffb16bd8c870dcb49750146cce8217c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4d0c808d21c56e91bdf61a78245231e9c1c5e027/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x3074ebfdf7a1047716c8879341206dd04d69e974",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2aa5ce395b00cc486159adbdd97c55b535cf2cf9/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xc7ff546c6cbc87ad9f6f557db5a0df5c742ca440",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x9323161faf56dd09cb32ace72c20dbd96b96d386",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x579cea1889991f68acc35ff5c3dd0621ff29b0c9/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x9d45081706102e7aaddd0973268457527722e274",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x383518188c0c6d7730d91b2c03a03c837814a899/0x6b175474e89094c44da98b954eedeac495271d0f",
+      "pool": "0x34d7d7aaf50ad4944b70b320acb24c95fa2def7c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x896e145568624a498c5a909187363ae947631503/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x8f9ef75cd6e610dd8acf8611c344573032fb9c3d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x557b933a7c2c45672b610f8954a3deb39a51a8ca/0xe53ec727dbdeb9e2d5456c3be40cff031ab40a55",
+      "pool": "0x77bd0e7ec0de000eea4ec88d51f57f1780e0dfb2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0309c98b1bffa350bcb3f9fb9780970ca32a5060/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x8d782c5806607e9aafb2ac38c1da3838edf8bd03",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x23a1e8b38bd71692c45d39b96774dcf489286b87/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb1058a18c243ba0c0242aea7ac4a6b5013b8aff2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x44564d0bd94343f72e3c8a0d22308b7fa71db0bb/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x34d25a4749867ef8b62a0cd1e2d7b4f7af167e01",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x16c52ceece2ed57dad87319d91b5e3637d50afa4/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xa87e2c5d5964955242989b954474ff2eb08dd2f5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9d409a0a012cfba9b15f6d4b36ac57a46966ab9a/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x9461173740d27311b176476fa27e94c681b1ea6b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x321c2fe4446c7c963dc41dd58879af648838f98d/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x2a93167ed63a31f35ca4788e2eb9fbd9fa6089d0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x7a970d7859bc912dd5aed001efb4256ee3be648c/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x263e634268eaa54d22cf6ed80ad4ea87ac7becde",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x383518188c0c6d7730d91b2c03a03c837814a899/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xfffae4a0f4ac251f4705717cd24cadccc9f33e06",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2c31b10ca416b82cec4c5e93c615ca851213d48d/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb48e9b22dace65f6a2b409871e154b85f4ed8b80",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0xafce9b78d409bf74980cacf610afb851bf02f257",
+      "pool": "0xd975b774c50aa0aeacb7b546b86218c1d7362123",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599/0xc4e15973e6ff2a35cc804c2cf9d2a1b817a8b40f",
+      "pool": "0x18d98d452072ac2eb7b74ce3db723374360539f1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x7c84e62859d0715eb77d1b1c4154ecd6abb21bec/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xd920a4bda8ecf4ac06ea2897f9a5a38a55e9ac6e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0b498ff89709d3838a063f1dfa463091f9801c2b/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+      "pool": "0x164fe0239d703379bddde3c80e4d4800a1cd452b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0ace32f6e87ac1457a5385f8eb0208f37263b415/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xa023cca9de8486d867e8b2f7bfd133a96455f850",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9c061df134d11412151e9c200ce3f9f6f295094a/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xfffae206a0c17c4804f04af3880ff8a9dea39210",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xeb10a2423810faef05e99333e501b7eb1ac8cafa",
+      "pool": "0x022a500470a03659a88bd20e9e36c3d0195f76fc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x368c5290b13caa10284db58b4ad4f3e9ee8bf4c9/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xbe844f05e3eada9453156e3fe5c39891b4245bc6",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1321f1f1aa541a56c31682c57b80ecfccd9bb288/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x87c33321e1755ab54b0a27d4969a72b953486e75",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x25deb74aac0a426b77bd897fbf063ba4ac52ee96/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb839a7b320b9c1bc52f268fe1d214d8cfe9f79fb",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xb05097849bca421a3f51b249ba6cca4af4b97cb9/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x481ddaf90c59d91f3e480e6793122e62612ca5a9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x57b946008913b82e4df85f501cbaed910e58d26c/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xccb42aaab2ea1f8012c30418ee3fce550954d827",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4104b135dbc9609fc1a9490e61369036497660c8/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x53162d78dca413d9e28cf62799d17a9e278b60e8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4eeac9248cb9a2919899b9f834c8b25524e50d75/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x2836e19a74f96b4ef098c2a0600416f825705991",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x06f3c323f0238c72bf35011071f2b5b7f43a054c/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x26e6a391953169d141df36834acfd9c61d3d4d59",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xedc83120ddd7f27c54a01ff8b29b21c153eb9e52",
+      "pool": "0xe44d8c3ac358f5bff7e3e16ac0432faae6819a51",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4f8cc34bfdd972bdbeaf4cc5118fba1382abb550/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x2e31e61f43c3726f081c2059f3d7485137f7ecfc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/0xe9f84de264e91529af07fa2c746e934397810334",
+      "pool": "0xd45afa3649e57a961c001b935ded1c79d81a9d23",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xbc6da0fe9ad5f3b0d58160288917aa56653660e9/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x0589e281d35ee1acf6d4fd32f1fba60effb5281b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x090185f2135308bad17527004364ebcc2d37e5f6/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb5de0c3753b6e1b4dba616db82767f17513e6d4e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0ec9f76202a7061eb9b3a7d6b59d36215a7e37da/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x57024267e8272618f9c5037d373043a8646507e5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x677ddbd918637e5f2c79e164d402454de7da8619/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb90047676cc13e68632c55cb5b7cbd8a4c5a0a8e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xe09b10efa59f6e17052e9a2d947bad6214e7cc90",
+      "pool": "0xc92a6738d66ebffbacff9310255b949eb960c21a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xd084944d3c05cd115c09d072b9f44ba3e0e45921",
+      "pool": "0xa914a9b9e03b6af84f9c6bd2e0e8d27d405695db",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b175474e89094c44da98b954eedeac495271d0f/0xff20817765cb7f73d4bde2e66e067e58d11095c2",
+      "pool": "0xa17661e7f2cd96633c25edc5455eb29170105ff0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x043c308bb8a5ae96d0093444be7f56459f1340b1/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0x7e9a225f4d518176328a6938ee4e99cd2c776316",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5aaddb423d184b4f84b1c07022a1ba1168f83575/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x40ca499226c94b95016d53b70ed1fa5813265611",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x618679df9efcd19694bb1daa8d00718eacfa2883/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0xbbbdb106a806173d1eea1640961533ff3114d69a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xbdd4f273c2b0f0b84a51bd733aac617d91159376/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x08cd7cf527330f10571fb7947256bf0c8b38afc4",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x86772b1409b61c639eaac9ba0acfbb6e238e5f83/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x8911fce375a8414b1b578be66ee691a8d2d4dbf7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x7815bda662050d84718b988735218cffd32f75ea/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xc83ce8612164ef7a13d17ddea4271dd8e8eebe5d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xae4fade35556b0910d7d5fc42762dd29472a8f40/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x1f1a6f71fb41c9f237829d25265d5fb4fdece9f9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xbdbf245c690d54b67c6e610a28486a2c6de08be6/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x29cf1ea0a2ccef2b489f67292c5294c5fa59e5d0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xe9f84de264e91529af07fa2c746e934397810334",
+      "pool": "0xfed8e81bd0fba2664e9bd9abfaffb77828f959b7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x99d8a9c45b2eca8864373a26d1459e3dff1e17f3/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x07d5695a24904cc1b6e3bd57cc7780b90618e3c4",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x8fcb1783bf4b71a51f702af0c266729c4592204a/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x0d8a21f2ea15269b7470c347083ee1f85e6a723b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/0xa92e7c82b11d10716ab534051b271d2f6aef7df5",
+      "pool": "0x81ef0c70fa76c8e7563cb26ee34a2e7f2a77c410",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3d4e7f52efafb9e0c70179b688fc3965a75bcfea/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x4556c4488cc16d5e9552cc1a99a529c1392e4fe9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5166e09628b696285e3a151e84fb977736a83575/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb7df0ef1c1232de62c0d99df9b5b92d35b522f6b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6a68de599e8e0b1856e322ce5bd11c5c3c79712b/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0x7a34bbd9db8686bf9c1489a4682825f65eeafa6e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x641927e970222b10b2e8cdbc96b1b4f427316f16/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xe339c1d0a744053cbceb0d2dc2d13967c8a69586",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x87931e7ad81914e7898d07c68f145fc0a553d8fb/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x0a2f9b5360b5c7b6d3ce826971425b3b8b766519",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x269616d549d7e8eaa82dfb17028d0b212d11232a/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x0463a06fbc8bf28b3f120cd1bfc59483f099d332",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x98968f0747e0a261532cacc0be296375f5c08398/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x0aa1e808bba7cde5210d13d23ee726de37b8a8bb",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x42b4df7e402a71eae743c6c5410ce3bbb63aef22/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x8180b2629d6589ef40fb566b14d8cdccc3e51ae4",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x69fa0fee221ad11012bab0fdb45d444d3d2ce71c/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x95cfa1f48fad82232772d3b1415ad4393517f3b5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xe804964c296e9fb666fbe67767838c1ff9ab3209",
+      "pool": "0x974415a21b5897fe78e15f826f5ebc231dcec969",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b175474e89094c44da98b954eedeac495271d0f/0xe76c6c83af64e4c60245d8c7de953df673a7a33d",
+      "pool": "0x7f517657496c09c43cc28d0ca131e35dcd557e02",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xe76c6c83af64e4c60245d8c7de953df673a7a33d/0xeb4c2781e4eba804ce9a9803c67d0893436bb27d",
+      "pool": "0x519854dd32b4f34f9a407874b0b69218465972d6",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5",
+      "pool": "0xd829de54877e0b66a2c3890b702fa5df2245203e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xb39185e33e8c28e0bb3dbbce24da5dea6379ae91/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xd3e31f8aac930e354283ca3efda1e22525f98af1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x010a0288af52ed61e32674d82bbc7ddbfa9a1324/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x8b758d7fd0fc58fca8caa5e53af2c7da5f5f8de1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xc4a11aaf6ea915ed7ac194161d2fc9384f15bff2",
+      "pool": "0x610468b2c5d1bd72c2093c47a6d2da68037c34e2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xcd46d92c46be1dbbd5ccc497e95611abe9d507bc",
+      "pool": "0x98a2836cef3f9e4325ba1f049ba24c7184e6d60e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x478e677c0bd24c848bd591cc5273383dd5f30e4a/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xeca88364ff2ab836a44c97846066650048ecb717",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xeb5a8eefdae23a815072bf28de8114a825c27876",
+      "pool": "0xdde5a5d1de6891a1a322343f8abcc80798338068",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xfde98a3bf5c7f6336ae4ce1b43148aeab7b7c89a",
+      "pool": "0x46c8d1e7edc17fb9e1e1f3d4d1b95352dc53d8fd",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xcc8fa225d80b9c7d42f96e9570156c65d6caaa25",
+      "pool": "0x8597fa0773888107e2867d36dd87fe5bafeab328",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xffe136de12a2cd95f64cef9f36414c93e9003959",
+      "pool": "0xf74779cbfed0c753b9f5fa5cab6d3c3d728237a6",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x96e61422b6a9ba0e068b6c5add4ffabc6a4aae27/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xa2d81bedf22201a77044cdf3ab4d9dc1ffbc391b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/0xd91e9a0fef7c0fa4ebdaf4d0acf55888949a2a9b",
+      "pool": "0x2ef2cb6af83de4171a69ee2f7c677079ffd9bcd0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xc7a8b45e184138114e6085c82936a8db93dd156a",
+      "pool": "0x38e03a5fb1b1a18d47b364cdd7cdce606397c72c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x89a64014d429509cffda1aebc7eb36b9435794bd/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x47d47819d6cb153d759af8867743be7985e63e06",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x25f8087ead173b73d6e8b84329989a8eea16cf73/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x99b42f2b49c395d2a77d973f6009abb5d67da343",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x72377f31e30a405282b522d588aebbea202b4f23/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x88024deacdc2e9eda02a3051377ed635381faa54",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1559fa1b8f28238fd5d76d9f434ad86fd20d1559/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x82dbc2673e9640343d263a3c55de49021ad39ae2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x83e031005ecb771b7ff900b3c7b0bdde7f521c08/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xa09579ea6112dcf1df138cb0c26fe39a250ce3e3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3d3738c698e868a239fde7ee21e37834c7a1708c/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb7e170c1935a5b4f6224392a28eb34b5cc3ec346",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b175474e89094c44da98b954eedeac495271d0f/0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+      "pool": "0xc5578194d457dcce3f272538d1ad52c68d1ce849",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2/0x853d955acef822db058eb8505911ed77f175b99e",
+      "pool": "0xe06f8d30ac334c857fc8c380c85969c150f38a6a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1c9922314ed1415c95b9fd453c3818fd41867d0b/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0xb473c2606f7ac371518b13d2d097c34c38ca33d5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xead894aaa04b23bc39a3005b79db86c182a1741b",
+      "pool": "0x32a7e60690ead28fe4426dc5aae7bea74708fe69",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1a4b46696b2bb4794eb3d4c26f1c55f9170fa4c5/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xe12af1218b4e9272e9628d7c7dc6354d137d024e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xb98217f7f050aad1696467a1559e726381879f33/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x7c959aa82761c2eeb9b8cba504f90df0a7489a53",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0afee744b6d9ff2b78f76fe10b3e0199c413fd34/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x9b98ff54446c7ccf3118f980b5f32520d7fa5207",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x808507121b80c02388fad14726482e061b8da827/0xbf682bd31a615123d28d611b38b0ae3d2b675c2c",
+      "pool": "0xb124c4e18a282143d362a066736fd60d22393ef4",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x322d6c69048330247165231eb7848a5c80a48878/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x72972b21ce425cfd67935e07c68e84300ce3f40f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3f01fa3ebaf10b496630808d4fa87f82ba40b926/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x5ab0ec69f46a807c00ad6479e5427b6289b8ec89",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xba5bde662c17e2adff1075610382b9b691296350/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x24e2adf50c49633039757ab08bff489b7c5bd6b2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xdfdb7f72c1f195c5951a234e8db9806eb0635346",
+      "pool": "0xeefa3b448768dd561af4f743c9e925987a1f8d09",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5de7cc4bcbca31c473f6d2f27825cfb09cc0bb16/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x1d46ac355f9f338d9edea6c072120abe90d67bee",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x68cfb82eacb9f198d508b514d898a403c449533e/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x3349217670f9aa55c5640a2b3d806654d27d0569",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x698ad151125deb394e62154245d6129e9068c483/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xa2cdb4c734283ff9297fa238e5d945d731881405",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x863ad391091ae0e87b850c2bb7bfc7597c79c93f/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb245347af7efa5e8b667bc74580effbf74fc9dcd",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0f2d719407fdbeff09d87557abb7232601fd9f29/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x4a86c01d67965f8cb3d0aaa2c655705e64097c31",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xeb61393503691c6e20eafd82655b7a94450c3124",
+      "pool": "0xe56db0b80bed4a9151691046e52acbb51f61753f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xe2311ae37502105b442bbef831e9b53c5d2e9b3b",
+      "pool": "0xcfa9a297a406a48d1137172c18de04c944b47ba9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x24c19f7101c1731b85f1127eaa0407732e36ecdd/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x41bfba56b9ba48d0a83775d89c247180617266bc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x32353a6c91143bfd6c7d363b546e62a9a2489a20/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x0d15e893cf50724382368cafed222cf131b55307",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x05224bd64ed68082f142f535e8b5c83e751fc956/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xdbb8bc5468be1e6b4accdb1b2779af2f0ed64eed",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5ce188b44266c7b4bbc67afa3d16b2eb24ed1065/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xfd52305d58f612aad5f7e5e331c7a0d77e352ec3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x41d5d79431a913c4ae7d69a668ecdfe5ff9dfb68/0x865377367054516e17014ccded1e7d814edc9ce4",
+      "pool": "0x5ba61c0a8c4dcccc200cd0ccc40a5725a426d002",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xb435eeffe949182aebe85506eb88d4a0ffea8f9e/0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "pool": "0xc73ee6632b08d890e67aa30e667b55cfdf281d96",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x058bc8ef040bd3971418e36aa88b64899378ccf4/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x7cd4eba939f87e0c22ffaa54edf311ec39c48cf1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x60e46a4dd91d10506d8efa2caa266e7191fe7ea8/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x8e1e093f84844f2119901619abdc229470415d63",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x84d821f7fbdd595c4c4a50842913e6b1e07d7a53/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x817211d408fbc19193e482f4900354e4cc894a44",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x327673ae6b33bd3d90f0096870059994f30dc8af/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x51c1dc85f57fdaf591606e2adcc34adc96b04006",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xcf9601b2117b6971c75d3c8c7b3e68a876047d9a",
+      "pool": "0xf9077035b81af578bc29ed18ab83571b9c90e6cf",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xf88e8bad7ee587e8b574ecb5ce2ce9ab0a7e6295",
+      "pool": "0x06f14d4d20f3513947f14b10401afb114d9fcc38",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4884190c0e2d99afc1a5fe4d61faab955d7a4cdf/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xeba76c5925befc5a9dbae99ce8ecd32e7df290aa",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2d77f5b3efa51821ad6483adaf38ea4cb1824cc5/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x48b23e73e5b7aa9ab86b5f65662d7fbe79d10043",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x7f6b4d98789d283622d6b85d0efa3a7928c59b89/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xec34ec99b19436010656eba91d24262ed67f7d7a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x44017598f2af1bd733f9d87b5017b4e7c1b28dde/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x195b2ed7dfb2bb19c63b8b06677d46934c0c4eea",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x16cda4028e9e872a38acb903176719299beaed87/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xb50580b0d81d9fe860746387cef9a8fc36d48d49",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/0xd779eea9936b4e323cddff2529eb6f13d0a4d66e",
+      "pool": "0x83b546e10917432a722444672504f0d459472171",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x383518188c0c6d7730d91b2c03a03c837814a899/0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+      "pool": "0xfdf12d1f85b5082877a6e070524f50f6c84faa6b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x8b202f32762dc8a55b0ce3d1c357af8bb3173ada/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x30532bfd106d8c49841c2c47cfee59fe138e19e0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2604e9f68259e609e8744fb67cc410d50fc9aa0f/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xfe4a7f5c61f0010876e7d6a7fdef0a9647a8b323",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x45e007750cc74b1d2b4dd7072230278d9602c499/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xf9a0483b7ace75319cb78c0f1c69a04d581f3d1a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4c2e59d098df7b6cbae0848d66de2f8a4889b9c3/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xce7e98d4da6ebda6af474ea618c6b175729cd366",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4c2e59d098df7b6cbae0848d66de2f8a4889b9c3/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0xa5c475167f03b1556c054e0da78192cd2779087f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x7b39917f9562c8bc83c7a6c2950ff571375d505d/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x4708713b4b6bd32e41bcb2f9c5901d74fedba447",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b175474e89094c44da98b954eedeac495271d0f/0xc56e2a2455ffb19906ee6ba0cc7d4b9a4ce2c38c",
+      "pool": "0x6db49b60b15b27d3e5c948db3025bc522d5262c9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3c8d2fce49906e11e71cb16fa0ffeb2b16c29638/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0xf79321e80acd5fa590936f09acb90ec6471fcbc4",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0affa06e7fbe5bc9a764c979aa66e8256a631f02/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x64aae17164aa665c50fbfe6176b50f33afae1c3d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6725363e565baa1dda45d492810298ae0b25c4ac/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x90931de9d58058fc437c9fd1c1c1fda0645d1051",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3e9bc21c9b189c09df3ef1b824798658d5011937/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "pool": "0x67e4423340b56c119749a570afa460f031ac29d6",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x18255f76a9efd79f39e13c9da84922946f37e3ce/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x6af5a6ce8c6f9edda44587c78404d96add823b26",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48/0xda0c94c73d127ee191955fb46bacd7ff999b2bcd",
+      "pool": "0xf1e34d19f63b69eaa70952f2f64f735849959833",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x06b884e60794ce02aafab13791b59a2e6a07442f/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x70813e6d7550fa1a31ef6028eb60c4d72285c7f0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/0xccc8cb5229b0ac8069c51fd58367fd1e622afd97",
+      "pool": "0x295685c8fe08d8192981d21ea1fe856a07443920",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0e5f6e67099529557f335be9e2333d90dce0861b/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "pool": "0x8e5320a0ab4e51cc0e7152529ebb62a1f13deff9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    }
+  ]
+}

@@ -1,0 +1,623 @@
+{
+  "chain": "base",
+  "measuredAt": "2026-10-30T02:08:04.277Z",
+  "totalUnconfigured": 138,
+  "candidates": [
+    {
+      "factory": "0x0fd83557b2be93617c9c1c1b6fd549401c74558c",
+      "poolsInRegistry": 37,
+      "distinctPairs": 31,
+      "swapsObservedInSweep": 9889,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "feeAmountTickSpacing": "60",
+        "owner": "0x4aB9070B7680f802cBf8322e597a4409902171e5"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "feeAmountTickSpacing(3000)=60 — Uniswap V3 fork",
+      "samplePools": [
+        "0x7682d268f34e86accadff56db9668eb6a449ff07",
+        "0x1d6cfee6eec4688dad33e6fbb2304a9efe8be3c8",
+        "0x331c12605938d2a9ab893c495cfd5f4e875e3313"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0x0fd83557",
+        "family": "uniswap-v3",
+        "factory": "0x0fd83557b2be93617c9c1c1b6fd549401c74558c",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "feeAmountTickSpacing(3000)=60 — Uniswap V3 fork"
+      }
+    },
+    {
+      "factory": "0x8e6a9fcd1d638cc760ffba397605fe3355de76d2",
+      "poolsInRegistry": 98,
+      "distinctPairs": 98,
+      "swapsObservedInSweep": 3731,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "factoryRegistry": "0x7b2A2c12dC5Ea2a31455952a05031C3E4BB28F3E",
+        "allPoolsLength": "281",
+        "defaultFee": "30"
+      },
+      "inferredFamily": "solidly-v2",
+      "evidence": "Solidly-style factory, allPoolsLength()=281",
+      "samplePools": [
+        "0x0bcf4c5672d02a4320d963ec6a950a7b0d615379",
+        "0xcfc7dc24e9d302976f0b1efb90a4d9b22b54b2a5",
+        "0x158e6434dfde91830607afc8a7678fada53f2b64"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified solidly-v2 factory 0x8e6a9fcd",
+        "family": "solidly-v2",
+        "factory": "0x8e6a9fcd1d638cc760ffba397605fe3355de76d2",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "Solidly-style factory, allPoolsLength()=281"
+      }
+    },
+    {
+      "factory": "0x3e84d913803b02a4a7f027165e8ca42c14c0fde7",
+      "poolsInRegistry": 65,
+      "distinctPairs": 65,
+      "swapsObservedInSweep": 1538,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "allPairsLength": "1291",
+        "feeTo": "0xdD8Bb6779D6d7A2540C38caE1e95c2A1c350A390",
+        "feeToSetter": "0x4aB9070B7680f802cBf8322e597a4409902171e5"
+      },
+      "inferredFamily": "uniswap-v2",
+      "evidence": "V2-style factory, allPairsLength()=1291",
+      "samplePools": [
+        "0x4c1453376952f899365d295c716aaa1010b8feaa",
+        "0x9bb646bf0f4da44bfaf3d899e774de065731edfe",
+        "0xef24722d5dae32dc155d961561cffbc5f347eee7"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v2 factory 0x3e84d913",
+        "family": "uniswap-v2",
+        "factory": "0x3e84d913803b02a4a7f027165e8ca42c14c0fde7",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "V2-style factory, allPairsLength()=1291"
+      }
+    },
+    {
+      "factory": "0xaa5865dc3a60b25d305226d66fd573021f0d8ffb",
+      "poolsInRegistry": 1,
+      "distinctPairs": 1,
+      "swapsObservedInSweep": 715,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "owner": "0xF407739E81574A3C9A3195bCb85eE694C94e540c",
+        "voter": "0xb509071a8a33fC2184B169dfc029B3dE3CF5172B",
+        "poolImplementation": "0x2DaA7cF731334b4Cd1c2E4E01E97Ca67F4B9C6AE",
+        "factoryRegistry": "0x6f701F163a7372C27275e76Af21b6cF06ca6D498",
+        "allPoolsLength": "3",
+        "tickSpacings": [
+          "1",
+          "50",
+          "100",
+          "200",
+          "2000"
+        ],
+        "swapFeeModule": "0x8Bc9B86eBCd30A724bf486536507B7f6bf1A5a46"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "Slipstream fingerprint; voter()=0xb509071a8a33fC2184B169dfc029B3dE3CF5172B",
+      "samplePools": [
+        "0x9dd30d200b5c7e6874ab5a23c7bd7e2ad6d9c135"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0xaa5865dc",
+        "family": "uniswap-v3",
+        "factory": "0xaa5865dc3a60b25d305226d66fd573021f0d8ffb",
+        "quoter": null,
+        "tickSpacingBased": true,
+        "evidence": "Slipstream fingerprint; voter()=0xb509071a8a33fC2184B169dfc029B3dE3CF5172B"
+      }
+    },
+    {
+      "factory": "0x38015d05f4fec8afe15d7cc0386a126574e8077b",
+      "poolsInRegistry": 21,
+      "distinctPairs": 12,
+      "swapsObservedInSweep": 666,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "feeAmountTickSpacing": "0",
+        "owner": "0x463112327576814f80DA8D3632f7bad23c853A29"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "feeAmountTickSpacing(3000)=0 — V3 fork with custom spacing",
+      "samplePools": [
+        "0x883e4ae0a817f2901500971b353b5dd89aa52184",
+        "0x74cb6260be6f31965c239df6d6ef2ac2b5d4f020",
+        "0x273fdfe6018230f188741d7f93d4ab589bd26197"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0x38015d05",
+        "family": "uniswap-v3",
+        "factory": "0x38015d05f4fec8afe15d7cc0386a126574e8077b",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "feeAmountTickSpacing(3000)=0 — V3 fork with custom spacing"
+      }
+    },
+    {
+      "factory": "0x57592d44eb60011500961ef177bff8d8691d5a8b",
+      "poolsInRegistry": 9,
+      "distinctPairs": 9,
+      "swapsObservedInSweep": 480,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "allPairsLength": "52",
+        "feeTo": "0xBe4ec6286bF4b557D098e303Fa3570584BDa1EB9",
+        "feeToSetter": "0x9973EdDb50D3F22C2523862eA8A415f7f43D5Cd7"
+      },
+      "inferredFamily": "uniswap-v2",
+      "evidence": "V2-style factory, allPairsLength()=52",
+      "samplePools": [
+        "0xae45f7eb428eb6403f2567c3a3ec47e9230bc823",
+        "0x9ccc7afe654b9c842a792e9567a30031c1943a1d",
+        "0xacfd20a524341602c682b250c86367d2fe09be7d"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v2 factory 0x57592d44",
+        "family": "uniswap-v2",
+        "factory": "0x57592d44eb60011500961ef177bff8d8691d5a8b",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "V2-style factory, allPairsLength()=52"
+      }
+    },
+    {
+      "factory": "0xed8db60acc29e14bc867a497d94ca6e3ceb5ec04",
+      "poolsInRegistry": 53,
+      "distinctPairs": 51,
+      "swapsObservedInSweep": 438,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "solidly-like (stable flag)"
+      ],
+      "fingerprint": {
+        "allPairsLength": "376"
+      },
+      "inferredFamily": "uniswap-v2",
+      "evidence": "V2-style factory, allPairsLength()=376",
+      "samplePools": [
+        "0x83240b049fa89b65be714aed68e5b074df6aac84",
+        "0x659908a3353c48aa92f9b0aeb6d3b473ac091b83",
+        "0x5a775ac84d0ccb48a404cfd23d44ee14ae75d221"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v2 factory 0xed8db60a",
+        "family": "uniswap-v2",
+        "factory": "0xed8db60acc29e14bc867a497d94ca6e3ceb5ec04",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "V2-style factory, allPairsLength()=376"
+      }
+    },
+    {
+      "factory": "0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e",
+      "poolsInRegistry": 69,
+      "distinctPairs": 69,
+      "swapsObservedInSweep": 410,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "allPairsLength": "53070",
+        "feeTo": "0x82B852d8483111FD2c714a2579eE9D4E83947a60",
+        "feeToSetter": "0xDdaf25D9363f852122d0c80ba33e7c613e8AbB47"
+      },
+      "inferredFamily": "uniswap-v2",
+      "evidence": "V2-style factory, allPairsLength()=53070",
+      "samplePools": [
+        "0x7e3771d4a491698b59885d40c6f5e7709091d536",
+        "0x8b9ae9726173f933972cdfd6b0b9b573826cd243",
+        "0x97a7c3ef92e8d058144abf7f040cc78daafc2631"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v2 factory 0x02a84c1b",
+        "family": "uniswap-v2",
+        "factory": "0x02a84c1b3bbd7401a5f7fa98a384ebc70bb5749e",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "V2-style factory, allPairsLength()=53070"
+      }
+    },
+    {
+      "factory": "0x3d237ac6d2f425d2e890cc99198818cc1fa48870",
+      "poolsInRegistry": 10,
+      "distinctPairs": 7,
+      "swapsObservedInSweep": 330,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "feeAmountTickSpacing": "0",
+        "owner": "0xe1581C10EE235F0DEbb655EA365100bCBD84BAD2"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "feeAmountTickSpacing(3000)=0 — V3 fork with custom spacing",
+      "samplePools": [
+        "0xfcd3960075c00af339a4e26afc76b949e5ff06ec",
+        "0x17d7b7bd4fc771555d8cccfe90d2efcf3c7106dd",
+        "0x1453e19e04b9442be929648125a7b97d2016a053"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0x3d237ac6",
+        "family": "uniswap-v3",
+        "factory": "0x3d237ac6d2f425d2e890cc99198818cc1fa48870",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "feeAmountTickSpacing(3000)=0 — V3 fork with custom spacing"
+      }
+    },
+    {
+      "factory": "0x7456837fb64e6e3f6f51d5719cc8be9ae3870534",
+      "poolsInRegistry": 11,
+      "distinctPairs": 11,
+      "swapsObservedInSweep": 267,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "allPairsLength": "24"
+      },
+      "inferredFamily": "uniswap-v2",
+      "evidence": "V2-style factory, allPairsLength()=24",
+      "samplePools": [
+        "0xb446de498ebfca7596a44fdbadba6ab2567a3fd9",
+        "0x43b5bc5e04a3472bf36fb455cf42902e569c258c",
+        "0x06612d3a895576094a2490897dc65ddbc2f2c880"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v2 factory 0x7456837f",
+        "family": "uniswap-v2",
+        "factory": "0x7456837fb64e6e3f6f51d5719cc8be9ae3870534",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "V2-style factory, allPairsLength()=24"
+      }
+    },
+    {
+      "factory": "0xf4502a98a15e82d66d28d2381e2f3a407ea45b83",
+      "poolsInRegistry": 9,
+      "distinctPairs": 9,
+      "swapsObservedInSweep": 263,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "owner": "0x2358545EeF7E56B2EbEaCbF62212278dD27A99db",
+        "defaultFee": "500"
+      },
+      "inferredFamily": null,
+      "evidence": "answered only generic methods; family not established",
+      "samplePools": [
+        "0x0b32f738a582126d395c796332b51e534e04c7d0",
+        "0xb6fc5795b39c192f624503b6fe1b39c49cc9544e",
+        "0x0e8af367dba0c9cb4674d38539ef3465a25a7237"
+      ],
+      "quotableIfAdded": false,
+      "configStub": null
+    },
+    {
+      "factory": "0x259b3217a01878ea9d64b45ee48231e660863ee7",
+      "poolsInRegistry": 3,
+      "distinctPairs": 3,
+      "swapsObservedInSweep": 209,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "allPairsLength": "11",
+        "feeTo": "0x38926066dBb8478022aBE84097D4349d80e07430",
+        "feeToSetter": "0x85c208ea8016EfD7Da54092475ADff8ed7D014DF"
+      },
+      "inferredFamily": "uniswap-v2",
+      "evidence": "V2-style factory, allPairsLength()=11",
+      "samplePools": [
+        "0x1baa5856f415f84613dd51df082e9c699044a906",
+        "0xe846431db89c7ece9a078380c77bad42dc59a0df",
+        "0xe2244a2b60914e81570447533eae2ad5cd47cdbe"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v2 factory 0x259b3217",
+        "family": "uniswap-v2",
+        "factory": "0x259b3217a01878ea9d64b45ee48231e660863ee7",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "V2-style factory, allPairsLength()=11"
+      }
+    },
+    {
+      "factory": "0x9a9a171c69cc811dc6b59bb2f9990e34a22fc971",
+      "poolsInRegistry": 7,
+      "distinctPairs": 7,
+      "swapsObservedInSweep": 197,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "allPairsLength": "35",
+        "feeTo": "0x38eaB8818eb1A1A82A473895e17bAA2565693910",
+        "feeToSetter": "0x937fd8CC7f7D2ef5B801E44c03218ade5648C3Fb"
+      },
+      "inferredFamily": "uniswap-v2",
+      "evidence": "V2-style factory, allPairsLength()=35",
+      "samplePools": [
+        "0x288976ed5c798937cc58954deee471dfbcd3f23b",
+        "0xe5ca910f564e7a3ee1ca7a4d9e0d83e0e5dbdd02",
+        "0x263c13f3ae5a173bf4a0d0cadeedc87c475c603d"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v2 factory 0x9a9a171c",
+        "family": "uniswap-v2",
+        "factory": "0x9a9a171c69cc811dc6b59bb2f9990e34a22fc971",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "V2-style factory, allPairsLength()=35"
+      }
+    },
+    {
+      "factory": "0xb5620f90e803c7f957a9ef351b8db3c746021bea",
+      "poolsInRegistry": 5,
+      "distinctPairs": 4,
+      "swapsObservedInSweep": 191,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "feeAmountTickSpacing": "0",
+        "owner": "0xfD5844867387Cecc3A0393b3e0BE32479Ea9e61a"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "feeAmountTickSpacing(3000)=0 — V3 fork with custom spacing",
+      "samplePools": [
+        "0x8d4b74fe1dfa2789caa367f670eb4ac202107635",
+        "0xf6062550e8711dd6a38ca87299b14dcd6d45d783",
+        "0xde1d6c1c1e59f166ef7d80f81ef4a24a1459cfdf"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0xb5620f90",
+        "family": "uniswap-v3",
+        "factory": "0xb5620f90e803c7f957a9ef351b8db3c746021bea",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "feeAmountTickSpacing(3000)=0 — V3 fork with custom spacing"
+      }
+    },
+    {
+      "factory": "0x829ce74128ea95c72aa379168df529feaa464aee",
+      "poolsInRegistry": 11,
+      "distinctPairs": 10,
+      "swapsObservedInSweep": 188,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "feeAmountTickSpacing": "0",
+        "owner": "0x5eB12d3D5Df72dB9D66D7B1BFd94FeAdA4D2A178"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "feeAmountTickSpacing(3000)=0 — V3 fork with custom spacing",
+      "samplePools": [
+        "0x143d8f1b319364ab451ed1e98b62a2a5f89dbdae",
+        "0xe3e0fb0ae6ae709d5a29a94190b5b2f931391af5",
+        "0x466b627e8bd7f358d27f68f64eab2a759e08fe78"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0x829ce741",
+        "family": "uniswap-v3",
+        "factory": "0x829ce74128ea95c72aa379168df529feaa464aee",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "feeAmountTickSpacing(3000)=0 — V3 fork with custom spacing"
+      }
+    },
+    {
+      "factory": "0x78589e876edcebdce72ee3436ab3c9ad3a7cef2d",
+      "poolsInRegistry": 8,
+      "distinctPairs": 8,
+      "swapsObservedInSweep": 176,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "factoryRegistry": "0x7b2A2c12dC5Ea2a31455952a05031C3E4BB28F3E",
+        "allPoolsLength": "21",
+        "defaultFee": "5"
+      },
+      "inferredFamily": "solidly-v2",
+      "evidence": "Solidly-style factory, allPoolsLength()=21",
+      "samplePools": [
+        "0x11cc6f32930c20e3cfb01fc35bd37ed20d3ed82f",
+        "0x64f492b7a8ac4b27e35d8e6c3c21e6b31ac69a27",
+        "0xdd2a5dac93e62c27fe0a3236d22fcea29e19c62c"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified solidly-v2 factory 0x78589e87",
+        "family": "solidly-v2",
+        "factory": "0x78589e876edcebdce72ee3436ab3c9ad3a7cef2d",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "Solidly-style factory, allPoolsLength()=21"
+      }
+    },
+    {
+      "factory": "0xe84fa17c2ea423e0dea3c986ee3e1560d684bb2d",
+      "poolsInRegistry": 1,
+      "distinctPairs": 1,
+      "swapsObservedInSweep": 165,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "feeAmountTickSpacing": "60",
+        "owner": "0x32f8ab67B8f6D3e7c7c2314aDCDb378de3D25BE9"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "feeAmountTickSpacing(3000)=60 — Uniswap V3 fork",
+      "samplePools": [
+        "0x3bd8f9086cc4fbab7ca734260396df450d594168"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0xe84fa17c",
+        "family": "uniswap-v3",
+        "factory": "0xe84fa17c2ea423e0dea3c986ee3e1560d684bb2d",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "feeAmountTickSpacing(3000)=60 — Uniswap V3 fork"
+      }
+    },
+    {
+      "factory": "0xe6da85feb3b4e0d6aed95c41a125fba859bb9d24",
+      "poolsInRegistry": 7,
+      "distinctPairs": 7,
+      "swapsObservedInSweep": 163,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "feeAmountTickSpacing": "60",
+        "owner": "0x5C146cd18fa53914580573C9b9604588529406Ca"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "feeAmountTickSpacing(3000)=60 — Uniswap V3 fork",
+      "samplePools": [
+        "0xb78daa6d74fe0e23e5c95446cfadbadc63205cfc",
+        "0x607af6e4351cd02f8aa38609060c67a6e9a86039",
+        "0xcc7135ec0d2f52f557b22069d3fde3cdd8b27165"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0xe6da85fe",
+        "family": "uniswap-v3",
+        "factory": "0xe6da85feb3b4e0d6aed95c41a125fba859bb9d24",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "feeAmountTickSpacing(3000)=60 — Uniswap V3 fork"
+      }
+    },
+    {
+      "factory": "0x04c9f118d21e8b767d2e50c946f0cc9f6c367300",
+      "poolsInRegistry": 16,
+      "distinctPairs": 16,
+      "swapsObservedInSweep": 155,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v2-like (reserves only)"
+      ],
+      "fingerprint": {
+        "allPairsLength": "1022",
+        "feeTo": "0xfD5844867387Cecc3A0393b3e0BE32479Ea9e61a",
+        "feeToSetter": "0xfD5844867387Cecc3A0393b3e0BE32479Ea9e61a"
+      },
+      "inferredFamily": "uniswap-v2",
+      "evidence": "V2-style factory, allPairsLength()=1022",
+      "samplePools": [
+        "0x5554419ccd0293d9383901f461c7c3e0c66e925f",
+        "0xaeeb835f3aa21d19ea5e33772daa9e64f1b6982f",
+        "0xc044fb4503bbc9a61b311898d2618f848805b688"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v2 factory 0x04c9f118",
+        "family": "uniswap-v2",
+        "factory": "0x04c9f118d21e8b767d2e50c946f0cc9f6c367300",
+        "quoter": null,
+        "tickSpacingBased": false,
+        "evidence": "V2-style factory, allPairsLength()=1022"
+      }
+    },
+    {
+      "factory": "0x0e5ab24bebda7e5bb3961f7e9b3532a83ae86b48",
+      "poolsInRegistry": 1,
+      "distinctPairs": 1,
+      "swapsObservedInSweep": 149,
+      "screeningDepthUsdSum": 0,
+      "poolInterfaceHints": [
+        "v3-like (fee + tickSpacing)"
+      ],
+      "fingerprint": {
+        "owner": "0xC9C0608F551ADe53F911cec50F565db55c5bAFd1",
+        "voter": "0x83eAb12357860e8be00D4b8a65928D6caB4c0e0c",
+        "poolImplementation": "0xcD3d85d82137d3094E6F4f7A507D309A2c2639F8",
+        "factoryRegistry": "0x8a66E17DC6fa9C963E891391C92d451202B6Fa28",
+        "allPoolsLength": "9",
+        "tickSpacings": [
+          "1",
+          "10",
+          "60",
+          "200",
+          "50",
+          "100"
+        ],
+        "swapFeeModule": "0xd9f77f8b00D42E2A49D82F8115cD5db380550750"
+      },
+      "inferredFamily": "uniswap-v3",
+      "evidence": "Slipstream fingerprint; voter()=0x83eAb12357860e8be00D4b8a65928D6caB4c0e0c",
+      "samplePools": [
+        "0x966617c62d5053fceed8fd051c0319ca2b5efd65"
+      ],
+      "quotableIfAdded": true,
+      "configStub": {
+        "label": "Unidentified uniswap-v3 factory 0x0e5ab24b",
+        "family": "uniswap-v3",
+        "factory": "0x0e5ab24bebda7e5bb3961f7e9b3532a83ae86b48",
+        "quoter": null,
+        "tickSpacingBased": true,
+        "evidence": "Slipstream fingerprint; voter()=0x83eAb12357860e8be00D4b8a65928D6caB4c0e0c"
+      }
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "chain": "ethereum",
+  "chainName": "Ethereum mainnet",
+  "auditedAt": "2026-10-30T05:55:37.312Z",
+  "pipelineAudited": [],
+  "windows": [],
+  "coverage": {
+    "observed": {
+      "poolsInArbitrages": 0,
+      "poolsEverResolved": 0,
+      "tokensInArbitrages": 0,
+      "tokensEverResolved": 0,
+      "pairsInArbitrageCycles": 0,
+      "pairsEverResolved": 0,
+      "venues": [],
+      "venueCombos": 0,
+      "blocks": 0,
+      "chainMinutes": 0,
+      "arbitragesDetected": 0,
+      "multiSwapTxsExamined": 0
+    },
+    "universe": {
+      "byFactory": {
+        "uniswap-v3": {
+          "label": "Uniswap V3",
+          "family": "uniswap-v3",
+          "address": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+          "onChainPoolCount": null,
+          "enumerable": false,
+          "enumMethod": null,
+          "observedPools": 0
+        },
+        "uniswap-v2": {
+          "label": "Uniswap V2",
+          "family": "uniswap-v2",
+          "address": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+          "onChainPoolCount": 526497,
+          "enumerable": true,
+          "enumMethod": "allPairs",
+          "observedPools": 0
+        },
+        "sushi-v2": {
+          "label": "SushiSwap V2",
+          "family": "uniswap-v2",
+          "address": "0xc0aee478e3658e2610c5f7a4a2e1777ce9e4f2ac",
+          "onChainPoolCount": 4812,
+          "enumerable": true,
+          "enumMethod": "allPairs",
+          "observedPools": 0
+        },
+        "pancake-v3": {
+          "label": "PancakeSwap V3",
+          "family": "pancake-v3",
+          "address": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+          "onChainPoolCount": null,
+          "enumerable": false,
+          "enumMethod": null,
+          "observedPools": 0
+        },
+        "sushi-v3": {
+          "label": "SushiSwap V3",
+          "family": "uniswap-v3",
+          "address": "0xbaceb8ec6b9355dfc0269c18bac9d6e2bdc29c4f",
+          "onChainPoolCount": null,
+          "enumerable": false,
+          "enumMethod": null,
+          "observedPools": 0
+        },
+        "aero-merged-cl-eth": {
+          "label": "Aero/Velodrome Slipstream CL (Ethereum deployment)",
+          "family": "uniswap-v3",
+          "address": "0xf4fd2e6c5b60c5b365cd1b96dd6245e6d60414c2",
+          "onChainPoolCount": 80,
+          "enumerable": true,
+          "enumMethod": "allPools",
+          "observedPools": 0
+        },
+        "unidentified-v2-a-eth": {
+          "label": "Unidentified Uniswap V2 fork A",
+          "family": "uniswap-v2",
+          "address": "0xeb2a625b704d73e82946d8d026e1f588eed06416",
+          "onChainPoolCount": 468,
+          "enumerable": true,
+          "enumMethod": "allPairs",
+          "observedPools": 0
+        },
+        "unidentified-v2-b-eth": {
+          "label": "Unidentified Uniswap V2 fork B",
+          "family": "uniswap-v2",
+          "address": "0x1097053fd2ea711dad45caccc45eff7548fcb362",
+          "onChainPoolCount": 8094,
+          "enumerable": true,
+          "enumMethod": "allPairs",
+          "observedPools": 0
+        },
+        "unidentified-v2-c-eth": {
+          "label": "Unidentified Uniswap V2 fork C",
+          "family": "uniswap-v2",
+          "address": "0x115934131916c8b277dd010ee02de363c09d037c",
+          "onChainPoolCount": 1062,
+          "enumerable": true,
+          "enumMethod": "allPairs",
+          "observedPools": 0
+        },
+        "balancer-v2": {
+          "label": "Balancer V2",
+          "family": "balancer-v2",
+          "address": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+          "onChainPoolCount": null,
+          "enumerable": false,
+          "enumMethod": null,
+          "observedPools": 0
+        }
+      },
+      "enumerablePools": 541013,
+      "nonEnumerableFactories": [
+        "uniswap-v3",
+        "pancake-v3",
+        "sushi-v3",
+        "balancer-v2"
+      ],
+      "knownPoolFloor": 541013
+    },
+    "ratios": {
+      "poolsEverResolvedVsEnumerableUniverse": 0,
+      "poolsInArbitragesVsEnumerableUniverse": 0,
+      "note": "Denominator counts only factories exposing an on-chain array. Factories without one (Uniswap V3, PancakeSwap V3, SushiSwap V3, Solidly V3, two unidentified V3 forks, Uniswap V4, Balancer V2) are additional and uncounted, so every percentage here is an OVERSTATEMENT of true coverage."
+    },
+    "routeUniverse": {
+      "basis": "pools already in the metadata cache only — a lower bound, not the market",
+      "pairsWithPools": 0,
+      "pairsWithTwoOrMorePools": 0,
+      "twoPoolRouteCandidates": 0,
+      "directionalRoutes": 0,
+      "routesEvaluatedByExistingTools": 0,
+      "routesEvaluatedNote": "No existing script generates a route. 04-validate-opportunity.mjs re-prices observed transactions; it never constructs an untraded pool combination."
+    }
+  },
+  "blindSpots": [
+    {
+      "id": "requires-prior-arbitrage",
+      "severity": "fundamental",
+      "finding": "A pool enters the dataset only if an operator already traded it inside an observed block. A pool holding a standing price difference that nobody took is invisible.",
+      "consequence": "The Stage-2 result describes opportunities other operators competed for. It is not a measurement of the opportunity universe."
+    },
+    {
+      "id": "pair-selection-is-inherited",
+      "severity": "fundamental",
+      "finding": "Token pairs were never chosen by us; they are whatever the observed operators chose. 97.5% of the top venue combination was a single pair.",
+      "consequence": "Conclusions about \"which pairs are profitable\" are conclusions about other operators' pair selection."
+    },
+    {
+      "id": "observation-window",
+      "severity": "quantified",
+      "finding": "0 blocks observed across 0 windows (0.0 minutes of chain time).",
+      "consequence": "Opportunities that recur on a daily or weekly cycle cannot appear in a 33-minute sample."
+    },
+    {
+      "id": "no-idle-pool-state",
+      "severity": "fundamental",
+      "finding": "No script reads pool state for a pool that did not trade. 04-validate-opportunity.mjs re-prices only the pools named in an observed arbitrage.",
+      "consequence": "Zero coverage of the quiet majority of the market, where competition is lowest."
+    },
+    {
+      "id": "no-factory-enumeration",
+      "severity": "fundamental",
+      "finding": "Before this stage, nothing enumerated a factory. Pool discovery was entirely incidental to swap-log decoding.",
+      "consequence": "No denominator existed, so no coverage percentage could be stated. 541,013 pools are reachable from on-chain arrays alone."
+    },
+    {
+      "id": "v4-registry-window",
+      "severity": "quantified",
+      "finding": "The Uniswap V4 poolId registry holds 0 pools, built from a bounded block scan.",
+      "consequence": "V4 swaps in pools created outside that window are unattributable and were marked unverified."
+    }
+  ],
+  "reuse": {
+    "reusableAsIs": [
+      [
+        "lib/rpc.mjs",
+        "JSON-RPC with failover, retry and concurrency cap"
+      ],
+      [
+        "lib/v3math.mjs",
+        "exact V3 tick maths, validated 32/32 against the deployed QuoterV2"
+      ],
+      [
+        "lib/quote.mjs",
+        "one exact-quote interface across V3 forks, solidly-v2, uniswap-v2; plus ternary-search optimal sizing"
+      ],
+      [
+        "lib/pools.mjs",
+        "pool/token metadata with retrying on-disk cache and factory->venue resolver"
+      ],
+      [
+        "lib/price.mjs",
+        "USD pricing from on-chain state at a block"
+      ],
+      [
+        "lib/registry.mjs",
+        "status ledger with the VALIDATED gate"
+      ],
+      [
+        "chains/*.json",
+        "per-chain factories with on-chain identification evidence"
+      ],
+      [
+        "scripts/03-validate-quotemath.mjs",
+        "the correctness gate every quote depends on"
+      ],
+      [
+        "scripts/08,09,10",
+        "latency, Flashblocks and decision-cost measurements feeding capture feasibility"
+      ]
+    ],
+    "mustBeBuilt": [
+      [
+        "lib/multicall.mjs",
+        "batched reads — built in this stage; makes enumeration affordable"
+      ],
+      [
+        "lib/discovery.mjs",
+        "factory enumeration and cross-venue pool completion"
+      ],
+      [
+        "lib/poolregistry.mjs",
+        "the indexed pool/token inventory with incremental updates"
+      ],
+      [
+        "lib/routes.mjs",
+        "route generation and the coverage ledger"
+      ],
+      [
+        "lib/costs.mjs",
+        "standalone cost model (gas + L1 data fee) not tied to an observed receipt"
+      ],
+      [
+        "scripts/22-24",
+        "discovery, state snapshot, independent scanner, persistence"
+      ]
+    ],
+    "preserved": [
+      [
+        "data/forensics-base-*.json",
+        "1,662 arbitrages across 1,000 blocks — System B evidence, untouched"
+      ],
+      [
+        "data/ranking-base.json, validation-base-*.json",
+        "Stage 2 rankings and validation runs, untouched"
+      ],
+      [
+        "registry.json",
+        "67 FAILED opportunity rows — negative results retained, not deleted"
+      ],
+      [
+        "reports/stage2-base-investigation.md, stage3-sameblock-feasibility.md",
+        "prior conclusions, unmodified"
+      ]
+    ]
+  },
+  "verdict": "No forensics run exists for this chain. All coverage is NOT TESTED."
+}

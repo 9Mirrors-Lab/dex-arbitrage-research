@@ -1,0 +1,522 @@
+{
+  "chain": "base",
+  "chainName": "Base",
+  "baseBlock": 53266711,
+  "horizon": 12,
+  "scanFile": "scan-base-53266711-v3.json",
+  "measuredAt": "2026-10-30T06:27:37.522Z",
+  "latencyModel": {
+    "source": "data/latency-base.json, data/decision-latency-base.json",
+    "observeMs": 43,
+    "decideMs": 55,
+    "submitMs": 43,
+    "totalMs": 141,
+    "blockIntervalMs": 2000,
+    "slackMs": 1859,
+    "measuredAgainst": "Base public endpoints from a local workstation",
+    "note": "Block-boundary capture only. Same-block reaction is a different architecture and is not claimed here.",
+    "caveat": "Base is sequenced first-come-first-served by a single sequencer with no public builder auction, so arriving inside the budget is the binding constraint and a persistent opportunity is genuinely reachable — subject to other operators arriving sooner."
+  },
+  "candidates": 3,
+  "byClassification": {
+    "CAPTURE CANDIDATE": 3
+  },
+  "captureCandidates": 3,
+  "notCapturable": 0,
+  "notReproducible": 0,
+  "results": [
+    {
+      "key": "0x50982a32af4f9e090df95956f3b07ffe70badb21|0xaffebeead5d3cf2a2f4ad6f17ba5517b77cfcad1|d0",
+      "pair": "0x4200000000000000000000000000000000000006/0x8b03d30b88e86fc5f447069c79ec56b8e7d87ab6",
+      "tokenIn": "0x4200000000000000000000000000000000000006",
+      "tokenInSymbol": "WETH",
+      "tokenMid": "0x8b03d30b88e86fc5f447069c79ec56b8e7d87ab6",
+      "tokenMidSymbol": "JAILBRK",
+      "venueA": "uniswap-v2",
+      "venueB": "aerodrome-v2",
+      "poolA": "0x50982a32af4f9e090df95956f3b07ffe70badb21",
+      "poolB": "0xaffebeead5d3cf2a2f4ad6f17ba5517b77cfcad1",
+      "feeA": null,
+      "feeB": null,
+      "dir": 0,
+      "sizeToken": 0.007953102744279898,
+      "notionalUsd": 17.61868016408829,
+      "grossUsdAtScan": 0.3265857328009567,
+      "costMedianUsd": 0.013495932018670663,
+      "costContestedUsd": 3.118442780072017,
+      "netUsdMedianAtScan": 0.31308980078228604,
+      "netUsdContestedAtScan": -2.79185704727106,
+      "priceBasis": "spot ratio of a $28,677,189 pool against a $1 anchor (1 hop) — uniswap-v3 0x6c561b44 vs USDC",
+      "profitableAtPrevBoundary": true,
+      "profitableAtNextBoundary": true,
+      "longestProfitableRunBlocks": 15,
+      "longestProfitableRunSeconds": 30,
+      "runStartBlock": 53266709,
+      "classification": "CAPTURE CANDIDATE",
+      "rationale": "net positive at 15 consecutive completed-block boundaries (30s). A bot observing the first boundary had 1859ms of slack to land in the next block while the state was still profitable.",
+      "competition": {
+        "knownArbitragesOnPoolA": 0,
+        "knownArbitragesOnPoolB": 0,
+        "distinctOperatorsPoolA": 0,
+        "distinctOperatorsPoolB": 0,
+        "swapsPoolAInSweep": 0,
+        "swapsPoolBInSweep": 1,
+        "swapsPerBlockPoolA": 0,
+        "swapsPerBlockPoolB": 1,
+        "basis": "arbitrage counts from the preserved Stage-2 forensics windows; swap counts from the Phase-B sweep window"
+      },
+      "series": [
+        {
+          "block": 53266709,
+          "offset": -2,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266710,
+          "offset": -1,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266711,
+          "offset": 0,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266712,
+          "offset": 1,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266713,
+          "offset": 2,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266714,
+          "offset": 3,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266715,
+          "offset": 4,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266716,
+          "offset": 5,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266717,
+          "offset": 6,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266718,
+          "offset": 7,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266719,
+          "offset": 8,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266720,
+          "offset": 9,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266721,
+          "offset": 10,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266722,
+          "offset": 11,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        },
+        {
+          "block": 53266723,
+          "offset": 12,
+          "grossToken": 0.000147421365482081,
+          "grossUsd": 0.3265857328009567,
+          "netUsdMedian": 0.31308980078228604,
+          "profitable": true
+        }
+      ]
+    },
+    {
+      "key": "0x56f2781e174f38afe547bbc3619c884c9d4f38f5|0xda00485016ab6c9efe354a594aa45e71e7657985|d0",
+      "pair": "0x4200000000000000000000000000000000000006/0xfc9d2f90eab3e9086f062ac67521461c70d86290",
+      "tokenIn": "0x4200000000000000000000000000000000000006",
+      "tokenInSymbol": "WETH",
+      "tokenMid": "0xfc9d2f90eab3e9086f062ac67521461c70d86290",
+      "tokenMidSymbol": "EDNA",
+      "venueA": "uniswap-v2",
+      "venueB": "aerodrome-v2",
+      "poolA": "0x56f2781e174f38afe547bbc3619c884c9d4f38f5",
+      "poolB": "0xda00485016ab6c9efe354a594aa45e71e7657985",
+      "feeA": null,
+      "feeB": null,
+      "dir": 0,
+      "sizeToken": 0.003082971503151887,
+      "notionalUsd": 6.8297733118182835,
+      "grossUsdAtScan": 0.02943560917074403,
+      "costMedianUsd": 0.013495932018670663,
+      "costContestedUsd": 3.118442780072017,
+      "netUsdMedianAtScan": 0.015939677152073367,
+      "netUsdContestedAtScan": -3.089007170901273,
+      "priceBasis": "spot ratio of a $28,677,189 pool against a $1 anchor (1 hop) — uniswap-v3 0x6c561b44 vs USDC",
+      "profitableAtPrevBoundary": true,
+      "profitableAtNextBoundary": true,
+      "longestProfitableRunBlocks": 15,
+      "longestProfitableRunSeconds": 30,
+      "runStartBlock": 53266709,
+      "classification": "CAPTURE CANDIDATE",
+      "rationale": "net positive at 15 consecutive completed-block boundaries (30s). A bot observing the first boundary had 1859ms of slack to land in the next block while the state was still profitable.",
+      "competition": {
+        "knownArbitragesOnPoolA": 0,
+        "knownArbitragesOnPoolB": 0,
+        "distinctOperatorsPoolA": 0,
+        "distinctOperatorsPoolB": 0,
+        "swapsPoolAInSweep": 0,
+        "swapsPoolBInSweep": 0,
+        "swapsPerBlockPoolA": 0,
+        "swapsPerBlockPoolB": 0,
+        "basis": "arbitrage counts from the preserved Stage-2 forensics windows; swap counts from the Phase-B sweep window"
+      },
+      "series": [
+        {
+          "block": 53266709,
+          "offset": -2,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266710,
+          "offset": -1,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266711,
+          "offset": 0,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266712,
+          "offset": 1,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266713,
+          "offset": 2,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266714,
+          "offset": 3,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266715,
+          "offset": 4,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266716,
+          "offset": 5,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266717,
+          "offset": 6,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266718,
+          "offset": 7,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266719,
+          "offset": 8,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266720,
+          "offset": 9,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266721,
+          "offset": 10,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266722,
+          "offset": 11,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        },
+        {
+          "block": 53266723,
+          "offset": 12,
+          "grossToken": 0.000013287284966587,
+          "grossUsd": 0.02943560917074403,
+          "netUsdMedian": 0.015939677152073367,
+          "profitable": true
+        }
+      ]
+    },
+    {
+      "key": "0x7464850cc1cfb54a2223229b77b1bca2f888d946|0xedbc10c4a80a85b14c6ab4fa1b3d26f1e315c103|d1",
+      "pair": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b/0x4f9fd6be4a90f2620860d680c0d4d5fb53d1a825",
+      "tokenIn": "0x4f9fd6be4a90f2620860d680c0d4d5fb53d1a825",
+      "tokenInSymbol": "AIXBT",
+      "tokenMid": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+      "tokenMidSymbol": "VIRTUAL",
+      "venueA": "uniswap-v2",
+      "venueB": "uniswap-v3",
+      "poolA": "0x7464850cc1cfb54a2223229b77b1bca2f888d946",
+      "poolB": "0xedbc10c4a80a85b14c6ab4fa1b3d26f1e315c103",
+      "feeA": null,
+      "feeB": 3000,
+      "dir": 1,
+      "sizeToken": 555.124233369127,
+      "notionalUsd": 8.873764829050447,
+      "grossUsdAtScan": 0.019740067576000102,
+      "costMedianUsd": 0.013495932018670663,
+      "costContestedUsd": 3.118442780072017,
+      "netUsdMedianAtScan": 0.006244135557329439,
+      "netUsdContestedAtScan": -3.098702712496017,
+      "priceBasis": "spot ratio of a $31,315 pool against a $1 anchor (1 hop) — uniswap-v3 0xf1fdc83c vs USDC",
+      "profitableAtPrevBoundary": true,
+      "profitableAtNextBoundary": true,
+      "longestProfitableRunBlocks": 15,
+      "longestProfitableRunSeconds": 30,
+      "runStartBlock": 53266709,
+      "classification": "CAPTURE CANDIDATE",
+      "rationale": "net positive at 15 consecutive completed-block boundaries (30s). A bot observing the first boundary had 1859ms of slack to land in the next block while the state was still profitable.",
+      "competition": {
+        "knownArbitragesOnPoolA": 0,
+        "knownArbitragesOnPoolB": 0,
+        "distinctOperatorsPoolA": 0,
+        "distinctOperatorsPoolB": 0,
+        "swapsPoolAInSweep": 15,
+        "swapsPoolBInSweep": 28,
+        "swapsPerBlockPoolA": 0.0008,
+        "swapsPerBlockPoolB": 0.0014,
+        "basis": "arbitrage counts from the preserved Stage-2 forensics windows; swap counts from the Phase-B sweep window"
+      },
+      "series": [
+        {
+          "block": 53266709,
+          "offset": -2,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266710,
+          "offset": -1,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266711,
+          "offset": 0,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266712,
+          "offset": 1,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266713,
+          "offset": 2,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266714,
+          "offset": 3,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266715,
+          "offset": 4,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266716,
+          "offset": 5,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266717,
+          "offset": 6,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266718,
+          "offset": 7,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266719,
+          "offset": 8,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266720,
+          "offset": 9,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266721,
+          "offset": 10,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266722,
+          "offset": 11,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        },
+        {
+          "block": 53266723,
+          "offset": 12,
+          "grossToken": 1.2348974861163204,
+          "grossUsd": 0.019740067576000102,
+          "netUsdMedian": 0.006244135557329439,
+          "profitable": true
+        }
+      ]
+    }
+  ],
+  "rpc": {
+    "calls": 271,
+    "errors": 0
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "chain": "base",
+  "measuredAt": "2026-10-29T22:55:46.726Z",
+  "whatTheCourseTeaches": "Dapp University selects a flash loan first (Balancer because its fee was zero, DODO as a fallback) and treats borrowed capital as the default for every arbitrage.",
+  "providers": {
+    "balancer-v2": {
+      "label": "Balancer V2 Vault",
+      "kind": "flash-loan",
+      "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+      "feeModel": "protocolFlashLoanFeePercentage (read on-chain)",
+      "feeBps": 0,
+      "feeSource": "ProtocolFeesCollector(0xce88686553686DA562CE7Cea497CE749DA109f9F).getFlashLoanFeePercentage()",
+      "capacity": {
+        "WETH": {
+          "raw": "22896094878580411129",
+          "human": 22.896094878580413,
+          "via": "balanceOf(provider)"
+        },
+        "USDC": {
+          "raw": "74580823327",
+          "human": 74580.823327,
+          "via": "balanceOf(provider)"
+        }
+      }
+    },
+    "aave-v3": {
+      "label": "Aave V3 Pool",
+      "kind": "flash-loan",
+      "address": "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5",
+      "feeModel": "FLASHLOAN_PREMIUM_TOTAL (read on-chain, bps)",
+      "feeBps": 5,
+      "feeSource": "Pool.FLASHLOAN_PREMIUM_TOTAL()",
+      "capacity": {
+        "WETH": {
+          "raw": "16174298209289677333824",
+          "human": 16174.298209289676,
+          "via": "balanceOf(aToken 0xD4a0e0b9149BCee3C920d2E00b5dE09138fd8bb7) from Pool.getReserveData(WETH).aTokenAddress"
+        },
+        "USDC": {
+          "raw": "10096446045202",
+          "human": 10096446.045202,
+          "via": "balanceOf(aToken 0x4e65fE4DbA92790696d040ac24Aa414708F5c0AB) from Pool.getReserveData(USDC).aTokenAddress"
+        }
+      }
+    },
+    "morpho-blue": {
+      "label": "Morpho Blue",
+      "kind": "flash-loan",
+      "address": "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb",
+      "feeModel": "zero-fee flashLoan",
+      "feeBps": 0,
+      "feeSource": "Morpho Blue charges no flash-loan fee (no fee parameter exists on flashLoan); stated, not read from a getter",
+      "capacity": {
+        "WETH": {
+          "raw": "84241946678177047546836",
+          "human": 84241.94667817705,
+          "via": "balanceOf(provider)"
+        },
+        "USDC": {
+          "raw": "196066492713805",
+          "human": 196066492.713805,
+          "via": "balanceOf(provider)"
+        }
+      }
+    },
+    "uniswap-v3-flash": {
+      "label": "Uniswap V3 pool flash / flash-swap",
+      "kind": "pool-native-credit",
+      "address": null,
+      "feeModel": "pool fee tier on the borrowed amount",
+      "note": "per-pool credit, not a single contract: cost is the pool fee tier on the borrowed amount, and capacity is that one pool",
+      "feeBps": "equal to the pool fee tier (e.g. 5 bps on a 0.05% pool)"
+    }
+  },
+  "observedEconomics": {
+    "netUsdPerArb": {
+      "n": 1772,
+      "sum": 450791.7612,
+      "max": 121240.8712,
+      "p90": 0.6218,
+      "median": 0.0187,
+      "min": -0.71247
+    },
+    "executionCostUsdPerArb": {
+      "n": 1772,
+      "sum": 338.031,
+      "max": 18.0051,
+      "p90": 0.3117,
+      "median": 0.0164,
+      "min": 0.00161
+    },
+    "fundingObserved": [
+      {
+        "fundingObserved": "none-observed",
+        "arbTxCount": 1700,
+        "sharePct": 95.9,
+        "netUsd": {
+          "n": 1700,
+          "sum": 450788.4681,
+          "max": 121240.8712,
+          "p90": 0.6383,
+          "median": 0.0186,
+          "min": -0.71247
+        }
+      },
+      {
+        "fundingObserved": "morpho-blue",
+        "arbTxCount": 72,
+        "sharePct": 4.1,
+        "netUsd": {
+          "n": 72,
+          "sum": 3.2931,
+          "max": 0.878,
+          "p90": 0.0799,
+          "median": 0.0213,
+          "min": -0.01057
+        }
+      }
+    ]
+  },
+  "affordability": {
+    "method": "For a borrowed notional N and a gross spread s (as a fraction of N), a flash loan at f bps is worth using only when s*N > f/10000*N + gas, i.e. the gross spread must exceed the flash-loan fee before gas is even counted.",
+    "breakEvenSpreadBps": {
+      "balancer-v2": 0,
+      "aave-v3": 5,
+      "morpho-blue": 0,
+      "uniswap-v3-flash": "equal to the pool fee tier (e.g. 5 bps on a 0.05% pool)"
+    },
+    "note": "A zero-fee provider (Balancer V2, Morpho Blue) imposes no spread threshold at all, so on Base the fee question is not what decides the funding method - the extra gas of the borrow/repay callback is.",
+    "aaveAt5bps": {
+      "medianNetUsdPerObservedArb": 0.0187,
+      "notionalAtWhichAaveFeeEatsMedianProfit": 37.4,
+      "reading": "Aave's 5 bps premium costs $5.00 on a $10,000 borrow. The median observed Base arbitrage nets $0.0187, so a borrow above roughly $37 notional would hand the entire median profit to the lender."
+    }
+  }
+}

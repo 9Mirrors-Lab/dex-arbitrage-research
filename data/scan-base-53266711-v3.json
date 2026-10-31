@@ -1,0 +1,1340 @@
+{
+  "chain": "base",
+  "chainName": "Base",
+  "block": 53266711,
+  "scannedAt": "2026-10-30T06:25:31.560Z",
+  "seconds": 4375,
+  "method": {
+    "candidateSource": "pool registry (data/market/pools-base.json) — generated mechanically, not derived from any observed arbitrage transaction",
+    "legOneQuote": "exact, pool-native arithmetic at the stated block",
+    "legTwoQuote": "exact, on the actual output amount of leg one",
+    "sizing": "geometric ladder of 8 sizes bounded by the shallower pool's input-token reserve, then ternary refinement when a spread appears",
+    "costs": "data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; block 53266711 base fee 0.0050 gwei, measured p50 kept in preference to it",
+    "costGasUsedBorrowed": false,
+    "builderPaymentUnmodelled": false,
+    "netProfitIsUpperBound": false,
+    "spotPricesUsedForProfit": false
+  },
+  "routeUniverse": {
+    "generated": 2820,
+    "pairs": 261,
+    "excludedAtGeneration": 2912,
+    "queued": 2820
+  },
+  "coverage": {
+    "total": 2820,
+    "evaluated": 2741,
+    "notTested": 0,
+    "unsupported": 79,
+    "pctEvaluated": 97.1986,
+    "byClass": {
+      "NO SPREAD": 2645,
+      "NEGATIVE NET": 93,
+      "UNSUPPORTED": 79,
+      "PROFITABLE / TIMING UNKNOWN": 3
+    },
+    "byType": {
+      "two-pool": {
+        "NO SPREAD": 2645,
+        "NEGATIVE NET": 93,
+        "UNSUPPORTED": 79,
+        "PROFITABLE / TIMING UNKNOWN": 3
+      }
+    }
+  },
+  "rpc": {
+    "calls": 86367,
+    "errors": 17,
+    "quoteCalls": 45910
+  },
+  "evaluationErrors": 0,
+  "leadingCandidates": [
+    {
+      "key": "0x50982a32af4f9e090df95956f3b07ffe70badb21|0xaffebeead5d3cf2a2f4ad6f17ba5517b77cfcad1|d0",
+      "type": "two-pool",
+      "pair": "0x4200000000000000000000000000000000000006/0x8b03d30b88e86fc5f447069c79ec56b8e7d87ab6",
+      "token0": "0x4200000000000000000000000000000000000006",
+      "token1": "0x8b03d30b88e86fc5f447069c79ec56b8e7d87ab6",
+      "poolA": "0x50982a32af4f9e090df95956f3b07ffe70badb21",
+      "poolB": "0xaffebeead5d3cf2a2f4ad6f17ba5517b77cfcad1",
+      "venueA": "uniswap-v2",
+      "venueB": "aerodrome-v2",
+      "familyA": "uniswap-v2",
+      "familyB": "solidly-v2",
+      "feeA": null,
+      "feeB": null,
+      "tokenIn": "0x4200000000000000000000000000000000000006",
+      "tokenMid": "0x8b03d30b88e86fc5f447069c79ec56b8e7d87ab6",
+      "dir": 0,
+      "sameVenue": false,
+      "crossBrand": true,
+      "depthUsdA": 2212.756562109547,
+      "depthUsdB": 1654.2743126518246,
+      "minDepthUsd": 1654.2743126518246,
+      "activity": 1,
+      "classification": "PROFITABLE / TIMING UNKNOWN",
+      "evaluatedAt": "2026-10-30T06:13:44.671Z",
+      "evidence": {
+        "block": 53266711,
+        "bestSizeToken": 0.007953102744279898,
+        "bestSizeRaw": "7953102744279898",
+        "midAmountRaw": "19881947751313",
+        "returnedRaw": "8100524109761979",
+        "grossToken": 0.000147421365482081,
+        "grossUsd": 0.3265857328009567,
+        "notionalUsd": 17.61868016408829,
+        "grossBasisToken": "WETH",
+        "priceBasis": "spot ratio of a $28,677,189 pool against a $1 anchor (1 hop) — uniswap-v3 0x6c561b44 vs USDC",
+        "quoteBasis": [
+          "constant product on getReserves() @53266711, fee 30 bps",
+          "pool.getAmountOut() view @53266711 (batched)"
+        ],
+        "ticksCrossed": [
+          null,
+          null
+        ],
+        "costMedianUsd": 0.013495932018670663,
+        "costContestedUsd": 3.118442780072017,
+        "netUsdMedian": 0.31308980078228604,
+        "netUsdContested": -2.79185704727106,
+        "costModel": "calibrated p50 from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; block 53266711 base fee 0.0050 gwei, measured p50 kept in preference to it; includes L1 data fee",
+        "netIsUpperBound": false,
+        "ladder": [
+          {
+            "size": "15586860805292",
+            "out": "16169296333880",
+            "profit": "582435528588"
+          },
+          {
+            "size": "155868608052926",
+            "out": "161640148385067",
+            "profit": "5771540332141"
+          },
+          {
+            "size": "779343040264631",
+            "out": "807029160501777",
+            "profit": "27686120237146"
+          },
+          {
+            "size": "3117372161058526",
+            "out": "3210663273423009",
+            "profit": "93291112364483"
+          },
+          {
+            "size": "9352116483175578",
+            "out": "9495091559472655",
+            "profit": "142975076297077"
+          },
+          {
+            "size": "23380291207938944",
+            "out": "23002144086783555",
+            "profit": "-378147121155389"
+          },
+          {
+            "size": "38967152013231576",
+            "out": "37060860100005223",
+            "profit": "-1906291913226353"
+          },
+          {
+            "size": "62347443221170528",
+            "out": "56477585398160757",
+            "profit": "-5869857823009771"
+          }
+        ],
+        "ceilingRaw": "779343040264631488"
+      }
+    },
+    {
+      "key": "0x56f2781e174f38afe547bbc3619c884c9d4f38f5|0xda00485016ab6c9efe354a594aa45e71e7657985|d0",
+      "type": "two-pool",
+      "pair": "0x4200000000000000000000000000000000000006/0xfc9d2f90eab3e9086f062ac67521461c70d86290",
+      "token0": "0x4200000000000000000000000000000000000006",
+      "token1": "0xfc9d2f90eab3e9086f062ac67521461c70d86290",
+      "poolA": "0x56f2781e174f38afe547bbc3619c884c9d4f38f5",
+      "poolB": "0xda00485016ab6c9efe354a594aa45e71e7657985",
+      "venueA": "uniswap-v2",
+      "venueB": "aerodrome-v2",
+      "familyA": "uniswap-v2",
+      "familyB": "solidly-v2",
+      "feeA": null,
+      "feeB": null,
+      "tokenIn": "0x4200000000000000000000000000000000000006",
+      "tokenMid": "0xfc9d2f90eab3e9086f062ac67521461c70d86290",
+      "dir": 0,
+      "sameVenue": false,
+      "crossBrand": true,
+      "depthUsdA": 3183.128714721738,
+      "depthUsdB": 3129.337381539559,
+      "minDepthUsd": 3129.337381539559,
+      "activity": 0,
+      "classification": "PROFITABLE / TIMING UNKNOWN",
+      "evaluatedAt": "2026-10-30T06:01:37.304Z",
+      "evidence": {
+        "block": 53266711,
+        "bestSizeToken": 0.003082971503151887,
+        "bestSizeRaw": "3082971503151887",
+        "midAmountRaw": "633817445345204718064227377",
+        "returnedRaw": "3096258788118474",
+        "grossToken": 0.000013287284966587,
+        "grossUsd": 0.02943560917074403,
+        "notionalUsd": 6.8297733118182835,
+        "grossBasisToken": "WETH",
+        "priceBasis": "spot ratio of a $28,677,189 pool against a $1 anchor (1 hop) — uniswap-v3 0x6c561b44 vs USDC",
+        "quoteBasis": [
+          "constant product on getReserves() @53266711, fee 30 bps",
+          "pool.getAmountOut() view @53266711 (batched)"
+        ],
+        "ticksCrossed": [
+          null,
+          null
+        ],
+        "costMedianUsd": 0.013495932018670663,
+        "costContestedUsd": 3.118442780072017,
+        "netUsdMedian": 0.015939677152073367,
+        "netUsdContested": -3.089007170901273,
+        "costModel": "calibrated p50 from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; block 53266711 base fee 0.0050 gwei, measured p50 kept in preference to it; includes L1 data fee",
+        "netIsUpperBound": false,
+        "ladder": [
+          {
+            "size": "28667525852734",
+            "out": "28913970794452",
+            "profit": "246444941718"
+          },
+          {
+            "size": "286675258527346",
+            "out": "289035492180901",
+            "profit": "2360233653555"
+          },
+          {
+            "size": "1433376292636733",
+            "out": "1442866092424401",
+            "profit": "9489799787668"
+          },
+          {
+            "size": "5733505170546934",
+            "out": "5737055663875522",
+            "profit": "3550493328588"
+          },
+          {
+            "size": "17200515511640802",
+            "out": "16941820619227817",
+            "profit": "-258694892412985"
+          },
+          {
+            "size": "43001288779102000",
+            "out": "40913915189975642",
+            "profit": "-2087373589126358"
+          },
+          {
+            "size": "71668814631836672",
+            "out": "65706606545051127",
+            "profit": "-5962208086785545"
+          },
+          {
+            "size": "114670103410938672",
+            "out": "99685253100321100",
+            "profit": "-14984850310617572"
+          }
+        ],
+        "ceilingRaw": "1433376292636733326"
+      }
+    },
+    {
+      "key": "0x7464850cc1cfb54a2223229b77b1bca2f888d946|0xedbc10c4a80a85b14c6ab4fa1b3d26f1e315c103|d1",
+      "type": "two-pool",
+      "pair": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b/0x4f9fd6be4a90f2620860d680c0d4d5fb53d1a825",
+      "token0": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+      "token1": "0x4f9fd6be4a90f2620860d680c0d4d5fb53d1a825",
+      "poolA": "0x7464850cc1cfb54a2223229b77b1bca2f888d946",
+      "poolB": "0xedbc10c4a80a85b14c6ab4fa1b3d26f1e315c103",
+      "venueA": "uniswap-v2",
+      "venueB": "uniswap-v3",
+      "familyA": "uniswap-v2",
+      "familyB": "uniswap-v3",
+      "feeA": null,
+      "feeB": 3000,
+      "tokenIn": "0x4f9fd6be4a90f2620860d680c0d4d5fb53d1a825",
+      "tokenMid": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+      "dir": 1,
+      "sameVenue": false,
+      "crossBrand": true,
+      "depthUsdA": 354641.79980513937,
+      "depthUsdB": 553.4438873008784,
+      "minDepthUsd": 553.4438873008784,
+      "activity": 43,
+      "classification": "PROFITABLE / TIMING UNKNOWN",
+      "evaluatedAt": "2026-10-30T06:23:40.715Z",
+      "evidence": {
+        "block": 53266711,
+        "bestSizeToken": 555.124233369127,
+        "bestSizeRaw": "555124233369126945385",
+        "midAmountRaw": "16034482859779254924",
+        "returnedRaw": "556359130855243265842",
+        "grossToken": 1.2348974861163204,
+        "grossUsd": 0.019740067576000102,
+        "notionalUsd": 8.873764829050447,
+        "grossBasisToken": "AIXBT",
+        "priceBasis": "spot ratio of a $31,315 pool against a $1 anchor (1 hop) — uniswap-v3 0xf1fdc83c vs USDC",
+        "quoteBasis": [
+          "constant product on getReserves() @53266711, fee 30 bps",
+          "local V3 tick maths @53266711"
+        ],
+        "ticksCrossed": [
+          null,
+          0
+        ],
+        "costMedianUsd": 0.013495932018670663,
+        "costContestedUsd": 3.118442780072017,
+        "netUsdMedian": 0.006244135557329439,
+        "netUsdContested": -3.098702712496017,
+        "costModel": "calibrated p50 from data/forensics-base-*.json, 1,222 observed two-swap self-funded arbitrages across 1,000 blocks; block 53266711 base fee 0.0050 gwei, measured p50 kept in preference to it; includes L1 data fee",
+        "netIsUpperBound": false,
+        "ladder": [
+          {
+            "size": "5070691589975937024",
+            "out": "5093171600069752850",
+            "profit": "22480010093815826"
+          },
+          {
+            "size": "50706915899759370240",
+            "out": "50922404900040131274",
+            "profit": "215489000280761034"
+          },
+          {
+            "size": "253534579498796843008",
+            "out": "254405316931738146297",
+            "profit": "870737432941303289"
+          },
+          {
+            "size": "1014138317995187372032",
+            "out": "1014551536375846448851",
+            "profit": "413218380659076819"
+          },
+          {
+            "size": "3042414953985562116096",
+            "out": "3020719425365102646768",
+            "profit": "-21695528620459469328"
+          },
+          {
+            "size": "7606037384963904503808",
+            "out": "7427553601094475960410",
+            "profit": "-178483783869428543398"
+          },
+          {
+            "size": "12676728974939841888256",
+            "out": "12182484475260667339855",
+            "profit": "-494244499679174548401"
+          },
+          {
+            "size": "20282766359903749537792",
+            "out": "19116337151700353010940",
+            "profit": "-1166429208203396526852"
+          }
+        ],
+        "ceilingRaw": "253534579498796826496059"
+      }
+    }
+  ],
+  "excludedSample": [
+    {
+      "pair": "0x236aa50979d5f3de3bd1eeb40e81137f22ab794b/0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
+      "pool": "0x723aef6543aece026a15662be4d3fb3424d502a9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4621b7a9c75199271f773ebd9a499dbd165c3191/0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
+      "pool": "0x0b25c51637c43decd6cc1c1e3da4518d54ddb528",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xf544251d25f3d243a36b07e7e7962a678f952691",
+      "pool": "0x2d25e0514f23c6367687de89bd5167dc754d4934",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xc5102fe9359fd9a28f877a67e36b0f050d81a3cc",
+      "pool": "0x75d18ee68bb93be5cb2dccfa0d8151e25cbc8eb8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xb79dd08ea68a908a97220c76d19a6aa9cbde4376/0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
+      "pool": "0x4a3636608d7bc5776cb19eb72caa36ebb9ea683b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xde5ed76e7c05ec5e4572cfc88d1acea165109e44",
+      "pool": "0x9e4cb8b916289864321661ce02cf66aa5ba63c94",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x940181a94a35a4569e4529a3cdfb74e38fd98631/0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
+      "pool": "0x2223f9fe624f69da4d8256a7bcc9104fba7f8f75",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9483ab65847a447e36d21af1cab8c87e9712ff93/0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
+      "pool": "0x3fc28bfac25fc8e93b5b2fc15efbbd5a8aa44efe",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5d1a42e32d84560ff46f4f06302fe4c69d28135d/0xce71509ea8f3488404770c2a27f69013a00d28bd",
+      "pool": "0x69cd4ddb6a63917f30ea22d96e02e4ed68c331f0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979",
+      "pool": "0x4f9dc2229f2357b27c22db56cb39582c854ad6d5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xff8adec2221f9f4d8dfbafa6b9a297d17603493d",
+      "pool": "0xffa3f8737c39e36dec4300b162c2153c67c8352f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2dad3a13ef0c6366220f989157009e501e7938f8/0x4200000000000000000000000000000000000006",
+      "pool": "0x84ff3b6e2046579fb2f2b891ce18ee10b5fbdbf2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x27dcb425c7005dd7558f9583797eda39a8d70abd/0xfb3e929bab9796d2bee7cd15ab7954533d899dad",
+      "pool": "0xf4ecebfe039e4bce40226663f54f8d1edce80b2b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+      "pool": "0xbbf71aad6e1f8d180d3b1d898528654c1d18b2ff",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2dad3a13ef0c6366220f989157009e501e7938f8/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+      "pool": "0x688f778c51db4d990bf1abaf8d33fd95e48c6641",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4621b7a9c75199271f773ebd9a499dbd165c3191/0xb79dd08ea68a908a97220c76d19a6aa9cbde4376",
+      "pool": "0x8e9154ac849e839d60299e85156bcb589de2693a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x27dcb425c7005dd7558f9583797eda39a8d70abd/0x8be49607832a299fa33ee837038418ad0223333e",
+      "pool": "0xde3820c24af47b420e6699a2e22d9a1512182a70",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xa3d1a8deb97b111454b294e2324efad13a9d8396/0xb79dd08ea68a908a97220c76d19a6aa9cbde4376",
+      "pool": "0x61366a4e6b1db1b85dd701f2f4bfa275ef271197",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x940181a94a35a4569e4529a3cdfb74e38fd98631/0xf544251d25f3d243a36b07e7e7962a678f952691",
+      "pool": "0x7810f8f3253ced11e8c56c6c8497f3134055d44c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x777b2839832982b35213063d850848369390ee16",
+      "pool": "0xeff0891e5a1bd47a8f1e77abebfee4145974d088",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xbf1aea8670d2528e08334083616dd9c5f3b087ae",
+      "pool": "0x2a1463cebe85315224c536afd389b381b43f3206",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x063d2db6d348fa5957b78b6141d144426486c68c/0x4200000000000000000000000000000000000006",
+      "pool": "0x08a118fbeb0250b418c9a588227a15915668b76a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xcc7ff230365bd730ee4b352cc2492cedac49383e/0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4",
+      "pool": "0xb5e331615fdba7df49e05cdeaceb14acdd5091c3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xf39a37d1075deb3f7dde15b0e69fa13c2ac7e67b",
+      "pool": "0x52cf9ef71a7dd1aee1f54d284bcd5648fd4e02ff",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x348fdfe2c35934a96c1353185f09d0f9efbada86/0x4200000000000000000000000000000000000006",
+      "pool": "0x4e275dddce0f669a40c045241181a769faf9a696",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1c7a460413dd4e964f96d8dfc56e7223ce88cd85/0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca",
+      "pool": "0x42e8dc1b1891c103291ec01d903451e729daaacc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xba7d47f471add16875e765edee0858c3413a56fd",
+      "pool": "0x1307f36bc34081401497a873522570aeba4cde90",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x22e6966b799c4d5b13be962e1d117b56327fda66/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0xcc79bfa7a3212d94390c358e88afcd39294549ca",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xde5ed76e7c05ec5e4572cfc88d1acea165109e44",
+      "pool": "0xf185f82a1948d014bae23d30b06fa8da35110315",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x85483696cc9970ad9edd786b2c5ef735f38d156f/0xb79dd08ea68a908a97220c76d19a6aa9cbde4376",
+      "pool": "0xe96c788e66a97cf455f46c5b27786191fd3bc50b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x373504da48418c67e6fcd071f33cb0b3b47613c7/0x4200000000000000000000000000000000000006",
+      "pool": "0x9d933f0af9dc01a6f9e5d2e6dcb25b6d0837ea81",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x78b3c724a2f663d11373c4a1978689271895256f",
+      "pool": "0x1a9f461a371559f82976fa18c46a6a0d29f131d0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x94025780a1ab58868d9b2dbbb775f44b32e8e6e5",
+      "pool": "0xb7a0b6322834014f95841e643dffa7bb9b9dc0ed",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x93dc5cb35627a759848c7a7f0079ea7b49e435a5",
+      "pool": "0xf91e0dfe1265b914182de54e08c9ca2068beddde",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x54bc229d1cb15f8b6415efeab4290a40bc8b7d84",
+      "pool": "0x688b0380360c84135769d4f75d70038119846a8e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3e34632e7d3484359777fcc98d6b96413a31907f/0x4200000000000000000000000000000000000006",
+      "pool": "0x302728d6d2395bc4bdb0f8238da6b9293006b7fc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x47e78d664e6c339693e8638b7a7d9543abcc99d4",
+      "pool": "0xd4b08a44321a19c973c08c8480b959d828b46bf3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x7f62ac1e974d65fab4a81821ca6af659a5f46298",
+      "pool": "0xcaedc2561356b6a01a94e3c0438011459e91fbb9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x373504da48418c67e6fcd071f33cb0b3b47613c7/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+      "pool": "0xdab27fb1923fc017e941d837040add59b9aff9fd",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4ed4e862860bed51a9570b96d89af5e1b0efefed/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0x637ad8d2611d3efe2ef41fdbb40b9f21abaf9585",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x940181a94a35a4569e4529a3cdfb74e38fd98631/0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4",
+      "pool": "0x4660ff55a4db144734ae76550ee3093e0ba7f8d1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x7f62ac1e974d65fab4a81821ca6af659a5f46298/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+      "pool": "0x90359da9715411b828769ab9343fa2732f726e19",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xc19669a405067927865b40ea045a2baabbbe57f5",
+      "pool": "0xf45f6cdbcd0d2d4bf4d9758b032a66a2cf4e55c8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x24fcfc492c1393274b6bcd568ac9e225bec93584/0x4200000000000000000000000000000000000006",
+      "pool": "0xc90e88d30b99442b6994915f3b146ce3d55982d9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xf7c1cefcf7e1dd8161e00099facd3e1db9e528ee",
+      "pool": "0xaace080ea9ce5e7942ea826d311b6170bdfcf73b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x5b5dee44552546ecea05edea01dcd7be7aa6144a",
+      "pool": "0x8f5f1d63599362115e7f9fe71bfd5ab883d82c82",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xc142171b138db17a1b7cb999c44526094a4dae05",
+      "pool": "0x1f019b4420936a800ff6f54c00d9da05445de433",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x374ad0f47f4ca39c78e5cc54f1c9e426ff8f231a/0x4200000000000000000000000000000000000006",
+      "pool": "0x664c0911d4d750ed1b125e42251499a08c44d9a1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979/0xc1cba3fcea344f92d9239c08c0568f6f2f0ee452",
+      "pool": "0xbd1f3d188de7ee07b1b323c0d26d6720cafb8780",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xa88594d404727625a9437c3f886c7643872296ae",
+      "pool": "0x89d0f320ac73dd7d9513ffc5bc58d1161452a657",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xab36452dbac151be02b16ca17d8919826072f64a/0xcb327b99ff831bf8223cced12b1338ff3aa322ff",
+      "pool": "0x95f04b5594e2a944ca91d56933d119841eef9a99",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xd1917629b3e6a72e6772aab5dbe58eb7fa3c2f33",
+      "pool": "0x862a9d8443bbf74cf86bc05afc8e05c63319dc1e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x78b3c724a2f663d11373c4a1978689271895256f/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+      "pool": "0xd88b9f7185f404015b665e070a5ef03a7e26661f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xe4796ccb6bb5de2290c417ac337f2b66ca2e770e",
+      "pool": "0xf0e08fa759b9c3099b0dd63f73f79984aeb6254f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xd3fdcb837dafdb7c9c3ebd48fe22a53f6dd3d7d7",
+      "pool": "0x06709c364dd4e2f5b0c10b1ebf80b2ce483dbdc5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x8533401a1de222f9da64777574ff9bb41c32d378",
+      "pool": "0xfa3dc3067a56a94ab1380cbe70be1bab4e7f70d8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2da56acb9ea78330f947bd57c54119debda7af71/0x4200000000000000000000000000000000000006",
+      "pool": "0x4a311ac4563abc30e71d0631c88a6232c1309ac5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x471b9900534ca3fd67e2becf8f27768dbaa81583",
+      "pool": "0x761c662bfa3f77462ede97fd0a9b7ba0630a36c1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xf4435cc8b478d54313f04c956882be3d9acf9f6f",
+      "pool": "0x0d4953d2bde145d316296cc72cce509d899a5529",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xb79dd08ea68a908a97220c76d19a6aa9cbde4376/0xe4796ccb6bb5de2290c417ac337f2b66ca2e770e",
+      "pool": "0xbb38eebd670a9f3cafe6d3170862ccd930cb25f9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xff21eca19864ecc60c2f7ee5bb82ede0510ab989",
+      "pool": "0x849ceef63786aae13750cb9bab8a55f1950c1466",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x940181a94a35a4569e4529a3cdfb74e38fd98631/0xa88594d404727625a9437c3f886c7643872296ae",
+      "pool": "0xcd401de1cbaa0d770ee5fb70ff622c752c92b8c5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x940181a94a35a4569e4529a3cdfb74e38fd98631/0xa3d1a8deb97b111454b294e2324efad13a9d8396",
+      "pool": "0x4704f9cf735b58ea442e387acca6717311597322",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0000206329b97db379d5e1bf586bbdb969c63274/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0xe503312e932a3647aeac8b00a8bd1d04e6a73c08",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1db0c569ebb4a8b57ac01833b9792f526305e062/0x4200000000000000000000000000000000000006",
+      "pool": "0x963ceee215e5b0b1dcb221c3ba398de66abc73d9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+      "pool": "0x8b49c7ec53cb4ca3666bb16727fc5c5f6d12226f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xf5653c2444023b87c0d9e2eb8458f005ae911539",
+      "pool": "0x3cc4e7880c0f38a8a7f1eb940a72f27df74132ad",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xcd2f22236dd9dfe2356d7c543161d4d260fd9bcb",
+      "pool": "0x0dfb9cb66a18468850d6216fcc691aa20ad1e091",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x614577036f0a024dbc1c88ba616b394dd65d105a/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+      "pool": "0x73dddbe505f9197138785e1ccfa2988705ce4bfd",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xdcefd8c8fcc492630b943abcab3429f12ea9fea2",
+      "pool": "0xb37642e87613d8569fd8ec80888ea6c63684e79e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x8e331509cc4befae1ee6363d5d06ad538fc65a3e",
+      "pool": "0x1a08fa01dfef73ebd7c3101e305cefbb3bb26c63",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0x8e331509cc4befae1ee6363d5d06ad538fc65a3e",
+      "pool": "0x06fc132ffff8e55dfd0dc581c5546532af88cfed",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x628c5ba9b775dacecd14e237130c537f497d1cc7",
+      "pool": "0x1610f736f1b4a2643d78c82bdda4a364fc9d11e2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xdcefd8c8fcc492630b943abcab3429f12ea9fea2",
+      "pool": "0x958682ec6282bc7e939fa8ba9397805c214c3a09",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xed1779845520339693cdbffec49a74246e7d671b",
+      "pool": "0x598299fb3f3829f7ba08662948706cdff7ec2350",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x80f6bcedd3d4fa1035285affa30e38f464db3895/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0xf471d220f16cc9c3400b5bd97d728072a87b9c75",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3636a7734b669ce352e97780df361ce1f809c58c/0x4200000000000000000000000000000000000006",
+      "pool": "0x8a97d8c1f67cc6efb1222e7a9a766c6089f8d76c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3dd79d6bd927615787cc95f2c7a77c9ac1af26f4/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0x9b0025d10e824e7e2b148953009a40b0c0792f30",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x58d75a1c4477914f9a98a8708feaed1dbe40b8a3",
+      "pool": "0x7c36577aec1d99d9b872b7075bd86c8f1334ecf2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0x8fe815417913a93ea99049fc0718ee1647a2a07c",
+      "pool": "0xcdb55b284257fd5f879598ba9e4b852bb0c3edf1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x806041b6473da60abbe1b256d9a2749a151be6c6",
+      "pool": "0x3a1d086839af6e86f48d96ca6648b48244f91a89",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4e74d4db6c0726ccded4656d0bce448876bb4c7a/0x548f93779fbc992010c07467cbaf329dd5f059b7",
+      "pool": "0x61907c8c3e6ef7ed813acc2fbbbf8c05ac0f31d5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1f4446faaaed23090f324f051c3f8c5ce5ad1c36/0x4200000000000000000000000000000000000006",
+      "pool": "0x65ee5a0ee82027d054efeb31a1f7079c37c5dbd8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2c8d2fc58b80acb3b307c165af8f3ee296e6a271/0x3dd79d6bd927615787cc95f2c7a77c9ac1af26f4",
+      "pool": "0x03ff264046b085450649a993cdd65dcdd01a893e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xb59c8912c83157a955f9d715e556257f432c35d7",
+      "pool": "0xce2d4e04e3d782ecb8bf2e265f421ba510f4e8f7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x940181a94a35a4569e4529a3cdfb74e38fd98631/0xbc45647ea894030a4e9801ec03479739fa2485f0",
+      "pool": "0x0f3027d68fe4e2a56860d7b18b3d80cae8d716d1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x04d5ddf5f3a8939889f11e97f8c4bb48317f1938/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0x6d0b9c9e92a3de30081563c3657b5258b3ffa38b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xba0dda8762c24da9487f5fa026a9b64b695a07ea",
+      "pool": "0xe140c5930889c4064a3d11b17bb04fe7224a5cdc",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x22e6966b799c4d5b13be962e1d117b56327fda66/0xc1e02884af4a283ca25ab63c45360d220d69da52",
+      "pool": "0xff808ffcf1fd541c8291c5d073da327b1b084248",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x36be1d329444aef5d28df3662ec5b4f965cd93e9/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0xd16cc119b7c113660580291580cbeb588c9e2653",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x02f92800f57bcd74066f5709f1daa1a4302df875/0x7b7615273c56de2d799608d3e8ed2311def4adaa",
+      "pool": "0xb9537095df355bb133bf9b81293d020d3e849e7c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x940181a94a35a4569e4529a3cdfb74e38fd98631/0xfad8cb754230dbfd249db0e8eccb5142dd675a0d",
+      "pool": "0xbd159df3aad190fba5864bc9470f81cf0f25851c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xe2dca969624795985f2f083bcd0b674337ba130a",
+      "pool": "0xaa721dc836b5195f33f09b7713f73171a0030e36",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xbdedeab2318e5c6997e60e743ae11df37481c747",
+      "pool": "0xf39360445057a3600b214532a44e13ff8f794523",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x6e2c81b6c2c0e02360f00a0da694e489acb0b05e",
+      "pool": "0x37785d5be19d0d9559d4634a5385c72c419b25da",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1f55a02a049033e3419a8e2975cf3f572f4e6e9a/0xc1cba3fcea344f92d9239c08c0568f6f2f0ee452",
+      "pool": "0x456c166e63634d75a4b49edec86cb51424d4c926",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x02f92800f57bcd74066f5709f1daa1a4302df875/0x71e629ffc616436d4000fccfb436865f2e17613b",
+      "pool": "0xae7db74c79b0416608bf1d84cef07ef57de87da7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3dd79d6bd927615787cc95f2c7a77c9ac1af26f4/0x7da2d618136ee3af42c0a4a22fa393cbede0f506",
+      "pool": "0x1d7edc5b425fe422d82ce7f2295c482da7c0b0db",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9a2c7e8880e1d8604b1717ceabee237bfa778f07/0xcd00b022940910961a9b37af9ecffc31d6cff89c",
+      "pool": "0xee47f0088795f57f062c7206ff7182a3da53e3dd",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xac130701aa31c284c36609e2489f150f419ad7ad/0xb8de15fb529d98c93c749de63c749d48d25a30df",
+      "pool": "0x893faaa7baf7a8247fc7142afb28e13d51a5aae8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xcd00b022940910961a9b37af9ecffc31d6cff89c",
+      "pool": "0xe29218eb7b405a0b80b12783f9548e39f7f9336f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x04d5ddf5f3a8939889f11e97f8c4bb48317f1938/0x4200000000000000000000000000000000000006",
+      "pool": "0x2ce63497999f520cc2afaaadbcfc37afd9def4b0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x01facc69ec7360640aa5898e852326752801674a/0x4200000000000000000000000000000000000006",
+      "pool": "0xc238f8eaa625bac4014ffd0e702a4b9a9d12019e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3ee5e23eee121094f1cfc0ccc79d6c809ebd22e5/0x4200000000000000000000000000000000000006",
+      "pool": "0x0fac819628a7f612abac1cad939768058cc0170c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0x8901cb2e82cc95c01e42206f8d1f417fe53e7af0",
+      "pool": "0x6751bd3d92b2be3cbac7c0c4dbce474b196de251",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x04d5ddf5f3a8939889f11e97f8c4bb48317f1938/0x4621b7a9c75199271f773ebd9a499dbd165c3191",
+      "pool": "0xcea8ef6ce6235f2c2cdd13c9e8a3ed470725a638",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x04d5ddf5f3a8939889f11e97f8c4bb48317f1938/0xe31ee12bdfdd0573d634124611e85338e2cbf0cf",
+      "pool": "0x7818b53f423457151407103321d8f961773815d1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x02f92800f57bcd74066f5709f1daa1a4302df875/0xdbca4ba3cf9126f4eb3ace8679221c7db42d47d9",
+      "pool": "0x9f759e19f595579226b9ab7307764349723ab257",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9eaf8c1e34f05a589eda6bafdf391cf6ad3cb239/0xc1cba3fcea344f92d9239c08c0568f6f2f0ee452",
+      "pool": "0x1524a14c55f097bb54f0b24383f3ae3e3743804a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xed2d13a70acbd61074fc56bd0d0845e35f793e5e",
+      "pool": "0xf067ae7ea89a7a64cc03fef71b19196b21ef70d2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x78b3c724a2f663d11373c4a1978689271895256f/0xb79dd08ea68a908a97220c76d19a6aa9cbde4376",
+      "pool": "0x8f72e491e293ecb223e77123a046521d6d7cad49",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xf2051d80cda1b1e8f77ae9460d4b642e0ea0308d",
+      "pool": "0x27a2b5db61bcf0a9d2173dad2fb2da0dcc5a046f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x6b35f4ee1398da7f644607513a6480bc24f05cd0/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0x85d59cff1f342743c6f45d9712b9538f23e21fef",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x084382d1cc4f4dfd1769b1cc1ac2a9b1f8365e90/0x4200000000000000000000000000000000000006",
+      "pool": "0x9bf387b4cdb6bcdb2107981e0e7c16d71576a970",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x04c0599ae5a44757c0af6f9ec3b93da8976c150a/0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22",
+      "pool": "0x24be4f7a32e5d131b30370bc53e93661e09e7dab",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0a27e060c0406f8ab7b64e3bee036a37e5a62853/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0x72d509aff75753aaad6a10d3eb98f2dbc58c480d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xe642657e4f43e6dcf0bd73ef24008394574dee28",
+      "pool": "0x0aa3e62f4d97c404012352e881a2d0f2712c24a2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9e1028f5f1d5ede59748ffcee5532509976840e0/0xc43f3ae305a92043bd9b62ebd2fe14f7547ee485",
+      "pool": "0xc4f290b08051aef9842e32acb48e3aaddbad6097",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xb676f87a6e701f0de8de5ab91b56b66109766db1",
+      "pool": "0x14f7ce67e16c435c876aff4092eb547584121312",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+      "pool": "0xb909f567c5c2bb1a4271349708cc4637d7318b4a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+      "pool": "0x3d36cf85a0c275cf4894315a6c1d6c558d6d984c",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0x9e087e2ad52d2494ff930553c20ed64f23a2fd20",
+      "pool": "0x7af869e158b7fd9302ef38b0bd21fa4b490ae469",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xdbfefd2e8460a6ee4955a68582f85708baea60a3",
+      "pool": "0x295e0f68384ac506b0c033592eef9674da5e4f99",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4154550f4db74dc38d1fe98e1f3f28ed6dad627d/0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42",
+      "pool": "0xc75799e0646470128a42d07335ab3bfa9e8ee7c2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3e31966d4f81c72d2a55310a6365a56a4393e98d/0x4200000000000000000000000000000000000006",
+      "pool": "0x1dda8b6469df243971381f1f3f4137814ca68722",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x25e1c298f100d7c600e9e44d46788c1ebbd4f69b/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0x54053f540f4b309110544fd6d1209686e9850b38",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xa5649b56aa4e74d8661ee9656130072df7666784",
+      "pool": "0x991473ceb78c9e9c9dbf596f5f28a81435b80bb9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x9b84d48c980d240605fc67867ded4e5bc3e2dbf9",
+      "pool": "0xea67923a7d0a3837f57d1f5e9d1cee2b158bb525",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xaf13924f23be104b96c6ac424925357463b0d105",
+      "pool": "0xe4f074353b6e973389f24170107c8a184ec70b58",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xbfc790abf9f8603d57dad2e5110e63c5d2d8d667",
+      "pool": "0x00ce54c8845e8deceb0e4d1e31f13722dd03997e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xa3a2cdd230f9b3ff6e01a01534a3ed3cbf049815",
+      "pool": "0x92a3267c6f7a109bddd99b11a14044d3575420b8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf/0xf544251d25f3d243a36b07e7e7962a678f952691",
+      "pool": "0x2e26a29f782e51296d9d31f78d4883462a2d339d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf/0xf307e242bfe1ec1ff01a4cef2fdaa81b10a52418",
+      "pool": "0x3ed81ea504b5987611d4e270884539fe648694f0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x37f0c2915cecc7e977183b8543fc0864d03e064c/0x4200000000000000000000000000000000000006",
+      "pool": "0xd6b1ff961077c740929ad23ba5438e63749c1c31",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0ecb04fd79ca0549c449f48e233e7ac9a6412f8a/0x9d36f8f62347538440a212e9162f534f797542df",
+      "pool": "0x3e100ef5ef4a6dfbb8f21f000daac042b9f69f4a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x75a6fc8182dee28a4fb7009feeb13702a185ed91/0x83a723cbde049b9c85ae1de1fbcd00c962870bd0",
+      "pool": "0x60ec7889d6d0060de1a84053b299ef0ade3fdf79",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xd0b4ddc07f90842446ca3e47d3d9758069534f7a/0xf1b4ddf712e108cf43711b1c39f2fddb0d5ce243",
+      "pool": "0x08342565be059c07eb2c30761ca807a569f80cce",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x75a6fc8182dee28a4fb7009feeb13702a185ed91/0xa75aa063f9866358dfc0a8dcdb5ec60396d80062",
+      "pool": "0x4369ce33a3de676892a413f36bb76d27c54efaa8",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x76eef0184fe5e5a09820afedb0ca38af99e8787d/0xa7c4326cc402d7b3b63eeee474822e94ccb7b6a1",
+      "pool": "0x455ede8b874f3f34596981cb2ea04cb51a90baae",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2324a7c742840496109d0f2c22b9e70a0f97b82e/0x76eef0184fe5e5a09820afedb0ca38af99e8787d",
+      "pool": "0x3209609c845c187b515449f7dd7508f51a661634",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x76eef0184fe5e5a09820afedb0ca38af99e8787d/0xc805838f3530f82a53cf79f475208e2a198f7998",
+      "pool": "0xda47fa6f6249317fee881d4b0dc65c0572dbe6da",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2c002ffec41568d138acc36f5894d6156398d539/0x4200000000000000000000000000000000000006",
+      "pool": "0x91eb4e7af337d9f1d0447da50d6ae6d8b86fb2a2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x474cb5b5087e13ea006e13702e330c93c825ab5d/0xc0d3700000987c99b3c9009069e4f8413fd22330",
+      "pool": "0x875d4cc8f0d91d9f2d985a64a3aa6624313e5fc3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2324a7c742840496109d0f2c22b9e70a0f97b82e/0xd0b4ddc07f90842446ca3e47d3d9758069534f7a",
+      "pool": "0xa522ac485a9014ec1f471daf9daba69953d6e0de",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x49f9f22941adcbea729ae154173ebcd91f9fff50/0xd0b4ddc07f90842446ca3e47d3d9758069534f7a",
+      "pool": "0xe3be9abd6548310239e74c9d210f930a083ffc15",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0e78d3dd2c612f0c7d7a41c0781649341923e661/0xd0b4ddc07f90842446ca3e47d3d9758069534f7a",
+      "pool": "0xbb1856fefc0bad27ca4429165d2cab5cf4d8d8dd",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5dfb484f31bc8f536f32838402526bb443a75563/0xd0b4ddc07f90842446ca3e47d3d9758069534f7a",
+      "pool": "0x0c7708726e1374096e7c30ceed51b7a61a8a5960",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x420c64e95afa7f85c484b5fa98e8df1a369ea420",
+      "pool": "0xbc7c45824e168303805c7ea0f53f346b311a009a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x63ae7925c801767b79a1ed83ba84af73194aca39/0xdfb364d8ea0440bdf17dbe76d5d3740b21133bd8",
+      "pool": "0x8d30690adcb5336531009fd9ddbf33cf2980368f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0xff8e0bd2d8f02904e7e18dd00ea50aec68f37a10",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x9b8df6e244526ab5f6e6400d331db28c8fdddb55/0xb0505e5a99abd03d94a1169e638b78edfed26ea4",
+      "pool": "0x733c3904df8f7e044677e8eb500a21f685f2853e",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x8cf55763617e4ea2e60eca050e92cd558e1e7f9d/0xd0b4ddc07f90842446ca3e47d3d9758069534f7a",
+      "pool": "0x6f8cbe7578bc689ce63b5b5729961aaefda8c329",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2dad3a13ef0c6366220f989157009e501e7938f8/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+      "pool": "0x112aab1af0393325ae24ba4cf4555783574e16f7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x23a96680ccde03bd4bdd9a3e9a0cb56a5d27f7c9/0x4200000000000000000000000000000000000006",
+      "pool": "0x9342001c286d21c7507694cd52a9aa73c3d5ce56",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xeb6d78148f001f3aa2f588997c5e102e489ad341",
+      "pool": "0x26029ed89a19b919b5698f10cf776a4f4aea1529",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x02f92800f57bcd74066f5709f1daa1a4302df875/0xd0b57b784ada47365ab3bda65fdf438b88252360",
+      "pool": "0x81518d9899a68ae9e043ae1043b67404a5c5c16d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xdbe125089d0752ef458c0685436ace93a7f1f8ca",
+      "pool": "0xdd3492560b93740cad8a4d9e376ce01901a372bd",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x8872a8c77f6b9d968111b03ef5a484292e65199c/0xd0b4ddc07f90842446ca3e47d3d9758069534f7a",
+      "pool": "0xb243dd5304462fed86a39ec9ca70d90f0b3dd273",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xab1e131c6984cc149ef45931073d11ae35497191",
+      "pool": "0x0d54e82bc304c9696ac783bf658dc85bb7937b78",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xcae60a112a69e052cef73059590215f5654ed4db/0xdcef0cafa40d3ea3db55242d352627bc9c8c23dd",
+      "pool": "0xd4d5497e062e78e9d7e1b51b1b13e1607fa96fd3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xf9569cfb8fd265e91aa478d86ae8c78b8af55df4",
+      "pool": "0x437846bee5e09a17d4fd944e97fd29a54c30ed7f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x34fb54c804c69669dc700670fcbb6e62e366ca0f/0xa7f9101d91121251d6ba7c1383b39a7f1321cdf3",
+      "pool": "0x35adbe9310594c3e0553b76a462391be2ac4cba3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xab387e8f0df922dedd9d5067e51816d08a938174",
+      "pool": "0x906028a66d699d148a166e5ab0d11107fff38480",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf/0xeb6d78148f001f3aa2f588997c5e102e489ad341",
+      "pool": "0x32450cebe156b2ca77dd517e0182409d89b723ff",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x8a6c3c80696307d7ad8e4ce786ad24d2cc45458d/0xbcb39b2797fb5414333ab4a0f60e7f020a7c62bf",
+      "pool": "0x9c6ac1f84e084d0149a965beb3c2ffce1bab0fb7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xb2b9a46373941c582bfe4ece79d1ba7a851fd2b8/0xbcb39b2797fb5414333ab4a0f60e7f020a7c62bf",
+      "pool": "0xc92c406ec8e30d845e62e096ac99f786ac8da033",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x692994a4ab80f01994c5e5545d49967625eccc17/0xbcb39b2797fb5414333ab4a0f60e7f020a7c62bf",
+      "pool": "0xfe3ddb4ec5f1358c79199a000dcb51f0a9df4b22",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x692994a4ab80f01994c5e5545d49967625eccc17/0x6a00862e1296669ce52b56bef63dc3279d1946a4",
+      "pool": "0xecd390850c3a1a6448f26478ede0b83f26447e72",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x940181a94a35a4569e4529a3cdfb74e38fd98631/0xf9569cfb8fd265e91aa478d86ae8c78b8af55df4",
+      "pool": "0x16f7e8199b46ff86d33be983ee6c642d9c14a5ae",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x76eef0184fe5e5a09820afedb0ca38af99e8787d/0xc449d7984760d4939c3088ba3caeae889321a935",
+      "pool": "0x2df1a946d45beeda10bf6edb8b85921b5f999d56",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x158664eb81c2637b0f51f68a44785f61c9b00534/0xbc151779ddfd55fcf90a6897e9419c6d55ca4c02",
+      "pool": "0xaa16b322a4af0940ea8be5bcef9d37dee96eca3d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x158664eb81c2637b0f51f68a44785f61c9b00534/0xc449d7984760d4939c3088ba3caeae889321a935",
+      "pool": "0xdd860d16134d43ff8cc86490d2991cacf14850b7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x2349d27af91220273576963d2e48e2f74e5c226b/0xbc151779ddfd55fcf90a6897e9419c6d55ca4c02",
+      "pool": "0xb5244fd70d39fdec908b4df4c6f565a9f7828b4b",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc449d7984760d4939c3088ba3caeae889321a935/0xe49c22e8c0031e258360c19b5fa8c2539ba85a59",
+      "pool": "0xcd5c1ecee75bcbbd269c5103f3a55566e0c2a739",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xc449d7984760d4939c3088ba3caeae889321a935/0xd0b4ddc07f90842446ca3e47d3d9758069534f7a",
+      "pool": "0xf4884ff4a06695ba224f1f4268625ee0cabea9ff",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4e9379e96cc33d06e973bded90961a2c8f274082/0x720b1cf5793c0c024a07d2225cd4ff76b4783304",
+      "pool": "0xff73dcdd2273eac54e3df2e40435253b68f95643",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x3362759ab0a7109829ad60e33bd02191d3d34419/0xadb0effbe2835d80cbe63707bac4c085b8543a86",
+      "pool": "0x916488cfbf11a6b6c06e6c3a040cbb6109e842b2",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x35e5db674d8e93a03d814fa0ada70731efe8a4b9/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "pool": "0xd3ee0a3b349237d68517df30bfb66be971f46ad9",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x93dc5cb35627a759848c7a7f0079ea7b49e435a5/0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+      "pool": "0x5aac53d1b18f1eaf908c223a94916b339b74309f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xb48a76929375cbfc4abdce11e68f50743b820cb4/0xcae60a112a69e052cef73059590215f5654ed4db",
+      "pool": "0x29659c3a426ff9b182f37013b76d61557e440152",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x1a14387afaa72d6d835208218de342e0a442f8bf/0xc4bf4b2d46b30f49ee8a35a5b7796d9d96af0fea",
+      "pool": "0x1bbc8c25570692ec677a3f784fef220162bd94c7",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x93757336de76f24f7eee15e6150e4ec42fbdaa21",
+      "pool": "0xb70f20c8645310a592c7a9bfb3cbd15e80802f52",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x34880447042625b463cbe368b1d9bf0bb47094c4/0x76f588c21fad74cd5d1ae95d7a72c16e6e1b1f03",
+      "pool": "0x3a61aafaf1e7b84b9ab85b1bfc5be2ba857f4aba",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0a62e4c19f8c1916195f43894667e9a3d82814a9/0xea9ef9cb12ce60bb84087900bbc1be420b490ae3",
+      "pool": "0x4fecc65163882e44599a4c1d109f6806889482b3",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0a62e4c19f8c1916195f43894667e9a3d82814a9/0x158664eb81c2637b0f51f68a44785f61c9b00534",
+      "pool": "0xcfa139fe800adbca5fd6cdaed8d199845b61bca5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0a62e4c19f8c1916195f43894667e9a3d82814a9/0x2349d27af91220273576963d2e48e2f74e5c226b",
+      "pool": "0x305fe58579749e3bcc0bd0368d28b448aeabdea4",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xe49c22e8c0031e258360c19b5fa8c2539ba85a59/0xea9ef9cb12ce60bb84087900bbc1be420b490ae3",
+      "pool": "0xdda35c2022650ca4614643be5a95d37579ca81ab",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0xbc151779ddfd55fcf90a6897e9419c6d55ca4c02/0xea9ef9cb12ce60bb84087900bbc1be420b490ae3",
+      "pool": "0x861a7a866a2399b43aaa389981334271a646eb32",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x5c985c58562fa7b2f017490c72817ba4984313e7/0xea9ef9cb12ce60bb84087900bbc1be420b490ae3",
+      "pool": "0xadc6ed998e60af6b37e534daa3eb8937d69b8678",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x54d76e9287771aaf3b3c8270a12e22321d0a5e21/0xea9ef9cb12ce60bb84087900bbc1be420b490ae3",
+      "pool": "0xb35aca6e4afba548e416889d97dc8134a7277c57",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0a62e4c19f8c1916195f43894667e9a3d82814a9/0xe49c22e8c0031e258360c19b5fa8c2539ba85a59",
+      "pool": "0x2444b9c52cf48fe5aeb49396cd8eeedde7f254a0",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0a62e4c19f8c1916195f43894667e9a3d82814a9/0xde35e5b53eb31b1be4023d783a9d78f34950881f",
+      "pool": "0x6085d6cd10a2982a52c7bf6308e597aff7091235",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xeec468333ccc16d4bf1cef497a56cf8c0aae4ca3",
+      "pool": "0xe4faa73134c66832c272f067adc401f0963a9d7a",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xedc68c4c54228d273ed50fc450e253f685a2c6b9",
+      "pool": "0xaec880badc135c6a72be280a87a2fea513b51c8f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913/0xedc68c4c54228d273ed50fc450e253f685a2c6b9",
+      "pool": "0x8d4076fa5d4180e019f403afd8b132045a9077ae",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xb1e1f3cc2b6fe4420c1ac82022b457018eb628ff",
+      "pool": "0x923bebd9fbcaf0f85251a3d5a11bf5bfaa19942f",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0xc48823ec67720a04a9dfd8c7d109b2c3d6622094",
+      "pool": "0x2b4a56fc7f4b78b7e27801df979d350afdfa26b5",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x4200000000000000000000000000000000000006/0x76c71f1703fbf19ffdcf3051e1e684cb9934510f",
+      "pool": "0x19c3c7eefb070ee00dde367a9768de1df52cbe5d",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x0388559c7c03088e94bd29db4e80be9ee5298c39/0x4200000000000000000000000000000000000006",
+      "pool": "0x1ed8dc91c30ea3ae0427b842e5f6df7db0090424",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    },
+    {
+      "pair": "0x251a022882f514001e622bf832ba24ed98e9b913/0x26953d6e6fae7a71512f64c792fae56bde856b15",
+      "pool": "0x2b8c58442be0dccf617c2a2c0330268cde5d56e1",
+      "reason": "only-one-eligible-pool-for-this-pair"
+    }
+  ]
+}

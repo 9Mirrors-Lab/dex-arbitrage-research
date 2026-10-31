@@ -1,0 +1,248 @@
+{
+  "chain": "ethereum",
+  "head": 26302680,
+  "measuredAt": "2026-10-30T02:48:30.023Z",
+  "factories": {
+    "uniswap-v3": {
+      "address": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+      "family": "uniswap-v3",
+      "label": "Uniswap V3",
+      "enumerable": false,
+      "enumMethod": null,
+      "poolCount": null,
+      "firstPoolSample": null,
+      "eventProbe": [
+        {
+          "sig": "PoolCreated(address,address,uint24,int24,address)",
+          "topic0": "0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2122
+        },
+        {
+          "sig": "PoolCreated(address,address,int24,address)",
+          "topic0": "0xab0d57f0df537bb25e80245ef7748fa62353808c54d6e528a9dd20887aed9ac2",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2096
+        }
+      ]
+    },
+    "uniswap-v2": {
+      "address": "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f",
+      "family": "uniswap-v2",
+      "label": "Uniswap V2",
+      "enumerable": true,
+      "enumMethod": "allPairs",
+      "poolCount": 526497,
+      "firstPoolSample": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+      "eventProbe": [
+        {
+          "sig": "PairCreated(address,address,address,uint256)",
+          "topic0": "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2055
+        }
+      ]
+    },
+    "sushi-v2": {
+      "address": "0xc0aee478e3658e2610c5f7a4a2e1777ce9e4f2ac",
+      "family": "uniswap-v2",
+      "label": "SushiSwap V2",
+      "enumerable": true,
+      "enumMethod": "allPairs",
+      "poolCount": 4812,
+      "firstPoolSample": "0x680a025da7b1be2c204d7745e809919bce074026",
+      "eventProbe": [
+        {
+          "sig": "PairCreated(address,address,address,uint256)",
+          "topic0": "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2058
+        }
+      ]
+    },
+    "pancake-v3": {
+      "address": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+      "family": "pancake-v3",
+      "label": "PancakeSwap V3",
+      "enumerable": false,
+      "enumMethod": null,
+      "poolCount": null,
+      "firstPoolSample": null,
+      "eventProbe": [
+        {
+          "sig": "PoolCreated(address,address,uint24,int24,address)",
+          "topic0": "0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2061
+        }
+      ]
+    },
+    "sushi-v3": {
+      "address": "0xbaceb8ec6b9355dfc0269c18bac9d6e2bdc29c4f",
+      "family": "uniswap-v3",
+      "label": "SushiSwap V3",
+      "enumerable": false,
+      "enumMethod": null,
+      "poolCount": null,
+      "firstPoolSample": null,
+      "eventProbe": [
+        {
+          "sig": "PoolCreated(address,address,uint24,int24,address)",
+          "topic0": "0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2061
+        },
+        {
+          "sig": "PoolCreated(address,address,int24,address)",
+          "topic0": "0xab0d57f0df537bb25e80245ef7748fa62353808c54d6e528a9dd20887aed9ac2",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2061
+        }
+      ]
+    },
+    "aero-merged-cl-eth": {
+      "address": "0xf4fd2e6c5b60c5b365cd1b96dd6245e6d60414c2",
+      "family": "uniswap-v3",
+      "label": "Aero/Velodrome Slipstream CL (Ethereum deployment)",
+      "enumerable": true,
+      "enumMethod": "allPools",
+      "poolCount": 80,
+      "firstPoolSample": "0xd661623947ef2ead12d577b47021c167d163b0c5",
+      "eventProbe": [
+        {
+          "sig": "PoolCreated(address,address,uint24,int24,address)",
+          "topic0": "0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2071
+        },
+        {
+          "sig": "PoolCreated(address,address,int24,address)",
+          "topic0": "0xab0d57f0df537bb25e80245ef7748fa62353808c54d6e528a9dd20887aed9ac2",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2050
+        }
+      ]
+    },
+    "unidentified-v2-a-eth": {
+      "address": "0xeb2a625b704d73e82946d8d026e1f588eed06416",
+      "family": "uniswap-v2",
+      "label": "Unidentified Uniswap V2 fork A",
+      "enumerable": true,
+      "enumMethod": "allPairs",
+      "poolCount": 468,
+      "firstPoolSample": "0x517aade313b5b02136a90011e23fed5ac6c3dcef",
+      "eventProbe": [
+        {
+          "sig": "PairCreated(address,address,address,uint256)",
+          "topic0": "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2055
+        }
+      ]
+    },
+    "unidentified-v2-b-eth": {
+      "address": "0x1097053fd2ea711dad45caccc45eff7548fcb362",
+      "family": "uniswap-v2",
+      "label": "Unidentified Uniswap V2 fork B",
+      "enumerable": true,
+      "enumMethod": "allPairs",
+      "poolCount": 8094,
+      "firstPoolSample": "0x2e8135be71230c6b1b4045696d41c09db0414226",
+      "eventProbe": [
+        {
+          "sig": "PairCreated(address,address,address,uint256)",
+          "topic0": "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2062
+        }
+      ]
+    },
+    "unidentified-v2-c-eth": {
+      "address": "0x115934131916c8b277dd010ee02de363c09d037c",
+      "family": "uniswap-v2",
+      "label": "Unidentified Uniswap V2 fork C",
+      "enumerable": true,
+      "enumMethod": "allPairs",
+      "poolCount": 1062,
+      "firstPoolSample": "0xcf6daab95c476106eca715d48de4b13287ffdeaa",
+      "eventProbe": [
+        {
+          "sig": "PairCreated(address,address,address,uint256)",
+          "topic0": "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9",
+          "range": 2000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2060
+        }
+      ]
+    },
+    "balancer-v2": {
+      "address": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+      "family": "balancer-v2",
+      "label": "Balancer V2",
+      "enumerable": false,
+      "enumMethod": null,
+      "poolCount": null,
+      "firstPoolSample": null,
+      "eventProbe": []
+    }
+  },
+  "logRange": {
+    "https://ethereum-rpc.publicnode.com": {
+      "maxFilteredRange": 1000,
+      "probes": [
+        {
+          "range": 1000,
+          "ok": true,
+          "logs": 6,
+          "ms": 154
+        },
+        {
+          "range": 10000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 400",
+          "ms": 2057
+        }
+      ]
+    },
+    "https://eth.drpc.org": {
+      "maxFilteredRange": 1000,
+      "probes": [
+        {
+          "range": 1000,
+          "ok": true,
+          "logs": 6,
+          "ms": 206
+        },
+        {
+          "range": 10000,
+          "ok": false,
+          "error": "eth_getLogs failed on all providers: HTTP 403",
+          "ms": 2060
+        }
+      ]
+    }
+  }
+}

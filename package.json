@@ -1,0 +1,8 @@
+{
+  "name": "arb-research",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Multichain arbitrage research + validation framework (research only; no trading).",
+  "dependencies": { "viem": "^2.21.0" }
+}

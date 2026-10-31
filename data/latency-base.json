@@ -1,0 +1,265 @@
+{
+  "measuredAt": "2026-10-30T00:40:38.283Z",
+  "host": "local workstation",
+  "flashblockIntervalMs": 200,
+  "blockMs": 2000,
+  "endpoints": {
+    "mainnet.base.org": {
+      "samples": 30,
+      "succeeded": 30,
+      "rttMs": {
+        "min": 51.5,
+        "p50": 53.3,
+        "p90": 58.1,
+        "max": 113.8
+      }
+    },
+    "base.drpc.org": {
+      "samples": 30,
+      "succeeded": 30,
+      "rttMs": {
+        "min": 38.8,
+        "p50": 43.3,
+        "p90": 47.9,
+        "max": 72.5
+      }
+    },
+    "base-rpc.publicnode.com": {
+      "samples": 30,
+      "succeeded": 30,
+      "rttMs": {
+        "min": 58.2,
+        "p50": 65.2,
+        "p90": 71.4,
+        "max": 121.1
+      }
+    }
+  },
+  "pendingTag": {
+    "mainnet.base.org": {
+      "pendingServed": true,
+      "pendingBlock": 53265748,
+      "latestBlock": 53265747,
+      "pendingTxCount": 54,
+      "pendingAheadOfLatest": 1,
+      "error": null
+    },
+    "base.drpc.org": {
+      "pendingServed": true,
+      "pendingBlock": 53265749,
+      "latestBlock": 53265748,
+      "pendingTxCount": 137,
+      "pendingAheadOfLatest": 1,
+      "error": null
+    },
+    "base-rpc.publicnode.com": {
+      "pendingServed": true,
+      "pendingBlock": 53265751,
+      "latestBlock": 53265750,
+      "pendingTxCount": 95,
+      "pendingAheadOfLatest": 1,
+      "error": null
+    }
+  },
+  "flashblocksWs": {
+    "url": "wss://mainnet.flashblocks.base.org/ws",
+    "reachable": true,
+    "messages": 12,
+    "firstMessageMs": 720,
+    "sample": [
+      {
+        "atMs": 430,
+        "event": "open"
+      },
+      {
+        "atMs": 720,
+        "bytes": 8,
+        "parsed": null
+      },
+      {
+        "atMs": 938,
+        "bytes": 8,
+        "parsed": null
+      },
+      {
+        "atMs": 1201,
+        "bytes": 8,
+        "parsed": null
+      },
+      {
+        "atMs": 1202,
+        "bytes": 8,
+        "parsed": null
+      },
+      {
+        "atMs": 1328,
+        "bytes": 8,
+        "parsed": null
+      }
+    ]
+  },
+  "pendingAdvance": {
+    "probeUrl": "mainnet.base.org",
+    "windowMs": 6000,
+    "polls": 29,
+    "distinctPendingStates": 27,
+    "blocksSeen": 4,
+    "interpretation": "pending advances within blocks: sub-block (Flashblock) granularity is reaching us",
+    "series": [
+      {
+        "atMs": 81,
+        "block": 53265751,
+        "txs": 129
+      },
+      {
+        "atMs": 287,
+        "block": 53265751,
+        "txs": 146
+      },
+      {
+        "atMs": 489,
+        "block": 53265751,
+        "txs": 160
+      },
+      {
+        "atMs": 695,
+        "block": 53265751,
+        "txs": 160
+      },
+      {
+        "atMs": 895,
+        "block": 53265752,
+        "txs": 1
+      },
+      {
+        "atMs": 1096,
+        "block": 53265752,
+        "txs": 58
+      },
+      {
+        "atMs": 1374,
+        "block": 53265752,
+        "txs": 78
+      },
+      {
+        "atMs": 1576,
+        "block": 53265752,
+        "txs": 111
+      },
+      {
+        "atMs": 1780,
+        "block": 53265752,
+        "txs": 128
+      },
+      {
+        "atMs": 1982,
+        "block": 53265752,
+        "txs": 144
+      },
+      {
+        "atMs": 2185,
+        "block": 53265752,
+        "txs": 161
+      },
+      {
+        "atMs": 2391,
+        "block": 53265752,
+        "txs": 227
+      },
+      {
+        "atMs": 2596,
+        "block": 53265752,
+        "txs": 267
+      },
+      {
+        "atMs": 2808,
+        "block": 53265753,
+        "txs": 1
+      },
+      {
+        "atMs": 3010,
+        "block": 53265753,
+        "txs": 52
+      },
+      {
+        "atMs": 3212,
+        "block": 53265753,
+        "txs": 108
+      },
+      {
+        "atMs": 3414,
+        "block": 53265753,
+        "txs": 147
+      },
+      {
+        "atMs": 3620,
+        "block": 53265753,
+        "txs": 170
+      },
+      {
+        "atMs": 3820,
+        "block": 53265753,
+        "txs": 188
+      },
+      {
+        "atMs": 4023,
+        "block": 53265753,
+        "txs": 195
+      },
+      {
+        "atMs": 4226,
+        "block": 53265753,
+        "txs": 200
+      },
+      {
+        "atMs": 4428,
+        "block": 53265753,
+        "txs": 226
+      },
+      {
+        "atMs": 4629,
+        "block": 53265753,
+        "txs": 226
+      },
+      {
+        "atMs": 4857,
+        "block": 53265754,
+        "txs": 1
+      },
+      {
+        "atMs": 5059,
+        "block": 53265754,
+        "txs": 79
+      },
+      {
+        "atMs": 5261,
+        "block": 53265754,
+        "txs": 94
+      },
+      {
+        "atMs": 5466,
+        "block": 53265754,
+        "txs": 103
+      },
+      {
+        "atMs": 5668,
+        "block": 53265754,
+        "txs": 124
+      },
+      {
+        "atMs": 5873,
+        "block": 53265754,
+        "txs": 146
+      }
+    ]
+  },
+  "headroom": {
+    "bestEndpointP50RttMs": 43.3,
+    "minimumReactionMs": 65,
+    "assumption": "floor = one round trip to observe the trigger plus half a round trip to push the response; it ignores all local compute, quoting and signing",
+    "flashblocksPerBlock": 10,
+    "flashblocksConsumedByOneReaction": 0.32,
+    "flashblocksRemainingInBlock": 9.68,
+    "fitsInsideOneBlock": true
+  }
+}

@@ -1,0 +1,898 @@
+{
+  "chain": "base",
+  "measuredAt": "2026-10-29T23:05:03.975Z",
+  "source": "data/forensics-base-53261540-53261789.json",
+  "sourceWindow": {
+    "fromBlock": 53261540,
+    "toBlock": 53261789,
+    "blocks": 250,
+    "chainMinutes": 8.3
+  },
+  "costModel": "the observed transaction receipt (L2 gas x effective gas price + OP-stack l1Fee), converted at the WETH/USDC pool price at the same block",
+  "quoteBasis": "exact historical pool state: local V3 tick maths (validated wei-for-wei against the deployed Uniswap QuoterV2), pool.getAmountOut() for Solidly/Aerodrome, constant product on getReserves() for V2",
+  "captureTestMethod": "an opportunity counts as capturable by a block-polling design only if it is already profitable using state at the end of the previous block AND no earlier transaction in the same block swapped on either pool",
+  "results": [
+    {
+      "hash": "0x915b3dbe79a90943258b056004d15c77a3ce6a59943ba0bd75b73965021b047c",
+      "block": 53261565,
+      "txIndex": 5,
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "cycle": "WETH -> cbBTC -> WETH",
+      "cycleTokens": {
+        "X": "0x4200000000000000000000000000000000000006",
+        "Y": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+        "symbolX": "WETH",
+        "symbolY": "cbBTC"
+      },
+      "pools": [
+        {
+          "venue": "aerodrome-cl-3",
+          "family": "uniswap-v3",
+          "pool": "0x42d4a22cad0f5a49681a5715ce994af73a43b76b",
+          "fee": 800,
+          "stable": null,
+          "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef"
+        },
+        {
+          "venue": "aero-merged-cl",
+          "family": "uniswap-v3",
+          "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2",
+          "fee": 85,
+          "stable": null,
+          "factory": "0x9cb220581b91b0c83223012fe69688b92ad07a76"
+        }
+      ],
+      "observedNetUsd": 0.02985115118556733,
+      "observedGrossUsd": 0.0635504793372878,
+      "executionCostUsd": 0.03369932815172047,
+      "l1ShareOfCost": 0.23093796891949012,
+      "gasUsed": 388337,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261564,
+        "optimalSizeX": 0.001368371553005665,
+        "optimalSizeRaw": "1368371553005665",
+        "grossProfitX": -1.9391153108e-7,
+        "grossProfitUsd": -0.00043885570511303766,
+        "netProfitUsd": -0.03413818385683351,
+        "direction": "aerodrome-cl-3 -> aero-merged-cl",
+        "cycleTokenPricingBasis": "WETH @ $2263.17 (uniswap-v3 slot0)",
+        "quoteBasis": [
+          "local V3 tick maths @53261564",
+          "local V3 tick maths @53261564"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 42
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 1,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0xb1520d71145f9d57f3da33f30420933f2e48fcb35d81edd6c3673d4cb6d52593",
+            "index": 3,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [],
+        "verdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2263.174875
+    },
+    {
+      "hash": "0x68f96dd44a0a556dc70cc3b539ce9a1e23701c57119fa2dd39da0239f49d49d5",
+      "skipped": "pools share 1 tokens, not a clean 2-pool cycle"
+    },
+    {
+      "hash": "0xe7f8cb401422ba4ba7545e939ec182d264727185f75b7cbb9f2280519f3234ae",
+      "skipped": "pools share 1 tokens, not a clean 2-pool cycle"
+    },
+    {
+      "hash": "0x8e6f3e0903a2c03890352d8aea80b02b602b086325c5e19a14986553d3a48e3f",
+      "block": 53261658,
+      "txIndex": 490,
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "cycle": "USDC -> Basecat -> USDC",
+      "cycleTokens": {
+        "X": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "Y": "0xb2000000000000000000004c27f6523082f41d01",
+        "symbolX": "USDC",
+        "symbolY": "Basecat"
+      },
+      "pools": [
+        {
+          "venue": "aero-merged-cl",
+          "family": "uniswap-v3",
+          "pool": "0x9c8dbaefa1a13a6a20e4bbc56786bf5b2a65e6ba",
+          "fee": 2910,
+          "stable": null,
+          "factory": "0x9cb220581b91b0c83223012fe69688b92ad07a76"
+        },
+        {
+          "venue": "uniswap-v3",
+          "family": "uniswap-v3",
+          "pool": "0x22906596bd81f53f01d700ddbdb3935bac2e1446",
+          "fee": 3000,
+          "stable": null,
+          "factory": "0x33128a8fc17869897dce68ed026d694621f6fdfd"
+        }
+      ],
+      "observedNetUsd": 0.18093073724645115,
+      "observedGrossUsd": 0.185171,
+      "executionCostUsd": 0.004240262753548847,
+      "l1ShareOfCost": 0.17723689255877725,
+      "gasUsed": 306921,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261657,
+        "optimalSizeX": 0.001782,
+        "optimalSizeRaw": "1782",
+        "grossProfitX": -0.000009,
+        "grossProfitUsd": -0.000009,
+        "netProfitUsd": -0.004249262753548848,
+        "direction": "aero-merged-cl -> uniswap-v3",
+        "cycleTokenPricingBasis": "stablecoin assumed $1.00",
+        "quoteBasis": [
+          "local V3 tick maths @53261657",
+          "local V3 tick maths @53261657"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 42
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 16,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0x212e26ae8f7a250e9548557e614767289e7c4391031c073eac11b1e0b4844bc7",
+            "index": 249,
+            "pool": "0x22906596bd81f53f01d700ddbdb3935bac2e1446"
+          },
+          {
+            "hash": "0xba0770d23ec4e3a8e54ff8a671bfb7c3e09c02ac00f13c6920f65dca2686567e",
+            "index": 251,
+            "pool": "0x22906596bd81f53f01d700ddbdb3935bac2e1446"
+          },
+          {
+            "hash": "0xba0770d23ec4e3a8e54ff8a671bfb7c3e09c02ac00f13c6920f65dca2686567e",
+            "index": 251,
+            "pool": "0x9c8dbaefa1a13a6a20e4bbc56786bf5b2a65e6ba"
+          },
+          {
+            "hash": "0x0042e814100fd44638ba4a9410ab508d164247a30b0652f690733d417089bee0",
+            "index": 252,
+            "pool": "0x22906596bd81f53f01d700ddbdb3935bac2e1446"
+          },
+          {
+            "hash": "0xedeb4ce9a10f9929da9272d615b1ebc343b717a23bba7a2bf2063909db696291",
+            "index": 261,
+            "pool": "0x9c8dbaefa1a13a6a20e4bbc56786bf5b2a65e6ba"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [
+          "0xba0770d23ec4e3a8e54ff8a671bfb7c3e09c02ac00f13c6920f65dca2686567e",
+          "0x555ffb5d2c053fc6e0aeea6b55081c5e369930a780dd927e9ef8d6513bfc6f77",
+          "0x6c14ba83fa8d53fd0986f6d5d66195241528febce7c58555506a152c3545d395",
+          "0xfa8cb9c71b3645f8324f92c64469ffb858caff477cd926f80f6fc2baec6adf33",
+          "0x225b8b9c2eb23465d05ca53b9d26ceaa7375ff74dd4ed53f682e6b9f76246417"
+        ],
+        "verdict": "same-block backrun: 16 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2273.3142129999997
+    },
+    {
+      "hash": "0x6df63668c1afd74f4a5cf0c50c733ebf02c2a5111b3877cf85bdf82459a9fff2",
+      "skipped": "pools share 1 tokens, not a clean 2-pool cycle"
+    },
+    {
+      "hash": "0xa10cdb8ed0a07665c06bdf05d64d3987c73a587326b8f33c0fccf6b3ed850c18",
+      "block": 53261567,
+      "txIndex": 198,
+      "venueCombo": "pancake-v3",
+      "cycle": "USDC -> cbBTC -> USDC",
+      "cycleTokens": {
+        "X": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "Y": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+        "symbolX": "USDC",
+        "symbolY": "cbBTC"
+      },
+      "pools": [
+        {
+          "venue": "pancake-v3",
+          "family": "pancake-v3",
+          "pool": "0x26e263efdc91f0d3279e2ec2bd58a7ca5c2fce62",
+          "fee": 500,
+          "stable": null,
+          "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865"
+        },
+        {
+          "venue": "pancake-v3",
+          "family": "pancake-v3",
+          "pool": "0xb94b22332abf5f89877a14cc88f2abc48c34b3df",
+          "fee": 100,
+          "stable": null,
+          "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865"
+        }
+      ],
+      "observedNetUsd": 0.0036328673552402883,
+      "observedGrossUsd": 0.01314,
+      "executionCostUsd": 0.009507132644759712,
+      "l1ShareOfCost": 0.10211055577246725,
+      "gasUsed": 243879,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261566,
+        "optimalSizeX": 0.444583,
+        "optimalSizeRaw": "444583",
+        "grossProfitX": -0.000767,
+        "grossProfitUsd": -0.000767,
+        "netProfitUsd": -0.010274132644759713,
+        "direction": "pancake-v3 -> pancake-v3",
+        "cycleTokenPricingBasis": "stablecoin assumed $1.00",
+        "quoteBasis": [
+          "local V3 tick maths @53261566",
+          "local V3 tick maths @53261566"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 42
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 1,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0x6b57d36d2b987ca99db18569b7d9c17ee889edde3031bd6590dfdb19d770bcbd",
+            "index": 133,
+            "pool": "0xb94b22332abf5f89877a14cc88f2abc48c34b3df"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [
+          "0x9300c612adfd21d4e621d5e5e295845cec6750b3a14ac020d9975140414cd93a"
+        ],
+        "verdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2263.19005
+    },
+    {
+      "hash": "0x90ed1c0325458e75b6284e87941595bd722559a0a4291499ec2ec42691b43eff",
+      "block": 53261730,
+      "txIndex": 70,
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "cycle": "USDC -> XDP -> USDC",
+      "cycleTokens": {
+        "X": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "Y": "0x07b3d902783c3c12b077508c3b5c00113d1291d0",
+        "symbolX": "USDC",
+        "symbolY": "XDP"
+      },
+      "pools": [
+        {
+          "venue": "aero-merged-cl",
+          "family": "uniswap-v3",
+          "pool": "0xc3cbfbaab532a04e36b6f901d725eaa5113fd781",
+          "fee": 91,
+          "stable": null,
+          "factory": "0x9cb220581b91b0c83223012fe69688b92ad07a76"
+        },
+        {
+          "venue": "uniswap-v3",
+          "family": "uniswap-v3",
+          "pool": "0x2df380544b88adb3ad0a94100dcc45fd705aae2d",
+          "fee": 100,
+          "stable": null,
+          "factory": "0x33128a8fc17869897dce68ed026d694621f6fdfd"
+        }
+      ],
+      "observedNetUsd": 0.019875592264900613,
+      "observedGrossUsd": 0.057146,
+      "executionCostUsd": 0.03727040773509939,
+      "l1ShareOfCost": 0.024656452634809475,
+      "gasUsed": 468796,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261729,
+        "optimalSizeX": 3.634605,
+        "optimalSizeRaw": "3634605",
+        "grossProfitX": 0.000299,
+        "grossProfitUsd": 0.000299,
+        "netProfitUsd": -0.03697140773509939,
+        "direction": "uniswap-v3 -> aero-merged-cl",
+        "cycleTokenPricingBasis": "stablecoin assumed $1.00",
+        "quoteBasis": [
+          "local V3 tick maths @53261729",
+          "local V3 tick maths @53261729"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 42
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 1,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0xdc7146eecabaad5e02d0dd1943fff12cc5a369b84d3801e7dae2e1a7e2e2696f",
+            "index": 69,
+            "pool": "0x2df380544b88adb3ad0a94100dcc45fd705aae2d"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [],
+        "verdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2277.053981
+    },
+    {
+      "hash": "0xe3a53d6761a67b50cd9a9f0b3ac0e051a1781684dcc07c0eebf9220c198ef150",
+      "skipped": "pools share 1 tokens, not a clean 2-pool cycle"
+    },
+    {
+      "hash": "0xb93a4e781daa00d0c95f609368365ccf02460ad9f52fef08e9d5059b017b10d7",
+      "block": 53261649,
+      "txIndex": 36,
+      "venueCombo": "pancake-v3 + uniswap-v3",
+      "cycle": "WETH -> USDC -> WETH",
+      "cycleTokens": {
+        "X": "0x4200000000000000000000000000000000000006",
+        "Y": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "symbolX": "WETH",
+        "symbolY": "USDC"
+      },
+      "pools": [
+        {
+          "venue": "uniswap-v3",
+          "family": "uniswap-v3",
+          "pool": "0xb4cb800910b228ed3d0834cf79d697127bbb00e5",
+          "fee": 100,
+          "stable": null,
+          "factory": "0x33128a8fc17869897dce68ed026d694621f6fdfd"
+        },
+        {
+          "venue": "pancake-v3",
+          "family": "pancake-v3",
+          "pool": "0x72ab388e2e2f6facef59e3c3fa2c4e29011c2d38",
+          "fee": 100,
+          "stable": null,
+          "factory": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865"
+        }
+      ],
+      "observedNetUsd": 0.005798212620832584,
+      "observedGrossUsd": 0.04566619514902835,
+      "executionCostUsd": 0.03986798252819577,
+      "l1ShareOfCost": 0.016850494068232694,
+      "gasUsed": 298514,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261648,
+        "optimalSizeX": 0.000003292731093387,
+        "optimalSizeRaw": "3292731093387",
+        "grossProfitX": -6.56255345e-10,
+        "grossProfitUsd": -0.0000014914386638763758,
+        "netProfitUsd": -0.03986947396685964,
+        "direction": "pancake-v3 -> uniswap-v3",
+        "cycleTokenPricingBasis": "WETH @ $2272.65 (uniswap-v3 slot0)",
+        "quoteBasis": [
+          "local V3 tick maths @53261648",
+          "local V3 tick maths @53261648"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 42
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 1,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0x819dcef3800fe13a4207c0fbd58e4381307ec25a9e86113e425af0ec10432674",
+            "index": 32,
+            "pool": "0xb4cb800910b228ed3d0834cf79d697127bbb00e5"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [],
+        "verdict": "same-block backrun: 1 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2272.64993
+    },
+    {
+      "hash": "0x76e5f24b1ca12cc2fc4183979b22a65a70023251ac55b157f99e53b55b7965f6",
+      "block": 53261691,
+      "txIndex": 225,
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "cycle": "cbBTC -> WETH -> cbBTC",
+      "cycleTokens": {
+        "X": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+        "Y": "0x4200000000000000000000000000000000000006",
+        "symbolX": "cbBTC",
+        "symbolY": "WETH"
+      },
+      "pools": [
+        {
+          "venue": "aero-merged-cl",
+          "family": "uniswap-v3",
+          "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2",
+          "fee": 85,
+          "stable": null,
+          "factory": "0x9cb220581b91b0c83223012fe69688b92ad07a76"
+        },
+        {
+          "venue": "aerodrome-cl-3",
+          "family": "uniswap-v3",
+          "pool": "0x7c7420dd105e2779316423ba3e973f434315efa9",
+          "fee": 85,
+          "stable": null,
+          "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef"
+        }
+      ],
+      "observedNetUsd": 0.013753968956764295,
+      "observedGrossUsd": 0.018975217432823474,
+      "executionCostUsd": 0.00522124847605918,
+      "l1ShareOfCost": 0.1177366426516142,
+      "gasUsed": 397011,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261690,
+        "optimalSizeX": 2e-8,
+        "optimalSizeRaw": "2",
+        "grossProfitX": -1e-8,
+        "grossProfitUsd": -0.0007896787914619698,
+        "netProfitUsd": -0.00601092726752115,
+        "direction": "aerodrome-cl-3 -> aero-merged-cl",
+        "cycleTokenPricingBasis": "exact quoter 0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf->WETH fee 3000 @ block 53261690",
+        "quoteBasis": [
+          "local V3 tick maths @53261690",
+          "local V3 tick maths @53261690"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 30
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 7,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0xd474f168d96d89b9618e5f977b8d8250f1b3eaeda135d151e171c65ee269b3b5",
+            "index": 3,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          },
+          {
+            "hash": "0x012cb4efa46b133a6b74949a44328c331b42c3170c87538581953ebead3a3142",
+            "index": 38,
+            "pool": "0x7c7420dd105e2779316423ba3e973f434315efa9"
+          },
+          {
+            "hash": "0x012cb4efa46b133a6b74949a44328c331b42c3170c87538581953ebead3a3142",
+            "index": 38,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          },
+          {
+            "hash": "0x1e9381fefb2e9b09913bf187662622979a3c36c9143984c656353017d590f2ba",
+            "index": 54,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          },
+          {
+            "hash": "0x975238b6ac1a511ea935e4901afa319078c5330b13efe7836d79c0ec9674b773",
+            "index": 80,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [
+          "0xde617b73a8d5daf10945b7ff2f150f14e5912a5da6cbadc238ee841f46da6977",
+          "0xd474f168d96d89b9618e5f977b8d8250f1b3eaeda135d151e171c65ee269b3b5",
+          "0x50f8b7a2a198922613601f60d29842ac50b6edf67ceec607931725765413042f",
+          "0x012cb4efa46b133a6b74949a44328c331b42c3170c87538581953ebead3a3142",
+          "0x1e9381fefb2e9b09913bf187662622979a3c36c9143984c656353017d590f2ba"
+        ],
+        "verdict": "same-block backrun: 7 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2276.0850889999997
+    },
+    {
+      "hash": "0x50f8b7a2a198922613601f60d29842ac50b6edf67ceec607931725765413042f",
+      "block": 53261691,
+      "txIndex": 378,
+      "venueCombo": "aero-merged-cl + aerodrome-cl-3",
+      "cycle": "WETH -> cbBTC -> WETH",
+      "cycleTokens": {
+        "X": "0x4200000000000000000000000000000000000006",
+        "Y": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+        "symbolX": "WETH",
+        "symbolY": "cbBTC"
+      },
+      "pools": [
+        {
+          "venue": "aero-merged-cl",
+          "family": "uniswap-v3",
+          "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2",
+          "fee": 85,
+          "stable": null,
+          "factory": "0x9cb220581b91b0c83223012fe69688b92ad07a76"
+        },
+        {
+          "venue": "aerodrome-cl-3",
+          "family": "uniswap-v3",
+          "pool": "0x7c7420dd105e2779316423ba3e973f434315efa9",
+          "fee": 85,
+          "stable": null,
+          "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef"
+        }
+      ],
+      "observedNetUsd": 0.0548782933411256,
+      "observedGrossUsd": 0.07139871823340675,
+      "executionCostUsd": 0.01652042489228115,
+      "l1ShareOfCost": 0.030890844367334414,
+      "gasUsed": 439635,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261690,
+        "optimalSizeX": 0.001025806955321707,
+        "optimalSizeRaw": "1025806955321707",
+        "grossProfitX": -2.89235613156e-7,
+        "grossProfitUsd": -0.0006583248663121437,
+        "netProfitUsd": -0.017178749758593296,
+        "direction": "aero-merged-cl -> aerodrome-cl-3",
+        "cycleTokenPricingBasis": "WETH @ $2276.09 (uniswap-v3 slot0)",
+        "quoteBasis": [
+          "local V3 tick maths @53261690",
+          "local V3 tick maths @53261690"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 42
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 16,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0xd474f168d96d89b9618e5f977b8d8250f1b3eaeda135d151e171c65ee269b3b5",
+            "index": 3,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          },
+          {
+            "hash": "0x012cb4efa46b133a6b74949a44328c331b42c3170c87538581953ebead3a3142",
+            "index": 38,
+            "pool": "0x7c7420dd105e2779316423ba3e973f434315efa9"
+          },
+          {
+            "hash": "0x012cb4efa46b133a6b74949a44328c331b42c3170c87538581953ebead3a3142",
+            "index": 38,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          },
+          {
+            "hash": "0x1e9381fefb2e9b09913bf187662622979a3c36c9143984c656353017d590f2ba",
+            "index": 54,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          },
+          {
+            "hash": "0x975238b6ac1a511ea935e4901afa319078c5330b13efe7836d79c0ec9674b773",
+            "index": 80,
+            "pool": "0xec3c3755b9ded4a2960ef50c9b48c1694ce274c2"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [
+          "0xde617b73a8d5daf10945b7ff2f150f14e5912a5da6cbadc238ee841f46da6977",
+          "0xd474f168d96d89b9618e5f977b8d8250f1b3eaeda135d151e171c65ee269b3b5",
+          "0x76e5f24b1ca12cc2fc4183979b22a65a70023251ac55b157f99e53b55b7965f6",
+          "0x012cb4efa46b133a6b74949a44328c331b42c3170c87538581953ebead3a3142",
+          "0x1e9381fefb2e9b09913bf187662622979a3c36c9143984c656353017d590f2ba"
+        ],
+        "verdict": "same-block backrun: 16 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2276.0850889999997
+    },
+    {
+      "hash": "0x82ee300b415215b61e52b79c5979178ca492d370a1f9a3bc7fed4c6e1f40a63a",
+      "block": 53261729,
+      "txIndex": 59,
+      "venueCombo": "uniswap-v3 + unknown:uniswap-v2",
+      "cycle": "WETH -> DEGEN -> WETH",
+      "cycleTokens": {
+        "X": "0x4200000000000000000000000000000000000006",
+        "Y": "0x4ed4e862860bed51a9570b96d89af5e1b0efefed",
+        "symbolX": "WETH",
+        "symbolY": "DEGEN"
+      },
+      "pools": [
+        {
+          "venue": "unknown:uniswap-v2",
+          "family": "uniswap-v2",
+          "pool": "0xa29180d0168f36427ce889810ca07df2922c7991",
+          "fee": null,
+          "stable": null,
+          "factory": "0xba34aa640b8be02a439221bcbea1f48c1035eef9"
+        },
+        {
+          "venue": "uniswap-v3",
+          "family": "uniswap-v3",
+          "pool": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa",
+          "fee": 3000,
+          "stable": null,
+          "factory": "0x33128a8fc17869897dce68ed026d694621f6fdfd"
+        }
+      ],
+      "observedNetUsd": 0.059127083326965646,
+      "observedGrossUsd": 0.06265183560870066,
+      "executionCostUsd": 0.0035247522817350185,
+      "l1ShareOfCost": 0.2666835786136498,
+      "gasUsed": 159653,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261728,
+        "optimalSizeX": 1e-18,
+        "optimalSizeRaw": "1",
+        "grossProfitX": -1e-18,
+        "grossProfitUsd": -2.2771321370000002e-15,
+        "netProfitUsd": -0.0035247522817372957,
+        "direction": "unknown:uniswap-v2 -> uniswap-v3",
+        "cycleTokenPricingBasis": "WETH @ $2277.13 (uniswap-v3 slot0)",
+        "quoteBasis": [
+          "constant product on getReserves() @53261728, fee 30 bps",
+          "local V3 tick maths @53261728"
+        ],
+        "ticksCrossed": [
+          null,
+          0
+        ],
+        "probes": 43
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 7,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0x21a3ffeaca1753dcc9dcf0e3f119b9fe9537c3963c4ce4590ce7cfc69bf63e83",
+            "index": 15,
+            "pool": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa"
+          },
+          {
+            "hash": "0xec65f3cd985bd56616a3bb588522f7b22b634c4dbafe7d9adf612123f31a5f90",
+            "index": 28,
+            "pool": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa"
+          },
+          {
+            "hash": "0x8f0eb49189e9348788362c09596db7588bac44e68ccd83a1ccdc02fce23b6cc8",
+            "index": 42,
+            "pool": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa"
+          },
+          {
+            "hash": "0x892be1a3b48a1580a2d63789bf8ab64fa9c3812f2c9d920b8e84acc80000c924",
+            "index": 43,
+            "pool": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa"
+          },
+          {
+            "hash": "0x3e8d6f24c0baebeda8723c8423339aa0b7bd48a840f8d7aba39463ba038ed274",
+            "index": 44,
+            "pool": "0xc9034c3e7f58003e6ae0c8438e7c8f4598d5acaa"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [
+          "0x28f7df5ce56a2a0b8adc941f190fdff494b5c655a20a9e3b6064558fe2d0a23b",
+          "0x7d403bea1d7e054a0c0ceb33f5d0db33df437564ab1d906a252539ca6567b5f9",
+          "0x350eeac1525f14fbd1f465e04e2a341367a6abbc8ca5bad310c79bd8ef0e056d"
+        ],
+        "verdict": "same-block backrun: 7 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2277.132137
+    },
+    {
+      "hash": "0xa7e812b0aa12b66e79d2c3878080022abc7d890be62ac2782b5e025480b187e0",
+      "block": 53261543,
+      "txIndex": 107,
+      "venueCombo": "aero-merged-cl + uniswap-v3",
+      "cycle": "USDC -> XDP -> USDC",
+      "cycleTokens": {
+        "X": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "Y": "0x07b3d902783c3c12b077508c3b5c00113d1291d0",
+        "symbolX": "USDC",
+        "symbolY": "XDP"
+      },
+      "pools": [
+        {
+          "venue": "aero-merged-cl",
+          "family": "uniswap-v3",
+          "pool": "0xc3cbfbaab532a04e36b6f901d725eaa5113fd781",
+          "fee": 91,
+          "stable": null,
+          "factory": "0x9cb220581b91b0c83223012fe69688b92ad07a76"
+        },
+        {
+          "venue": "uniswap-v3",
+          "family": "uniswap-v3",
+          "pool": "0x2df380544b88adb3ad0a94100dcc45fd705aae2d",
+          "fee": 100,
+          "stable": null,
+          "factory": "0x33128a8fc17869897dce68ed026d694621f6fdfd"
+        }
+      ],
+      "observedNetUsd": 0.002435009778339596,
+      "observedGrossUsd": 0.019461,
+      "executionCostUsd": 0.017025990221660403,
+      "l1ShareOfCost": 0.4081155492977767,
+      "gasUsed": 381165,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261542,
+        "optimalSizeX": 0.000374,
+        "optimalSizeRaw": "374",
+        "grossProfitX": -0.000001,
+        "grossProfitUsd": -0.000001,
+        "netProfitUsd": -0.017026990221660404,
+        "direction": "aero-merged-cl -> uniswap-v3",
+        "cycleTokenPricingBasis": "stablecoin assumed $1.00",
+        "quoteBasis": [
+          "local V3 tick maths @53261542",
+          "local V3 tick maths @53261542"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 42
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 4,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0x66530ef8c41c11b6c08b37f2c8ef23c7354fd0c100ecf3b75e525f5d1a441ea6",
+            "index": 41,
+            "pool": "0x2df380544b88adb3ad0a94100dcc45fd705aae2d"
+          },
+          {
+            "hash": "0xe4fd656708aa16a26e80bac3e6268909dece3754040ba458779aa9749044de03",
+            "index": 44,
+            "pool": "0x2df380544b88adb3ad0a94100dcc45fd705aae2d"
+          },
+          {
+            "hash": "0xe343ee3230d13970f15da84d47f2b3a5194f45c8aeea517be593e50848847474",
+            "index": 45,
+            "pool": "0x2df380544b88adb3ad0a94100dcc45fd705aae2d"
+          },
+          {
+            "hash": "0xf6293927876a2dbdcf0ac86c2182be5967189de0835c66508a09a097ec68141d",
+            "index": 93,
+            "pool": "0x2df380544b88adb3ad0a94100dcc45fd705aae2d"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [],
+        "verdict": "same-block backrun: 4 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2264.824608
+    },
+    {
+      "hash": "0xcaf94291e42244e4283260b868fb5a652a16d1c67edad87521ad93ff530fad6b",
+      "block": 53261559,
+      "txIndex": 242,
+      "venueCombo": "aero-merged-cl + aerodrome-cl-2",
+      "cycle": "WETH -> ICP -> WETH",
+      "cycleTokens": {
+        "X": "0x4200000000000000000000000000000000000006",
+        "Y": "0x00f3c42833c3170159af4e92dbb451fb3f708917",
+        "symbolX": "WETH",
+        "symbolY": "ICP"
+      },
+      "pools": [
+        {
+          "venue": "aerodrome-cl-2",
+          "family": "uniswap-v3",
+          "pool": "0xbe762d548f8ca86a78e9da6e3ddc87f91457e398",
+          "fee": 500,
+          "stable": null,
+          "factory": "0xade65c38cd4849adba595a4323a8c7ddfe89716a"
+        },
+        {
+          "venue": "aero-merged-cl",
+          "family": "uniswap-v3",
+          "pool": "0x3eca1a7d881e12d2c7d8111269cea0bcbf12192a",
+          "fee": 252,
+          "stable": null,
+          "factory": "0x9cb220581b91b0c83223012fe69688b92ad07a76"
+        }
+      ],
+      "observedNetUsd": 0.008229013427265341,
+      "observedGrossUsd": 0.015687446064223825,
+      "executionCostUsd": 0.007458432636958484,
+      "l1ShareOfCost": 0.15160071540111159,
+      "gasUsed": 427753,
+      "funding": [
+        "none-observed"
+      ],
+      "revalidatedAtPrevBlock": {
+        "block": 53261558,
+        "optimalSizeX": 0.00000217910042793,
+        "optimalSizeRaw": "2179100427930",
+        "grossProfitX": -1.4209678e-11,
+        "grossProfitUsd": -3.216305110876764e-8,
+        "netProfitUsd": -0.007458464800009593,
+        "direction": "aero-merged-cl -> aerodrome-cl-2",
+        "cycleTokenPricingBasis": "WETH @ $2263.46 (uniswap-v3 slot0)",
+        "quoteBasis": [
+          "local V3 tick maths @53261558",
+          "local V3 tick maths @53261558"
+        ],
+        "ticksCrossed": [
+          0,
+          0
+        ],
+        "probes": 43
+      },
+      "captureTest": {
+        "profitableAtPreviousBlock": false,
+        "earlierSameBlockSwapsOnThesePools": 4,
+        "earlierSameBlockDetail": [
+          {
+            "hash": "0x76343a3d149a15b7dbd82ae1f1e38be3c91fc4927b833d78c2992129af19e5c3",
+            "index": 103,
+            "pool": "0xbe762d548f8ca86a78e9da6e3ddc87f91457e398"
+          },
+          {
+            "hash": "0xb834499ce85d428e550ff1107575babc927fff582b23aa152c8922d58775b593",
+            "index": 123,
+            "pool": "0xbe762d548f8ca86a78e9da6e3ddc87f91457e398"
+          },
+          {
+            "hash": "0xb834499ce85d428e550ff1107575babc927fff582b23aa152c8922d58775b593",
+            "index": 123,
+            "pool": "0x3eca1a7d881e12d2c7d8111269cea0bcbf12192a"
+          },
+          {
+            "hash": "0xbce4ff42fb056f59a01527409fe31716ef363161d65ede0c11d136fcd92fa9d9",
+            "index": 238,
+            "pool": "0xbe762d548f8ca86a78e9da6e3ddc87f91457e398"
+          }
+        ],
+        "otherArbsOnSamePoolsInBlock": [
+          "0xb834499ce85d428e550ff1107575babc927fff582b23aa152c8922d58775b593"
+        ],
+        "verdict": "same-block backrun: 4 earlier transaction(s) in this block swapped on these pools, so capture needs same-block reaction"
+      },
+      "wethUsdAtPrevBlock": 2263.460939
+    }
+  ],
+  "rpcStats": {
+    "calls": 170,
+    "errors": 27,
+    "retries": 0,
+    "byUrl": {
+      "https://mainnet.base.org": 143,
+      "https://base.drpc.org": 27
+    }
+  },
+  "quoteCalls": 1549
+}
